@@ -1,23 +1,17 @@
 {
-  "name": "org.javacream.training.react",
+  "name": "people_app",
   "version": "1.0.0",
-  "description": "React Training",
-  "main": "index.js",
+  "author": "Javacream",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "go": "open http://localhost:4000; npm run server",
+    "e2e": "nightwatch",
+    "test": "./node_modules/.bin/concurrently -k 'npm run server' 'npm run e2e'",
+    "start": "npm run server",
+    "server": "node ./node_modules/live-server/live-server.js public --host=localhost --port=4000 --middleware=./disable-browser-cache.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/JavacreamTraining/org.javacream.training.react.git"
-  },
-  "keywords": [
-    "JavaScript",
-    "React"
-  ],
-  "author": "Rainer Sawitzki",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/JavacreamTraining/org.javacream.training.react/issues"
-  },
-  "homepage": "https://github.com/JavacreamTraining/org.javacream.training.react#readme"
+  "private": true,
+  "devDependencies": {
+    "concurrently": "2.2.0",
+    "live-server": "git://github.com/acco/live-server.git"
+  }
 }
