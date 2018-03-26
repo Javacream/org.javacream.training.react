@@ -61,7 +61,7 @@ class Worker extends Person{
     return super.info() + `, working at ${this.company}`
   }
 
-  study(){
+  work(){
     console.log(`working at ${this.company} ...`)
   }
 }
