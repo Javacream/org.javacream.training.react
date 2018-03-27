@@ -65,3 +65,25 @@ class Worker extends Person{
     console.log(`working at ${this.company} ...`)
   }
 }
+
+class PeopleModel{
+  constructor(){
+    this.data = new Map()
+  }
+
+  add(person){
+    this.data.set(person.personId, person)
+  }
+
+  people(){
+    return Array.from(this.data.values())
+  }
+
+  update(person){
+    this.data.set(person.personId, person)
+  }
+
+  personOf(personId){
+    return this.data.get(personId)
+  }
+}

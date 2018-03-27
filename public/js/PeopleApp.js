@@ -17,10 +17,12 @@ function dump(){
   console.log(p3.info())
 }
 
-let people = new Array()//[]
-people.push(p1, p2, p3)
+let peopleModel = new PeopleModel()//[]
+peopleModel.add(p1)
+peopleModel.add(p2)
+peopleModel.add(p3)
 
-people.push({
+peopleModel.add({
   lastname: "Mehlfeld",
   firstname: "Johann",
   personId: 42,
@@ -28,12 +30,12 @@ people.push({
 })
 
 console.log("************** SORT LASTNAME**************")
-people.sort((pa, pb) => {return pa.lastname.localeCompare(pb.lastname)} )
-people.forEach((p) => console.log(p.info()))
+peopleModel.people().sort((pa, pb) => {return pa.lastname.localeCompare(pb.lastname)} )
+peopleModel.people().forEach((p) => console.log(p.info()))
 console.log("************** SORT FIRSTNAME**************")
-people.sort((pa, pb) => {return pa.firstname.localeCompare(pb.firstname)} )
-people.forEach((p) => console.log(p.info()))
+peopleModel.people().sort((pa, pb) => {return pa.firstname.localeCompare(pb.firstname)} )
+peopleModel.people().forEach((p) => console.log(p.info()))
 
 console.log("************** PEOPLE INFOS**************")
-let peopleInfos = people.map((p) => p.info())
+let peopleInfos = peopleModel.people().map((p) => p.info())
 console.log(...peopleInfos)
