@@ -17,9 +17,15 @@ function dump(){
   console.log(p3.info())
 }
 
-let people = []
+let people = new Array()//[]
 people.push(p1, p2, p3)
 
+people.push({
+  lastname: "Mehlfeld",
+  firstname: "Johann",
+  personId: 42,
+  info: function(){ return "i am mehlfeld"}
+})
 
 console.log("************** SORT LASTNAME**************")
 people.sort((pa, pb) => {return pa.lastname.localeCompare(pb.lastname)} )
