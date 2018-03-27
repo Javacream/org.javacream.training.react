@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import {WelcomeComponent, PeopleComponent} from './PeopleAppComponents'
 import {FunctionDemoMainComponent} from './FunctionDemoComponents'

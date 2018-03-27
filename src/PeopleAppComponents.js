@@ -12,9 +12,6 @@ class PeopleComponent extends Component{
     people: [],
   };
 
-  constructor(){
-    super()
-  }
   componentDidMount(){
     this.setState({people: peopleModel.people()})
   }
