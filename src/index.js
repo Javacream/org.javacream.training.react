@@ -2,6 +2,5 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
-import {WelcomeComponent, PeopleComponent} from './PeopleAppComponents';
-ReactDOM.render(<WelcomeComponent />, document.getElementById('welcome-content'));
-ReactDOM.render(<PeopleComponent />, document.getElementById('people'));
+import Main from './Main';
+ReactDOM.render(<Main />, document.getElementById('content'));

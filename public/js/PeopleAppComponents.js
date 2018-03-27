@@ -1,22 +1,33 @@
-import React, { Component } from 'react';
-import {peopleModel} from './PeopleApp'
-
-class WelcomeComponent extends Component{
+class WelcomeComponent extends React.Component{
   render(){
     return <h2>Welcome to the People App!</h2>
   }
 }
 
-class PeopleComponent extends Component{
+class PeopleComponent extends React.Component{
   state = {
     people: [],
   };
 
   constructor(){
     super()
+    this.message = "a message from PeopleComponent"
+    this.callback3 = this.callback3.bind(this)
   }
   componentDidMount(){
     this.setState({people: peopleModel.people()})
+  }
+  callback1(){
+    return this.message
+  }
+  callback2 = () => {
+    return this.message
+  }
+  callback3(){
+    return this.message
+  }
+  callback4 = function(){
+    return this.message
   }
 
   handleNameChange = (clickedPerson) => {
@@ -37,15 +48,26 @@ class PeopleComponent extends Component{
   return (
           <div>
             <h3>People</h3>
-            <div><ol>{peopleHtml}</ol></div>
+            <div className='ui unstackable items'><ol>{peopleHtml}</ol></div>
             <h3>People Info</h3>
-            <div><ul>{peopleInfoHtml}</ul></div>
+            <div className='ui unstackable items'><ul>{peopleInfoHtml}</ul></div>
+            <h3>FunctionDemoComponent</h3>
+            <div className='ui unstackable items'><FunctionDemoComponent function1={this.callback1} function2={this.callback2} function3={this.callback3} function4={this.callback4} message="a message from FunctionDemoComponent"/></div>
           </div>
   )
 }
 }
 
-
+const FunctionDemoComponent = (props) => {
+    return (
+      <div>
+        <p>Callback1: {props.function1()}</p>
+        <p>Callback2: {props.function2()}</p>
+        <p>Callback3: {props.function3()}</p>
+        <p>Callback4: {props.function4()}</p>
+      </div>
+    )
+}
 const PersonInfoComponent = (props) => {
     return <li>{props.info}</li>
 }
@@ -66,4 +88,6 @@ const PersonComponent = (props) => {
   )
 }
 
-export {PeopleComponent, WelcomeComponent}
+
+ReactDOM.render(<WelcomeComponent />, document.getElementById('welcome-content'))
+ReactDOM.render(<PeopleComponent />, document.getElementById('people'))
