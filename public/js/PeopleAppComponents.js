@@ -58,41 +58,34 @@ class PeopleComponent extends React.Component{
 }
 }
 
-class FunctionDemoComponent extends React.Component{
-  render(){
+const FunctionDemoComponent = (props) => {
     return (
       <div>
-        <p>Callback1: {this.props.function1()}</p>
-        <p>Callback2: {this.props.function2()}</p>
-        <p>Callback3: {this.props.function3()}</p>
-        <p>Callback4: {this.props.function4()}</p>
+        <p>Callback1: {props.function1()}</p>
+        <p>Callback2: {props.function2()}</p>
+        <p>Callback3: {props.function3()}</p>
+        <p>Callback4: {props.function4()}</p>
       </div>
     )
-  }
 }
-class PersonInfoComponent extends React.Component{
-  render(){
-    return <li>{this.props.info}</li>
-  }
+const PersonInfoComponent = (props) => {
+    return <li>{props.info}</li>
 }
 
-class PersonComponent extends React.Component{
+const PersonComponent = (props) => {
 
-  handleNameChange = () => {
+    const handleNameChange = () => {
+      props.handleNameChange(props.index)
+    }
 
-    //this.props.lastname = "Changed" // runtime error: props is read-only
-    //people[(this.props.index - 1)].lastname = "Changed" //NOT RENDERED!!!
-    this.props.handleNameChange(this.props.index)
-  }
-  render(){
     return (
       <li>
-        <p>Lastname: {this.props.lastname}</p>
-        <p>Firstname: {this.props.firstname}</p>
-        <p>Married: <input type="checkbox" value="Married" checked={this.props.married} readOnly="true"></input></p>
-        <p><input type="button" value="Change name!" onClick={this.handleNameChange}></input></p>
+        <p>Lastname: {props.lastname}</p>
+        <p>Firstname: {props.firstname}</p>
+        <p>Married: <input type="checkbox" value="Married" checked={props.married} readOnly="true"></input></p>
+        <p><input type="button" value="Change name!" onClick={handleNameChange}></input></p>
       </li>
-  )}
+  )
 }
 
 
