@@ -1,7 +1,13 @@
 import React from 'react';
-
+import PropTypes from 'prop-types';
 const PersonComponent = (props) => {
-
+  PersonComponent.propTypes={
+    index: PropTypes.number.isRequired,
+    lastname: PropTypes.string.isRequired,
+    firstname: PropTypes.string.isRequired,
+    married: PropTypes.bool.isRequired,
+    handleNameChange: PropTypes.func.isRequired
+  }
     const handleNameChange = () => {
       props.handleNameChange(props.index)
     }
