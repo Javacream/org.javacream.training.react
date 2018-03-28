@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import PubSub from 'pubsub-js'
+
 const PersonComponent = (props) => {
   PersonComponent.propTypes={
     index: PropTypes.number.isRequired,
@@ -9,6 +11,7 @@ const PersonComponent = (props) => {
     handleNameChange: PropTypes.func.isRequired
   }
     const handleNameChange = () => {
+      PubSub.publish("AUDIT", `changed person with index ${props.index}`)
       props.handleNameChange(props.index)
     }
 

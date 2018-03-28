@@ -11,6 +11,7 @@ const NavigationComponent = (props) => {
         <Link to="/peopleFromServer">People Server</Link>
         <Link to="/functionDemo">Function Demo</Link>
         <Link to="/clientServerDemo">Client Server Demo</Link>
+        <Link to="/auditDemo">Show Audit</Link>
       </div>
     )
 }
