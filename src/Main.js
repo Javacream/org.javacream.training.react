@@ -21,6 +21,7 @@ const Main = (props) => {
         <Switch>
           <Route path='/people' component={PeopleComponent}/>
           <Route path='/peopleFromServer' component={PeopleServerComponent}/>
+          <Route path='/todo' component={ToDosComponent}/>
           <Route exact path='/functionDemo' component={FunctionDemoMainComponent}/>
           <Route exact path='/clientServerDemo' component={ClientServerComponent}/>
           <Route exact path='/auditDemo' component={AuditSubscriptionComponent}/>
