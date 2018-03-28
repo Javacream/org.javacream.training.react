@@ -1,13 +1,10 @@
 import React, { Component } from 'react';
-import {peopleModel} from './PeopleApp'
-import {Person} from './People'
+import {peopleModel} from '../model/PeopleApp'
+import {Person} from '../model/People'
 import {Link, Switch, Route} from 'react-router-dom'
-
-class WelcomeComponent extends Component{
-  render(){
-    return <h2>Welcome to the People App!</h2>
-  }
-}
+import {PersonInputFormComponent} from './PersonInputFormComponent'
+import {PersonInfoComponent} from './PersonInfoComponent'
+import {PersonComponent} from './PersonComponent'
 
 class PeopleComponent extends Component{
   state = {
@@ -24,7 +21,8 @@ class PeopleComponent extends Component{
     this.changeState()
   }
 
-  handleCreatePerson = (person) => {
+  handleCreatePerson = (personData) => {
+    let person = new Person(Math.floor(Math.random() * 100001), personData.data.lastname, personData.data.firstname)
     peopleModel.add(person)
     this.changeState()
   }
@@ -79,57 +77,4 @@ class PeopleComponent extends Component{
 }
 }
 
-
-const PersonInfoComponent = (props) => {
-    return <li>{props.info}</li>
-}
-
-const PersonComponent = (props) => {
-
-    const handleNameChange = () => {
-      props.handleNameChange(props.index)
-    }
-
-    return (
-      <li>
-        <p>Lastname: {props.lastname}</p>
-        <p>Firstname: {props.firstname}</p>
-        <p>Married: <input type="checkbox" value="Married" checked={props.married} readOnly="true"></input></p>
-        <p><input type="button" value="Change name!" onClick={handleNameChange}></input></p>
-      </li>
-  )
-}
-
-class PersonInputFormComponent extends Component{
-  state = {
-    fields: {
-      lastname: '',
-      firstname: ''
-    }
-  }
-  handleFormSubmit = (event) => {
-    let p = new Person(Math.floor(Math.random() * 100000), this.state.fields.lastname, this.state.fields.firstname)
-    alert("Created " + p.info())
-    this.props.createPersonHandler(p)
-
-    event.preventDefault();
-  }
-  handleChange = (event) => {
-    let target = event.target
-    let result = this.state.fields
-    result[target.name] = target.value
-    this.setState({fields: result})
-  }
-  render(){
-    return (
-      <form onSubmit={this.handleFormSubmit}>
-      <input placeholder="Lastname" name="lastname" value={this.state.fields.lastname} onChange={this.handleChange}></input>
-      <input placeholder="Firstname" name="firstname" value={this.state.fields.firstname} onChange={this.handleChange}></input>
-      <input type="submit" value="Create Person"/>
-      </form>
-    )
-  }
-
-}
-
-export {PeopleComponent, WelcomeComponent, PersonInputFormComponent}
+export {PeopleComponent}

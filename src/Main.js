@@ -1,7 +1,8 @@
 import React from 'react';
 
-import {WelcomeComponent, PeopleComponent} from './PeopleAppComponents'
-import {FunctionDemoMainComponent} from './FunctionDemoComponents'
+import {PeopleComponent} from './people/components/PeopleComponent'
+import {WelcomeComponent} from './people/components/WelcomeComponent'
+import {FunctionDemoMainComponent} from './demo/FunctionDemoComponents'
 import {NavigationComponent} from './NavigationComponent'
 
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
