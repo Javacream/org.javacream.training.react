@@ -14,7 +14,7 @@ const Main = (props) => {
         <NavigationComponent />
         <hr />
         <Switch>
-          <Route exact path='/people' component={PeopleComponent}/>
+          <Route path='/people' component={PeopleComponent}/>
           <Route exact path='/functionDemo' component={FunctionDemoMainComponent}/>
         </Switch>
         </div>
