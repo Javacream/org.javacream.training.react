@@ -1,6 +1,7 @@
 import React from 'react';
 
 import {PeopleComponent} from './people/components/PeopleComponent'
+import {PeopleServerComponent} from './people/components/PeopleServerComponent'
 import {WelcomeComponent} from './people/components/WelcomeComponent'
 import {FunctionDemoMainComponent} from './demo/FunctionDemoComponents'
 import {ClientServerComponent} from './demo/ClientServerComponent'
@@ -17,6 +18,7 @@ const Main = (props) => {
         <hr />
         <Switch>
           <Route path='/people' component={PeopleComponent}/>
+          <Route path='/peopleFromServer' component={PeopleServerComponent}/>
           <Route exact path='/functionDemo' component={FunctionDemoMainComponent}/>
           <Route exact path='/clientServerDemo' component={ClientServerComponent}/>
         </Switch>
