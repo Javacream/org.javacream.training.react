@@ -1,9 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class WelcomeComponent extends Component{
-  render(){
+const WelcomeComponent = () => {
     return <h2>Welcome to the People App!</h2>
-  }
 }
 
 export {WelcomeComponent}

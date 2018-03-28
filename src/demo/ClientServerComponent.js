@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 const ClientServerComponent = (props) => {
   const doRequestWithFetch = () => {
     fetch('http://10.28.6.1:8080/people').then(function(response){
-      if (response.status == 200){
+      if (response.status === 200){
       response.json().then(function(data){
         alert("Result: " + data[5].lastname)
       })
@@ -24,9 +24,14 @@ const ClientServerComponent = (props) => {
     }
   }
 
+  let asyncAwait = true
 
-  //doRequestWithFetch()
-  doRequestWithAsyncAwait()
+  if (asyncAwait){
+    doRequestWithAsyncAwait()
+
+  } else{
+    doRequestWithFetch()
+  }
   return (
       <div>
       TODO Implement Component
