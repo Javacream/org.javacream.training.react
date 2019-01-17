@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {peopleModel} from './PeopleApp'
 const PI = 3.14159
 class Hello extends Component {
         render() {
