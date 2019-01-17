@@ -1,16 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-class ProductList extends React.Component {
+class Hello extends React.Component {
 render() {
     return (
     <div className='ui unstackable items'>
-    Hello, friend! I am a basic React component.
+    I am a basic React component.
     </div>
     );
     }
 }
 ReactDOM.render(
-<ProductList />,
+<Hello />,
 document.getElementById('content')
 );

@@ -1,5 +1,5 @@
 {
-  "name": "Javacream_React_App",
+  "name": "org.javacream.training.react",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
