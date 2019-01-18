@@ -88,4 +88,5 @@ class PeopleModel{
   }
 }
 
-export {Person, Student, Worker, PeopleModel}
+const peopleModel = new PeopleModel()
+export {Person, Student, Worker, PeopleModel, peopleModel}
