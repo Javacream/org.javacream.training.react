@@ -3,10 +3,12 @@ import {samplePeople} from '../model/PeopleData'
 import {PersonComponent} from './PersonComponent' 
 class PeopleComponent extends Component{
     render(){
-        const people = samplePeople.map((p) => {
-            return (<PersonComponent person={p} />)
-        });
-        return (<div>{people}</div>)
+        const callback = (p) => {
+            return (<li><PersonComponent person={p} /></li>)
+        }
+
+        const people = samplePeople.map(callback);
+        return (<ul>{people}</ul>)
     }
 }
 
