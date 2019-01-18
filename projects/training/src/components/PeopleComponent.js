@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {peopleModel, Person} from '../model/People'
 import {PersonComponent} from './PersonComponent' 
 import {PersonInputFormComponent} from './PersonInputFormComponent' 
+import {PeopleServerComponent} from './PeopleServerComponent' 
 class PeopleComponent extends Component{
     state = {
         people: [],
@@ -25,6 +26,10 @@ class PeopleComponent extends Component{
 
         const people = this.state.people.map(callback);
         return (<div>
+                    <div>
+                        <PeopleServerComponent  />
+                    </div>
+                    <hr />
                     <div>
                         <PersonInputFormComponent createPersonHandler={this.handleCreatePerson} />
                     </div>

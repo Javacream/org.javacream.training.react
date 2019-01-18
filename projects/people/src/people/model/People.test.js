@@ -1,4 +1,4 @@
-import { Person } from "../../../../first/src/components/People";
+import { Person } from "../../../../first/src/model/People";
 
 describe('Simple', () => {
     it('creates a person', () => {
