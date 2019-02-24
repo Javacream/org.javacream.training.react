@@ -9,9 +9,10 @@ class PeopleServerComponent extends Component{
 
   async loadData() {
     try{
-      let result = await fetch('http://localhost:8080/people')
+      let result = await fetch('http://localhost:8080/people/6')
       let data = await result.json()
-      let people = data.map((p) => new Person(p.id, p.lastname, p.firstname))
+      //let people = data.map((p) => new Person(p.id, p.lastname, p.firstname))
+      let people = [new Person(data.id, data.lastname, data.firstname)]
       this.setState({people: people})
     }
     catch(err){
