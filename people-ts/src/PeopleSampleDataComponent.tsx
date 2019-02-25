@@ -17,3 +17,18 @@ export class PersonSampleDataComponent extends React.Component{
     }
 
 }
+
+
+export let StatelessPersonSampleDataComponent = () => {
+    let attributePerson1 = new PersonClass(9, "Musterfrau", "Hanna");
+    let attributePerson2: Person = {personId: 19, lastname: "Muster", firstname: "Han"}
+
+        return (
+            <div>
+                <PersonComponent person={samplePerson} />
+                <PersonComponent person={attributePerson1}/>
+                <PersonComponent person={attributePerson2} />
+            </div>
+
+        );
+}
