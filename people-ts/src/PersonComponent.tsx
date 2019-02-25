@@ -1,18 +1,23 @@
 import React from 'react';
-import {PersonClass, Person, samplePerson} from './model/People';
-export class PersonComponent extends React.Component{
-    attributePerson1 = new PersonClass(9, "Musterfrau", "Hanna");
-    attributePerson2: Person = {personId: 19, lastname: "Muster", firstname: "Han"}
+import {Person} from './model/People';
+
+export interface PersonProp{
+    person: Person;
+}
+export class PersonComponent extends React.Component<PersonProp>{
+
+    constructor(prop :PersonProp){
+        super(prop)
+    }
 
     render(){
         return (
             <div>
-                <p>{this.attributePerson1.lastname}</p>
-                <p>{this.attributePerson2.lastname}</p>
-                <p>{samplePerson.lastname}</p>
-            </div>
-
-        );
+              <p>Firstname: {this.props.person.firstname} Lastname: {this.props.person.lastname}</p>
+              </div>
+        )
     }
 
 }
+
+
