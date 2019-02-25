@@ -9,7 +9,7 @@ export class PersonClass implements Person{
     firstname: String
     personId: Number
 
-    constructor(personId: number, lastname: String, firstname: String){
+    constructor(personId: Number, lastname: String, firstname: String){
         this.lastname = lastname;
         this.firstname = lastname;
         this.personId = personId;
