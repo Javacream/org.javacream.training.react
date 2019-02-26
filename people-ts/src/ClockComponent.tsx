@@ -8,7 +8,7 @@ interface TimeInfo{
 export class ClockComponent extends React.PureComponent<{}, TimeInfo>{
 
     render(){
-        return (<div>Time: {this.state.time.toLocaleTimeString()}</div>)
+        return (<div>Time: {this.state.time.toUTCString()}</div>)
     }
 
     init = () => {
@@ -18,6 +18,8 @@ export class ClockComponent extends React.PureComponent<{}, TimeInfo>{
     increment = () => {
         this.setState({time: new Date(Date.now())})
     }
+
     readonly state = this.init()
+
 
 }
