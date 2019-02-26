@@ -8,7 +8,7 @@ export let PersonComponent = (props: PersonProp) => {
 
         return (
             <div>
-              <p>Firstname: {props.person.firstname} Lastname: {props.person.lastname}</p>
+              <li>Firstname: {props.person.firstname} Lastname: {props.person.lastname}</li>
               </div>
         )
 
