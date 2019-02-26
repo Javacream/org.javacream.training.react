@@ -11,11 +11,11 @@ export class PersonClass implements Person{
     }
 
     info = () => {
-        return this.firstname + "" + this.lastname //this ist immer an die Instanz gebunden
+        return `Hello, my name is ${this.firstname} ${this.lastname}` //this ist immer an die Instanz gebunden
     }
 
     infoMethod(){
-        return this.firstname + "" + this.lastname //this ist Context-Abhängig
+        return this.firstname + " " + this.lastname //this ist Context-Abhängig
     }
 
 }
