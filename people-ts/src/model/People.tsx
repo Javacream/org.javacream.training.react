@@ -1,19 +1,23 @@
 export interface Person{
-    lastname: String
-    firstname: String
-    personId: Number
+    lastname: string
+    firstname: string
+    personId: number
+    height?: number
+    info: () => string
 }
 
 export class PersonClass implements Person{
-    lastname: String
-    firstname: String
-    personId: Number
-
-    constructor(personId: Number, lastname: String, firstname: String){
-        this.lastname = lastname;
-        this.firstname = lastname;
-        this.personId = personId;
+    constructor(readonly personId: number, readonly lastname: string, readonly firstname: string){
     }
+
+    info = () => {
+        return this.firstname + "" + this.lastname //this ist immer an die Instanz gebunden
+    }
+
+    infoMethod(){
+        return this.firstname + "" + this.lastname //this ist Context-Abhängig
+    }
+
 }
 
 class PeopleModel{
@@ -40,3 +44,5 @@ class PeopleModel{
   }
 
 export let samplePerson = new PersonClass(42, "Mustermann", "Hans");
+
+
