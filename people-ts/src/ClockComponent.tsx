@@ -1,4 +1,5 @@
 import React from 'react';
+import { inherits } from 'util';
 
 interface TimeInfo{
     time: Date;
@@ -6,9 +7,17 @@ interface TimeInfo{
 
 export class ClockComponent extends React.PureComponent<{}, TimeInfo>{
 
-    readonly state = {time: new Date(Date.now())}
-
     render(){
-        return (<div>Time: {this.state.time.toDateString()}</div>)
+        return (<div>Time: {this.state.time.toLocaleTimeString()}</div>)
     }
+
+    init = () => {
+        setInterval(this.increment, 1000);
+        return {time: new Date(Date.now())}
+    }
+    increment = () => {
+        this.setState({time: new Date(Date.now())})
+    }
+    readonly state = this.init()
+
 }

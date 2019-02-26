@@ -7,7 +7,7 @@ export interface Person{
 }
 
 export class PersonClass implements Person{
-    constructor(readonly personId: number, readonly lastname: string, readonly firstname: string){
+    constructor(readonly personId: number, readonly lastname: string, public firstname: string){
     }
 
     info = () => {
@@ -45,4 +45,8 @@ class PeopleModel{
 
 export let samplePerson = new PersonClass(42, "Mustermann", "Hans");
 
+setTimeout(() => {
+  samplePerson.firstname = "Changed!!!"
+  console.log(samplePerson.info())
+}, 2000)
 
