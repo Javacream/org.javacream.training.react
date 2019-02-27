@@ -1,4 +1,6 @@
 import React, { Component, FormEvent } from 'react';
+import {notificationBus} from '../ApplicationContext'
+
 type InputFields = {
   lastname: string,
   firstname: string
@@ -16,6 +18,7 @@ class PersonInputFormComponent extends Component<{createPersonHandler: any}, {fi
   }
   handleFormSubmit = (event:FormEvent) => {
     this.props.createPersonHandler({data: this.state.fields})
+    notificationBus.publish("log", "created new Person...")
     event.preventDefault();
   }
   handleChange = (event:React.FormEvent<HTMLInputElement>) => {

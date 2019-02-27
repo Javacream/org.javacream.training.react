@@ -19,7 +19,7 @@ export class PersonClass implements Person{
 
 }
 
-class PeopleModel{
+export class PeopleModel{
     data: Map<Number, Person>
     constructor(){
       this.data = new Map()
@@ -49,4 +49,3 @@ setTimeout(() => {
   console.log(samplePerson.info())
 }, 2000)
 
-export let peopleModel = new PeopleModel();

@@ -1,5 +1,5 @@
 import React from 'react';
-import {Person} from './model/People';
+import {Person} from '../model/People';
 
 export interface PersonProp{
     person: Person;

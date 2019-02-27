@@ -1,9 +1,10 @@
 import React, { PureComponent } from 'react';
-import {Person, peopleModel, PersonClass} from './model/People'
+import {Person, PersonClass} from '../model/People'
 import {Link, Switch, Route} from 'react-router-dom'
 import {PersonInputFormComponent} from './PersonInputFormComponent'
 import {PersonInfoComponent} from './PersonInfoComponent'
 import {PersonComponent} from './PersonComponent'
+import {peopleModel} from '../ApplicationContext'
 
 class PeopleComponent extends PureComponent<{}, {people: Array<Person>}>{
   state = {

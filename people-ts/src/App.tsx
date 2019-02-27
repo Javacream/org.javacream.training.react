@@ -2,12 +2,15 @@ import React, { Component } from 'react';
 import {BrowserRouter, Route, Switch  } from 'react-router-dom';
 import logo from './logo.svg';
 import './App.css';
-import {StatelessPersonSampleDataComponent} from './PeopleSampleDataComponent'
-import {ClockComponent} from './ClockComponent'
-import {WelcomeComponent} from './WelcomeComponent'
-import {NavigationComponent} from './NavigationComponent'
-import {PeopleComponent} from './PeopleComponent'
-import {PeopleServerComponent} from './PeopleServerComponent'
+import {StatelessPersonSampleDataComponent} from './component/PeopleSampleDataComponent'
+import {ClockComponent} from './component/ClockComponent'
+import {LogComponent} from './component/LogComponent'
+import {WelcomeComponent} from './component/WelcomeComponent'
+import {NavigationComponent} from './component/NavigationComponent'
+import {PeopleComponent} from './component/PeopleComponent'
+import {PeopleServerComponent} from './component/PeopleServerComponent'
+
+
 class App extends Component {
   render() {
     return (
@@ -16,6 +19,7 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" width="100"/>
           <hr />
           <ClockComponent />
+          <LogComponent />
           <hr />
           <BrowserRouter>
           <div>

@@ -1,5 +1,5 @@
 import React from 'react';
-import {PersonClass, Person, samplePerson} from './model/People';
+import {PersonClass, Person, samplePerson} from '../model/People';
 import {PersonComponent} from './PersonComponent';
 import {PersonInfoComponent} from './PersonInfoComponent';
 export let StatelessPersonSampleDataComponent = () => {

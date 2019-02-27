@@ -1,5 +1,4 @@
 import React from 'react';
-import { inherits } from 'util';
 
 interface TimeInfo{
     time: Date;
