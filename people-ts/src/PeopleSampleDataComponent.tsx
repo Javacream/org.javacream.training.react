@@ -4,11 +4,9 @@ import {PersonComponent} from './PersonComponent';
 import {PersonInfoComponent} from './PersonInfoComponent';
 export let StatelessPersonSampleDataComponent = () => {
     let attributePerson1 = new PersonClass(9, "Musterfrau", "Hanna");
-    let attributePerson2: Person = {personId: 19, lastname: "Muster", firstname: "Han", 
-                                        info: () => {return "Hugo"}
-                                    }
+    let attributePerson2: Person = {id: 19, lastname: "Muster", firstname: "Han"}
 
-    let people = new Array<Person>()
+    let people = new Array<PersonClass>()
     people.push(new PersonClass(1, "Sawitzki", "Rainer"))
     people.push(new PersonClass(2, "Sawitzki", "Klaus"))
     people.push(new PersonClass(3, "Metzger", "Georg"))
@@ -16,11 +14,11 @@ export let StatelessPersonSampleDataComponent = () => {
     people.push(new PersonClass(5, "Bonhammel", "Ortwin"))
 
 
-    let peopleInfoHtml = people.map((p) =>
-        <PersonInfoComponent key={p.personId} person_info={p.info()} />)
+    let peopleInfoHtml = people.map((p:PersonClass) =>
+        <PersonInfoComponent key={p.id} person_info={p.info()} />)
 
-    let peopleHtml = people.map((p) =>
-    <PersonComponent key={p.personId} person={p}/>)
+    let peopleHtml = people.map((p:Person) =>
+    <PersonComponent key={p.id} person={p}/>)
 
     let PeopleHtmlRenderer = () => {
       return (

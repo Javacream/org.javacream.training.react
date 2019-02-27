@@ -1,13 +1,12 @@
 export interface Person{
     lastname: string
     firstname: string
-    personId: number
+    id: number
     height?: number
-    info: () => string
 }
 
 export class PersonClass implements Person{
-    constructor(readonly personId: number, readonly lastname: string, public firstname: string){
+    constructor(readonly id: number, readonly lastname: string, public firstname: string){
     }
 
     info = () => {
@@ -27,7 +26,7 @@ class PeopleModel{
     }
   
     add(person:Person){
-      this.data.set(person.personId, person)
+      this.data.set(person.id, person)
     }
   
     people(): Array<Person>{
@@ -35,7 +34,7 @@ class PeopleModel{
     }
   
     update(person:Person){
-      this.data.set(person.personId, person)
+      this.data.set(person.id, person)
     }
   
     personOf(personId:Number):Person|undefined{
@@ -50,3 +49,4 @@ setTimeout(() => {
   console.log(samplePerson.info())
 }, 2000)
 
+export let peopleModel = new PeopleModel();
