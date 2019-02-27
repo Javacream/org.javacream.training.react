@@ -7,6 +7,7 @@ import {ClockComponent} from './ClockComponent'
 import {WelcomeComponent} from './WelcomeComponent'
 import {NavigationComponent} from './NavigationComponent'
 import {PeopleComponent} from './PeopleComponent'
+import {PeopleServerComponent} from './PeopleServerComponent'
 class App extends Component {
   render() {
     return (
@@ -24,6 +25,7 @@ class App extends Component {
             <Route path='/welcome' component={WelcomeComponent}/>
             <Route path='/peopleSample' component={StatelessPersonSampleDataComponent}/>
             <Route path='/people' component={PeopleComponent}/>
+            <Route path='/peopleServer' component={PeopleServerComponent}/>
           </Switch>
           </div>
         </BrowserRouter>

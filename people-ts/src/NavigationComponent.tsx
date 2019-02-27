@@ -8,6 +8,7 @@ export const NavigationComponent = () => {
         <Link to="/welcome">Welcome</Link>
         <Link to="/peopleSample">People Sample Data</Link>
         <Link to="/people">People</Link>
+        <Link to="/peopleServer">People Server</Link>
       </div>
     )
 }
