@@ -12,10 +12,10 @@ export default class ClockComponent extends React.PureComponent<{}, TimeInfo>{
 
     init= () =>{
         setInterval(this.increment, 1000);
-        return {time: new Date(Date.now())}
+        return {time: new Date()}
     }
     increment = () => {
-        this.setState({time: new Date(Date.now())})
+        this.setState({time: new Date()})
     }
 
     readonly state = this.init()

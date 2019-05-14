@@ -2,9 +2,9 @@ import React, {useState} from 'react';
 
 
 let ClockComponentFunctionalStateHook = ()=> {
-    const [time, setTime] = useState(new Date(Date.now()));
+    const [time, setTime] = useState(new Date());
     let increment = () => {
-        setTime(new Date(Date.now()))
+        setTime(new Date())
     }
     setInterval(increment, 1000)
     return (<div>Time: {time.toUTCString()}</div>)

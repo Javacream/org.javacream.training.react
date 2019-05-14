@@ -2,9 +2,9 @@ import React from 'react';
 
 
 let ClockComponentFunctionalNoRerender = ()=> {
-        let time = new Date(Date.now())
+        let time = new Date()
         let increment = () => {
-            time = new Date(Date.now())
+            time = new Date()
             //console.log("Time from ClockComponentFunctionalNoRerender: " + time.toUTCString())
         }
         setInterval(increment, 1000)
