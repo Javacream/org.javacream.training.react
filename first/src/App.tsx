@@ -2,15 +2,18 @@ import React from 'react';
 import './App.css';
 import HeaderComponent from './components/HeaderComponent'
 import PersonComponent from './components/PersonComponent'
+import ClockComponent from './components/ClockComponent'
 import {currentUser} from './model/PeopleModel'
 const App: React.FC = () => {
   return (
-    <div>
+    <>
       <HeaderComponent />
       <hr />
       Current User: 
       <PersonComponent person={currentUser} />
-    </div>
+      <hr />
+      <ClockComponent />
+    </>
   );
 }
 

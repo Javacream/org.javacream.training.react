@@ -1,6 +1,6 @@
 import React from 'react';
 
-const HeaderComponent = () => {
+let HeaderComponent = () => {
     return <h1>PEOPLE APP</h1>
 }
 
