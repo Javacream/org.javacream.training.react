@@ -3,6 +3,8 @@ import './App.css';
 import HeaderComponent from './components/HeaderComponent'
 import PersonComponent from './components/PersonComponent'
 import ClockComponent from './components/ClockComponent'
+import ClockComponentFunctionalNoRerender from './components/ClockComponentFunctionalNoRerender'
+import ClockComponentFunctionalStateHook from './components/ClockComponentFunctionalStateHook'
 import {currentUser} from './model/PeopleModel'
 const App: React.FC = () => {
   return (
@@ -12,7 +14,11 @@ const App: React.FC = () => {
       Current User: 
       <PersonComponent person={currentUser} />
       <hr />
-      <ClockComponent />
+      Using PureComponent: <ClockComponent />
+      <hr />
+      Using Functional Component with Closure: <ClockComponentFunctionalNoRerender />
+      <hr />
+      Using Functional Component with Hook: <ClockComponentFunctionalStateHook />
     </>
   );
 }
