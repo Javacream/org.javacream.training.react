@@ -14,8 +14,6 @@ export class PersonClass implements Person{
     }
 
 }
-export let currentUser:Person = {lastname: "Sawitzki", firstname:"Rainer", id:42}
-
 export class PeopleModel{
     data: Map<number, Person>
     constructor(){
@@ -39,8 +37,3 @@ export class PeopleModel{
     }
   }
 
-export let peopleModel = new PeopleModel();
-
-export let samplePerson = new PersonClass(42, "Mustermann", "Hans");
-
-setTimeout(() => {currentUser.lastname = "Meier"; console.log(currentUser.lastname )}, 5000);

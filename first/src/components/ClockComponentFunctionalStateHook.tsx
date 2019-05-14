@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import {ClockDisplayComponent} from './ClockDisplayComponent'
 
 
 let ClockComponentFunctionalStateHook = ()=> {
@@ -7,7 +8,7 @@ let ClockComponentFunctionalStateHook = ()=> {
         setTime(new Date())
     }
     setInterval(increment, 1000)
-    return (<div>Time: {time.toUTCString()}</div>)
+    return (<ClockDisplayComponent time={time} />)
 }
 
 export default ClockComponentFunctionalStateHook
