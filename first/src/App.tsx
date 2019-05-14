@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
-import {HeaderComponent} from './components/HeaderComponent'
-import {PersonComponent} from './components/PersonComponent'
+import HeaderComponent from './components/HeaderComponent'
+import PersonComponent from './components/PersonComponent'
 import {currentUser} from './model/PeopleModel'
 const App: React.FC = () => {
   return (

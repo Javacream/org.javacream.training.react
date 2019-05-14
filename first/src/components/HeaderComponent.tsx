@@ -1,5 +1,7 @@
 import React from 'react';
 
-export const HeaderComponent = () => {
+const HeaderComponent = () => {
     return <h1>PEOPLE APP</h1>
 }
+
+export default HeaderComponent
