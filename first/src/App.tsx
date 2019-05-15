@@ -10,7 +10,7 @@ import {StopClockComponent} from './components/StopClockComponent'
 import {BrowserRouter, Route, Switch } from 'react-router-dom';
 import NavigationComponent from './components/NavigationComponent'
 import PeopleComponent from './components/PeopleComponent'
-import EmployeeComponent from './components/EmployeeController'
+import EmployeeComponent from './components/EmployeeComponent'
 const App: React.FC = () => {
   return (
     <>
