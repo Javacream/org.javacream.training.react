@@ -14,10 +14,7 @@ export default class ClockComponent extends React.PureComponent<{}, TimeInfo>{
     }
 
     init = () =>{
-        let interval = setInterval(this.increment, 1000)
-        console.log("initializing " + interval)
-        this.interval = interval
-        console.log("initializing " + this.interval)
+        this.interval = setInterval(this.increment, 1000)
         return {time: new Date()}
     }
     increment = () => {

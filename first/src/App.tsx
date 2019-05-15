@@ -7,6 +7,10 @@ import ClockComponentFunctionalNoRerender from './components/ClockComponentFunct
 import ClockComponentFunctionalStateHook from './components/ClockComponentFunctionalStateHook'
 import {applicationContext} from './context/ApplicationContext'
 import {StopClockComponent} from './components/StopClockComponent'
+import {BrowserRouter, Route, Switch } from 'react-router-dom';
+import NavigationComponent from './components/NavigationComponent'
+import PeopleComponent from './components/PeopleComponent'
+import EmployeeComponent from './components/EmployeeController'
 const App: React.FC = () => {
   return (
     <>
@@ -14,16 +18,35 @@ const App: React.FC = () => {
       <hr />
       Current User: 
       <PersonComponent person={applicationContext.currentUser} />
-      <hr />
-      Using PureComponent: <ClockComponent />
-      <hr />
-      Using Functional Component with Closure: <ClockComponentFunctionalNoRerender />
-      <hr />
-      Using Functional Component with Hook: <ClockComponentFunctionalStateHook />
-      <hr />
-      <StopClockComponent />
+      <BrowserRouter>
+          <>
+          <NavigationComponent />
+          <hr />
+          <Switch>
+            <Route path='/clock' component={ClockSample}/>
+            <Route path='/people' component={PeopleComponent}/>
+            <Route path='/employees' component={EmployeeComponent}/>
+          </Switch>
+          </>
+</BrowserRouter>
     </>
   );
 }
 
+const ClockSample: React.FC = () => {
+  return (
+
+    <> 
+    <hr />
+    Using PureComponent: <ClockComponent />
+    <hr />
+    Using Functional Component with Closure: <ClockComponentFunctionalNoRerender />
+    <hr />
+    Using Functional Component with Hook: <ClockComponentFunctionalStateHook />
+    <hr />
+    <StopClockComponent />
+
+    </>
+  )
+}
 export default App;

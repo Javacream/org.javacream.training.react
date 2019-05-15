@@ -1,14 +1,26 @@
 import React, {useState} from 'react';
 import {ClockDisplayComponent} from './ClockDisplayComponent'
-
-
-let ClockComponentFunctionalStateHook = ()=> {
+import {applicationContext} from '../context/ApplicationContext'
+let interval: any
+let stopClock = () => {
+    console.log("stopping interval " + interval)
+    clearInterval(interval)
+    interval = undefined
+}
+let increment:any
+let ClockComponentFunctionalStateHook = () => {
     const [time, setTime] = useState(new Date());
-    let increment = () => {
+    increment = () => {
         setTime(new Date())
     }
-    setInterval(increment, 1000)
+    console.log("starting interval " + interval)
+
+    if (!interval){
+        interval = setInterval(increment, 1000)
+    } 
+
     return (<ClockDisplayComponent time={time} />)
 }
 
+applicationContext.stopFunction = stopClock
 export default ClockComponentFunctionalStateHook
