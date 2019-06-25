@@ -1,4 +1,5 @@
 import React from 'react';
+import { context } from '../Context';
 
 class PersonInputFormComponent extends React.Component{
   state = {
@@ -8,8 +9,13 @@ class PersonInputFormComponent extends React.Component{
     }
   }
   handleFormSubmit = (event) => {
-      //TODO: Insert new Person using input values...
-    event.preventDefault();
+        let lastname = this.state.fields.lastname
+        let firstname = this.state.fields.firstname
+        context.peopleModel.add(lastname, firstname)
+        if (context.peopleComponent){
+            context.peopleComponent.setState({people:context.peopleModel.people()})
+        }
+      event.preventDefault();
   }
   handleChange = (event) => {
     let target = event.target

@@ -7,7 +7,7 @@ class PeopleModel{
   
     add(lastname, firstname){
       let personId = Math.floor((Math.random() * 1000) + 100);  
-      let person = new Person(personId, lastname, false)
+      let person = new Person(personId, lastname, firstname)
       this.data.set(person.personId, person)
       return personId
     }

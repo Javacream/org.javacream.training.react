@@ -5,7 +5,9 @@ import {context} from '../Context'
 export class PeopleComponent extends React.Component{
     state = {people: []}
     componentDidMount(){
-        this.setState({people: context.samplePeople})
+        let peopleModel = context.peopleModel
+        let people = peopleModel.people()
+        this.setState({people: people})
         context.peopleComponent = this
     }
     componentWillUnmount(){
