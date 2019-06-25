@@ -2,10 +2,18 @@ import React from 'react'
 import {PersonComponent} from './PersonComponent'
 import {context} from '../Context'
 
-export const PeopleComponent = () => {
-    let samplePeople = context.samplePeople
+export class PeopleComponent extends React.Component{
+    state = {people: []}
+    componentDidMount(){
+        this.setState({people: context.samplePeople})
+        context.peopleComponent = this
+    }
+    componentWillUnmount(){
+        delete(context.peopleComponent)
+    }
+    render(){
     //peopleHtml is a list of HtmlElements
-    let peopleHtml = samplePeople.map((person) => {
+    let peopleHtml = this.state.people.map((person) => {
         return <PersonComponent key={person.personId} person={person} />
     }
     )
@@ -15,4 +23,5 @@ export const PeopleComponent = () => {
             <ul>{peopleHtml}</ul>
         </>
     )
+}
 }

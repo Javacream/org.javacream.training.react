@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 let PersonComponent = (props) => {
+    
     return (
         <>
             <p>PersonComponent</p>
