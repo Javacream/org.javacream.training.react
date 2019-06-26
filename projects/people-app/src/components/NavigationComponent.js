@@ -7,6 +7,8 @@ export const NavigationComponent = (props) => {
         <>
             <Link to="/">Home</Link>
             <Link to="/people">People</Link>
-            <Link to="/peopleInput">Create new Person</Link>        </>
-    )
+            <Link to="/peopleInput">Create new Person</Link>   
+            <Link to="/peopleFromServer">Show People From Server</Link>        
+        </>
+        )
 }
