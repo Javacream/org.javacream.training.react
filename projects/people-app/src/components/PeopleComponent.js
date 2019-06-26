@@ -2,6 +2,7 @@ import React from 'react'
 import {PersonComponent} from './PersonComponent'
 import {context} from '../Context'
 import PubSub from 'pubsub-js'
+import {Link} from 'react-router-dom'
 
 export class PeopleComponent extends React.Component{
     state = {people: []}
@@ -29,7 +30,13 @@ export class PeopleComponent extends React.Component{
     render(){
     //peopleHtml is a list of HtmlElements
     let peopleHtml = this.state.people.map((person) => {
-        return <PersonComponent key={person.personId} person={person} />
+        let search = `?${person.personId}`
+        return (
+            <>
+                <PersonComponent key={person.personId} person={person} />
+                <Link to={{ pathname: "/people", search: search }}>Detail</Link>
+            </>
+            )
     }
     )
     return (
