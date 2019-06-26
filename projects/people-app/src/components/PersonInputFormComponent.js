@@ -1,5 +1,6 @@
 import React from 'react';
 import { context } from '../Context';
+import PubSub from 'pubsub-js'
 
 class PersonInputFormComponent extends React.Component{
   state = {
@@ -11,10 +12,12 @@ class PersonInputFormComponent extends React.Component{
   handleFormSubmit = (event) => {
         let lastname = this.state.fields.lastname
         let firstname = this.state.fields.firstname
-        context.peopleModel.add(lastname, firstname)
+        let createdId = context.peopleModel.add(lastname, firstname)
+        PubSub.publish("CREATED", createdId)
+/*
         if (context.peopleComponent){
             context.peopleComponent.setState({people:context.peopleModel.people()})
-        }
+        }*/
       event.preventDefault();
   }
   handleChange = (event) => {
