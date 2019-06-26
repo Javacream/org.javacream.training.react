@@ -9,6 +9,7 @@ export const NavigationComponent = (props) => {
             <Link to="/people">People</Link>
             <Link to="/peopleInput">Create new Person</Link>   
             <Link to="/peopleFromServer">Show People From Server</Link>        
+            <Link to="/peopleInputServer">POST Person</Link>        
         </>
         )
 }

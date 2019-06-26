@@ -30,10 +30,10 @@ export class PeopleComponent extends React.Component{
     render(){
     //peopleHtml is a list of HtmlElements
     let peopleHtml = this.state.people.map((person) => {
-        let search = `?${person.personId}`
+        let search = `?${person.id}`
         return (
             <>
-                <PersonComponent key={person.personId} person={person} />
+                <PersonComponent key={person.id} person={person} />
                 <Link to={{ pathname: "/people", search: search }}>Detail</Link>
             </>
             )

@@ -5,7 +5,7 @@ export const PersonDetailComponent = (props) => {
         <>
             <p>PersonComponent</p>
             <ul>
-                <li>{props.person.personId}</li>
+                <li>{props.person.id}</li>
                 <li>{props.person.firstname}</li>
                 <li>{props.person.lastname}</li>
             </ul>

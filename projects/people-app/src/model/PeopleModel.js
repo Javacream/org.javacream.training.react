@@ -6,10 +6,10 @@ class PeopleModel{
     }
   
     add(lastname, firstname){
-      let personId = Math.floor((Math.random() * 1000) + 100);  
-      let person = new Person(personId, lastname, firstname)
-      this.data.set(person.personId, person)
-      return personId
+      let id = Math.floor((Math.random() * 1000) + 100);  
+      let person = new Person(id, lastname, firstname)
+      this.data.set(person.id, person)
+      return id
     }
   
     people(){
@@ -17,14 +17,14 @@ class PeopleModel{
     }
   
     update(person){
-      this.data.set(person.personId, person)
+      this.data.set(person.id, person)
     }
   
-    personWith(personId){
-      return this.data.get(personId)
+    personWith(id){
+      return this.data.get(id)
     }
-    deleteWith(personId){
-        this.data.delete(personId)
+    deleteWith(id){
+        this.data.delete(id)
       }
     }
 

@@ -1,0 +1,36 @@
+{
+  "name": "people-ts",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@types/jest": "24.0.6",
+    "@types/node": "11.9.5",
+    "@types/pubsub-js": "^1.5.18",
+    "@types/react": "16.8.4",
+    "@types/react-dom": "16.8.2",
+    "@types/react-router-dom": "^4.3.1",
+    "PubSub": "^3.6.0",
+    "pubsub-js": "^1.7.0",
+    "react": "^16.8.3",
+    "react-dom": "^16.8.3",
+    "react-pdf": "4.0.3",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "2.1.5",
+    "typescript": "3.3.3333"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}
