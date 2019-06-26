@@ -9,7 +9,8 @@ export class PersonInputFormServerComponent extends React.Component{
     }
   }
   handleFormSubmit = async (event) => {
-        let lastname = this.state.fields.lastname
+    event.preventDefault();
+    let lastname = this.state.fields.lastname
         let firstname = this.state.fields.firstname
         let createdId = context.peopleModel.add(lastname, firstname)
         let person = context.peopleModel.personWith(createdId)
@@ -32,7 +33,6 @@ export class PersonInputFormServerComponent extends React.Component{
         if (context.peopleComponent){
             context.peopleComponent.setState({people:context.peopleModel.people()})
         }*/
-      event.preventDefault();
   }
   handleChange = (event) => {
     let target = event.target
