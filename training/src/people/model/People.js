@@ -9,6 +9,7 @@ export class People{
     add(lastname, firstname, height, gender){
         const person = new Person(this.counter, lastname, firstname, height, gender)
         this.people.push(person)
+        this.counter++
     }
 
     allPeople() {
