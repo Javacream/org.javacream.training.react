@@ -29,7 +29,7 @@ class PersonInputFormComponent extends Component{
       <input placeholder="Firstname" name="firstname" value={this.state.fields.firstname} onChange={this.handleChange}></input>
       <input placeholder="m|f|x" name="gender" value={this.state.fields.gender} onChange={this.handleChange}></input>
       <input placeholder="123" name="height" value={this.state.fields.height} onChange={this.handleChange}></input>
-      <Button variant="outline-info" onClick={this.handleFormSubmit}>Info</Button>
+      <Button variant="info" onClick={this.handleFormSubmit}>Create</Button>
       </>
     )
   }
