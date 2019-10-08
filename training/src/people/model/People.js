@@ -25,7 +25,7 @@ export class People{
         return this.people.map((person) => person.info())
     }
 
-    handleCreatePersonCallback = (data) => {
-        console.log("received Notfication" + data)
+    handleCreatePersonCallback = (topic, data) => {
+        console.log("received notfication: " + data)
     }
 }
