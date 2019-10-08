@@ -1,8 +1,6 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import {userProfile} from './people/testdata/PeopleData'
-//import ContentComponent from './content/component/ContentComponent'
+import {peopleData, userProfile} from './people/testdata/PeopleData'
 import PeopleHeaderComponent from './main/component/PeopleHeaderComponent'
 import PeopleFooterComponent from './main/component/PeopleFooterComponent'
 import PersonComponent from './people/component/PersonComponent'
@@ -11,8 +9,8 @@ function App() {
   return (
     <div className="App">
     <PeopleHeaderComponent />
-    <PersonComponent person={userProfile}/>
-    <PeopleComponent />
+    <PersonComponent person={userProfile} className='profile'/>
+    <PeopleComponent people={peopleData} />
     <PeopleFooterComponent />
     </div>
   );

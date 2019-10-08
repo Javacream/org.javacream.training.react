@@ -1,7 +1,7 @@
-import React from 'react';
-import {peopleData} from '../testdata/PeopleData'
-function PeopleComponent() {
-    const peopleHtml = peopleData.allPeopleBy('m').map( (p) => <li>{p.info()}</li>)
+import React from 'react'
+import PersonComponent from './PersonComponent'
+let PeopleComponent = (props) => {
+    const peopleHtml = props.people.allPeopleBy('m').map( (p) => <li key={p.id}><PersonComponent  person={p} detail={true} /></li>)
     return (
         <div><ol>{peopleHtml}</ol></div>    
     );

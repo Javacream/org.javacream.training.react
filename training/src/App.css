@@ -1,6 +1,10 @@
 .App {
   text-align: center;
 }
+.profile {
+  text-align: right;
+  color: red;
+}
 
 .App-logo {
   height: 40vmin;
