@@ -1,9 +1,10 @@
 import { Person } from "./Person";
-
+import PubSub from 'pubsub-js'
 export class People{
     constructor(){
         this.people = []
         this.counter = 0
+        PubSub.subscribe("PEOPLE", this.handleCreatePersonCallback)
     }
 
     add(lastname, firstname, height, gender){
@@ -22,5 +23,9 @@ export class People{
 
     allInfos(){
         return this.people.map((person) => person.info())
+    }
+
+    handleCreatePersonCallback = (data) => {
+        console.log("received Notfication" + data)
     }
 }
