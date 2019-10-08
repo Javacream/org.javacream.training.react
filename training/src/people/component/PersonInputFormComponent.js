@@ -12,6 +12,7 @@ class PersonInputFormComponent extends Component{
   handleFormSubmit = (event) => {
     this.props.handleCreatePerson(this.state.fields)
     PubSub.publish("PEOPLE", "Created Person")
+    PubSub.publish("Javacream.People", {...this.state.fields})
     event.preventDefault();
   }
   handleChange = (event) => {

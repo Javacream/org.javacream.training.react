@@ -4,11 +4,13 @@ import PeopleHeaderComponent from './main/component/PeopleHeaderComponent'
 import PeopleFooterComponent from './main/component/PeopleFooterComponent'
 //import PeopleAppComponent from './people/component/PeopleAppHookComponent'
 import PeopleAppComponent from './people/component/PeopleAppComponent'
+import LoggingComponent from './logging/component/LoggingComponent'
 function App() {
   return (
     <div className="App">
     <PeopleHeaderComponent />
     <PeopleAppComponent />
+    <LoggingComponent numberOfMessages="3" />
     <PeopleFooterComponent />
     </div>
   );
