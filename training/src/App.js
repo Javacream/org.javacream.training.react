@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import PeopleHeaderComponent from './main/component/PeopleHeaderComponent'
 import PeopleFooterComponent from './main/component/PeopleFooterComponent'
+import 'bootstrap/dist/css/bootstrap.min.css';
 //import PeopleAppComponent from './people/component/PeopleAppHookComponent'
 import PeopleAppComponent from './people/component/PeopleAppComponent'
 import LoggingComponent from './logging/component/LoggingComponent'
