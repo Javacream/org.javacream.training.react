@@ -21,7 +21,7 @@ export default class PeopleAppComponent extends Component{
     }
 
     createPersonCallback = (personData) =>{
-        peopleData.add(personData.lastname, personData.firstname, 155, 'm')
+        peopleData.add(personData.lastname, personData.firstname, personData.height, personData.gender)
         console.log("CREATE_PERSON " + personData)
         this.setState({...this.state, ...{people: peopleData}})
 
