@@ -14,6 +14,7 @@ class PersonInputFormComponent extends Component{
     this.props.handleCreatePerson(this.state.fields)
     PubSub.publish("PEOPLE", "Created Person")
     PubSub.publish("Javacream.People", {...this.state.fields})
+    this.props.history.push('/people')
     event.preventDefault();
   }
   handleChange = (event) => {
@@ -21,6 +22,7 @@ class PersonInputFormComponent extends Component{
     let result = this.state.fields
     result[target.name] = target.value
     this.setState({fields: result})
+    
   }
   render(){
     return (
