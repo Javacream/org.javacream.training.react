@@ -9,11 +9,9 @@ export default LoggingComponent = (props) => {
         const slicedMessages = [...logModel.messages].reverse().slice(0, length)
         updateMessages(slicedMessages)
     }
-    render(){
-        const htmlMessages = this.state.messages.map((m, i) => <p key={i}>{JSON.stringify(m.message)}</p>)
-        return (<>
-                {htmlMessages}
-                </>
-        )
-    }
+    const htmlMessages = this.state.messages.map((m, i) => <p key={i}>{JSON.stringify(m.message)}</p>)
+    return (<>
+            {htmlMessages}
+            </>
+    )
 }
