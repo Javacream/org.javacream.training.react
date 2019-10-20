@@ -1,12 +1,11 @@
 # org.javacream.training.react: React Trainining
 
-## Erstellen des Training-Projekts mit funktionalen Komponenten
+## Übung Personen-Beispiel
 
-* Referent
-  * Demonstration durch Hinzufügen einer simplen funktionalen ContentComponent
 * Teilnehmer
-  * Eigenständiges Erstellen des Projekts training
-  * Entfernen aller überflüssigen Inhalte
-  * Hinzufügen der beiden Komponenten für Header und Footer der People-Applikation
-  * Optional etwas CSS-Layout einführen
-* Dauer etwa 30 Minuten
+  * Erstellen des Datenmodells für Personen
+    * Bei Bedarf Exkurs in die Collections: filter, sort, map, forEach, reduce 
+  * Hinzufügen eines Tests
+  * PersonComponent und PeopleComponent
+    * die PeopleComponent hat die PersonComponent noch nicht als Child-Komponente
+* Dauer etwa 45 Minuten
