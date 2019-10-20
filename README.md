@@ -1,14 +1,12 @@
 # org.javacream.training.react: React Trainining
 
-## Übung 1: Erstellen eines ersten React-Projekts
+## Erstellen des Training-Projekts mit funktionalen Komponenten
 
 * Referent
-  * Prüfen der Installation mit node --version, npm --version
-  * Installieren der [React Scripts](https://www.npmjs.com/package/react-scripts)
-  * Anlegen des first-Projekts
-  * Starten des Projekts
-  * Demonstration BrowserSync, transpilierter Code im Browser, Debugger mit Source Maps
+  * Demonstration durch Hinzufügen einer simplen funktionalen ContentComponent
 * Teilnehmer
-  * Eigenständiges Nachvollziehen der Präsentation des Referenten
-  * "Spielen" mit den demonstrierten Features
+  * Eigenständiges Erstellen des Projekts training
+  * Entfernen aller überflüssigen Inhalte
+  * Hinzufügen der beiden Komponenten für Header und Footer der People-Applikation
+  * Optional etwas CSS-Layout einführen
 * Dauer etwa 30 Minuten
