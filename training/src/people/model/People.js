@@ -1,4 +1,5 @@
 import { Person } from "./Person";
+import PubSub from 'pubsub-js'
 
 export class People{
     constructor(){
@@ -10,6 +11,7 @@ export class People{
         const person = new Person(this.counter, lastname, firstname, height, gender)
         this.people.push(person)
         this.counter++
+        PubSub.publish("Javacream.People", `add ${person.info()}`)
     }
 
     allPeople() {

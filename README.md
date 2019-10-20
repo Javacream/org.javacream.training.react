@@ -1,12 +1,13 @@
 # org.javacream.training.react: React Trainining
 
 ## Übung Personen-Beispiel
-
-* Referent
-  * Demonstration State zur automatischen Aktualisierung der Oberfläche
-    * Änderung des Datenbestands mit setTimeout, eine Dateneingabe ist ja noch nicht besprochen
-    * Demonstration des Datenflows State - Properties  
 * Teilnehmer
-  * Stateful Komponenten als Klasse
-  * Stateful Komponenten mit funktionalen Komponenten und Hooks
+  * Installation pubsub-js mit npm install pubsub-js
+    * Warnmeldungen können hier ignoriert werden
+  * Implementieren der Logging-Komponente mit Component und Model
+    * Workflow: 
+      * logging/model/LogModel subscribe Javacream.People
+      * logging/component/LoggingComponent subscribe Javacream.ModelChange.Log
+      * people/model/People published Javacream.People
+      * logging/model/LogModel published Javacream.ModelChange.Log
 * Dauer etwa 30 Minuten
