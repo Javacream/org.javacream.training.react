@@ -2,12 +2,8 @@
 
 ## Übung Personen-Beispiel
 * Teilnehmer
-  * Installation pubsub-js mit npm install pubsub-js
+  * Installation von Bootstrap React  mit npm install react-bootstrap bootstrap
     * Warnmeldungen können hier ignoriert werden
-  * Implementieren der Logging-Komponente mit Component und Model
-    * Workflow: 
-      * logging/model/LogModel subscribe Javacream.People
-      * logging/component/LoggingComponent subscribe Javacream.ModelChange.Log
-      * people/model/People published Javacream.People
-      * logging/model/LogModel published Javacream.ModelChange.Log
+  * Verwendung des Bootstrap Buttons in der PersonInputFormComponent
+  * Eigenständiges Evaluieren der Bootstrap-Komponenten und optional Verwendung weiterer Komponenten (z.B. Dialog oder Toast für das Logging)
 * Dauer etwa 30 Minuten

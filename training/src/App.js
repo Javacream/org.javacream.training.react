@@ -5,6 +5,7 @@ import PeopleFooterComponent from './main/component/PeopleFooterComponent'
 import PeopleAppComponent from './people/component/PeopleAppHookComponent'
 //import PeopleAppComponent from './people/component/PeopleAppComponent'
 import LoggingComponent from './logging/component/LoggingComponent'
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 function App() {
   return (
