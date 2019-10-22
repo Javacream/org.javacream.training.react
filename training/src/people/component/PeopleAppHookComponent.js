@@ -3,7 +3,8 @@ import {peopleData, userProfile} from '../testdata/PeopleData'
 import PersonComponent from './PersonComponent'
 import PeopleComponent from './PeopleComponent'
 import PersonInputFormComponent from './PersonInputFormComponent'
-
+import PeopleFromServerComponent from './PeopleFromServerComponent'
+import PersonSearchComponent from './PersonSearchComponent.js'
 let first = true;
 let PeopleAppComponent = () => {
     const [people, updatePeople] = useState({data: peopleData})
@@ -31,7 +32,10 @@ let PeopleAppComponent = () => {
             <PeopleComponent people={people.data} />
             <hr />
             <PersonInputFormComponent handleCreatePerson={createPersonCallback}/>
-        </>
+            <hr />
+            <PeopleFromServerComponent />  
+            <hr />
+            <PersonSearchComponent />       </>
     )
 }
 

@@ -3,6 +3,8 @@ import {peopleData, userProfile} from '../testdata/PeopleData'
 import PersonComponent from './PersonComponent'
 import PeopleComponent from './PeopleComponent'
 import PersonInputFormComponent from './PersonInputFormComponent'
+import PeopleFromServerComponent from './PeopleFromServerComponent'
+import PersonSearchComponent from './PersonSearchComponent.js'
 
 export default class PeopleAppComponent extends Component{
     state = {people: peopleData, userProfile: userProfile}
@@ -34,6 +36,10 @@ export default class PeopleAppComponent extends Component{
                 <PeopleComponent people={this.state.people} />
                 <hr />
                 <PersonInputFormComponent handleCreatePerson={this.createPersonCallback}/>
+                <hr />
+                <PeopleFromServerComponent />  
+                <hr />
+                <PersonSearchComponent />
             </>
         )
     }
