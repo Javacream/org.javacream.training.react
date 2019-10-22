@@ -5,6 +5,9 @@ import PeopleComponent from './PeopleComponent'
 import PersonInputFormComponent from './PersonInputFormComponent'
 import PeopleFromServerComponent from './PeopleFromServerComponent'
 import PersonSearchComponent from './PersonSearchComponent.js'
+import NavigationComponent from './NavigationComponent'
+import {BrowserRouter, Switch, Route} from 'react-router-dom'
+
 let first = true;
 let PeopleAppComponent = () => {
     const [people, updatePeople] = useState({data: peopleData})
@@ -26,6 +29,19 @@ let PeopleAppComponent = () => {
         updatePeople({data: peopleData})
     }
     return (
+        <BrowserRouter>
+            <PersonComponent person={profile.data} className='profile'/>
+            <NavigationComponent />
+            <hr />
+            <Switch>
+                <Route path='/people' render={(props) => <PeopleComponent {...props} people={people.data} />} />    
+                <Route path='/peopleInput' render={(props) => <PersonInputFormComponent {...props} handleCreatePerson={createPersonCallback} />}/>    
+                <Route path='/peopleFromServer' component={PeopleFromServerComponent}/>    
+                <Route path='/peopleSearch' component={PersonSearchComponent}/>    
+            </Switch>
+        </BrowserRouter>
+    )
+return (
         <>
             <PersonComponent person={profile.data} className='profile'/>
             <hr />

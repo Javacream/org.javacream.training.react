@@ -5,6 +5,8 @@ import PeopleComponent from './PeopleComponent'
 import PersonInputFormComponent from './PersonInputFormComponent'
 import PeopleFromServerComponent from './PeopleFromServerComponent'
 import PersonSearchComponent from './PersonSearchComponent.js'
+import NavigationComponent from './NavigationComponent'
+import {BrowserRouter, Switch, Route} from 'react-router-dom'
 
 export default class PeopleAppComponent extends Component{
     state = {people: peopleData, userProfile: userProfile}
@@ -29,18 +31,16 @@ export default class PeopleAppComponent extends Component{
 
     }
     render(){
-        return (
-            <>
+        return (<BrowserRouter>
                 <PersonComponent person={this.state.userProfile} className='profile'/>
+                <NavigationComponent />
                 <hr />
-                <PeopleComponent people={this.state.people} />
-                <hr />
-                <PersonInputFormComponent handleCreatePerson={this.createPersonCallback}/>
-                <hr />
-                <PeopleFromServerComponent />  
-                <hr />
-                <PersonSearchComponent />
-            </>
+                <Switch>
+                    <Route path='/people' render={(props) => <PeopleComponent {...props} people={this.state.people} />} />    
+                    <Route path='/peopleInput' render={(props) => <PersonInputFormComponent {...props} handleCreatePerson={this.createPersonCallback} />}/>    
+                    <Route path='/peopleFromServer' component={PeopleFromServerComponent}/>    
+                    <Route path='/peopleSearch' component={PersonSearchComponent}/>    
+                </Switch>
+           </BrowserRouter>
         )
-    }
-}
+    }}

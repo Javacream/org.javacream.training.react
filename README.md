@@ -2,12 +2,12 @@
 
 ## Übung Personen-Beispiel
 * Referent
-  * Wichtig: Gegenüberstellung Callbacks - Promise - async-await
-  * Starten des REST-Servers entweder zentral auf dem Referentenrechner oder für jeden Teilnehmer separat
-    * Details zum Server unter [GitHub des Servers](https://github.com/Javacream/org.javacream.training.rest)
-  * Implementieren der PeopleFromServerComponent
+  * Hinweise: 
+    * Diese Übung erfordert Änderungen an relativ vielen Programmstellen. Deshalb die Teilnehmer hier "an der Hand nehmen"
+    * Die Teilnehmer insbesondere auf die Route-Definition und den Unterschied component= versus render= hinweisen
 * Teilnehmer
-  * Optional: Starten des Web Servers
-  * Einbinden der PeopleFromServerComponent
-  * Implementieren der PersonSearchComponent
+  * Installation der Router-Module mit npm install react-router react-router-dom
+    * Warnungen können hier ignoriert werden
+  * Einführen der Navigation durch Implementierung der NavigationComponent
+  * 
 * Dauer etwa 30 Minuten
