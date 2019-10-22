@@ -1,9 +1,9 @@
 # org.javacream.training.react: React Trainining
 
-## Übung Redux-Beispiel
+## Übung Personen-Beispiel mit TypeScript
 * Referent
-  * Ausführliche Besprechung des Beispiels redux_sample, einer einfachen ToDo-Liste
-  * Hierbei besonders auf die "Magie" der connect-Funktion aus react-redux hinweisen
+  * Präsentation des Beispiels training_tx, hier insbesondere durchaus kritisch den zusätzlichen Aufwand ansprechen, den die Typisierung mit sich bringt
+    * Vorsicht: Das Beispiel stammt aktuell aus einem anderen Kurs, so dass Optik und Funktion nicht exakt dem JavaScript-Beispiel entsprechen
 * Teilnehmer
-  * Analysieren der Redux-Anwendung
+  * Analysieren der TypeScript-Anwendung
 * Dauer etwa 30 Minuten
