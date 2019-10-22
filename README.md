@@ -1,13 +1,9 @@
 # org.javacream.training.react: React Trainining
 
-## Übung Personen-Beispiel
+## Übung Redux-Beispiel
 * Referent
-  * Hinweise: 
-    * Diese Übung erfordert Änderungen an relativ vielen Programmstellen. Deshalb die Teilnehmer hier "an der Hand nehmen"
-    * Die Teilnehmer insbesondere auf die Route-Definition und den Unterschied component= versus render= hinweisen
+  * Ausführliche Besprechung des Beispiels redux_sample, einer einfachen ToDo-Liste
+  * Hierbei besonders auf die "Magie" der connect-Funktion aus react-redux hinweisen
 * Teilnehmer
-  * Installation der Router-Module mit npm install react-router react-router-dom
-    * Warnungen können hier ignoriert werden
-  * Einführen der Navigation durch Implementierung der NavigationComponent
-  * 
+  * Analysieren der Redux-Anwendung
 * Dauer etwa 30 Minuten
