@@ -1,0 +1,15 @@
+Tag 1:
+- Einführung/Rekapitulation JavaScript (Klassen, Konstruktoren, Arrow-Funktionen)
+- Eine erste React-Componente
+- JSX, Properties, State, Hooks
+
+Tag 2:
+- Asynchrone Programmierung
+- NPM/NPX, Routing, Navigation
+- Anbindung des RESTful Web Services
+
+Tag 3:
+- Weiterleitung, Authentifizierung
+- Realisierung einer kompletten React-Applikation mit Client-Server-Zugriff
+- Weitere Themen: Redux, React Native, Server-seitiges Rendering, React Bootstrap
+
