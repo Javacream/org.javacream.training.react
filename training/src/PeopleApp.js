@@ -1,11 +1,15 @@
 import React from 'react';
 import './PeopleApp.css';
-
+import PeopleAppHeader from './people/PeopleAppHeader'
+import PeopleAppFooter from './people/PeopleAppFooter'
+import PeopleContent from './people/PeopleContent'
 function PeopleApp() {
   return (
-    <div className="App">
-    <h1>P E O P L E</h1>
-    </div>
+    <>
+    <PeopleAppHeader />
+    <PeopleContent />
+    <PeopleAppFooter />
+    </>
   );
 }
 
