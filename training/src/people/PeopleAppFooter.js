@@ -1,6 +1,6 @@
 import React from 'react';
 
-function PeopleAppFooter(){
+export default function PeopleAppFooter(){
     const footerText = "People Footer"
     return (
         <>
@@ -9,5 +9,3 @@ function PeopleAppFooter(){
         </>
     )
 }
-
-export default PeopleAppFooter
