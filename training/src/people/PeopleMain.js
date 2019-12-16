@@ -1,5 +1,5 @@
-import PeopleAppHeader from './PeopleAppHeader'
-import PeopleAppFooter from './PeopleAppFooter'
-import PeopleContent from './PeopleContent'
+import PeopleAppHeader from './component/PeopleAppHeader'
+import PeopleAppFooter from './component/PeopleAppFooter'
+import PeopleContent from './component/PeopleContent'
 
 export {PeopleAppHeader, PeopleAppFooter, PeopleContent}

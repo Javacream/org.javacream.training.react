@@ -1,7 +1,7 @@
 import React from 'react';
-
+import {user} from '../testdata/PeopleData'
 export default function PeopleAppFooter(){
-    const footerText = "People Footer"
+    const footerText = user.info()
     return (
         <>
         <hr />
