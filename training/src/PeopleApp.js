@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './PeopleApp.css';
 import {PeopleAppFooter as Footer, PeopleContent as Content, PeopleAppHeader} from './people/PeopleMain'
 import {user, peopleData} from './people/testdata/PeopleData'
-
+import 'bootstrap/dist/css/bootstrap.min.css';
 export default class PeopleApp extends Component {
 
   constructor(){
