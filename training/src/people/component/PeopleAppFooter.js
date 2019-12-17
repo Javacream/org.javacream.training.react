@@ -1,11 +1,12 @@
 import React from 'react';
-import {user} from '../testdata/PeopleData'
-export default function PeopleAppFooter(){
-    const footerText = user.info()
+import PersonComponent from './PersonComponent'
+export default function PeopleAppFooter(props){
     return (
         <>
         <hr />
-        <p className="footer">{footerText}</p>
+        <div className="footer">
+            <PersonComponent person={props.user}/>
+        </div>
         </>
     )
 }

@@ -1,9 +1,7 @@
 import React from 'react';
 import PeopleComponent from './PeopleComponent'
-function PeopleContent(){
+export default function PeopleContent(props){
     return (
-        <PeopleComponent />
+        <PeopleComponent people={props.people}/>
     )
 }
-
-export default PeopleContent

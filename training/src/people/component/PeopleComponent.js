@@ -1,10 +1,8 @@
 import React from 'react'
-import {peopleData} from '../testdata/PeopleData'
-function PeopleComponent(){
-
-    let peopleInfo = peopleData.allPeople().map((person) => <li key={person.id}>{person.info()}</li>)
+import PersonComponent from './PersonComponent'
+export default function PeopleComponent(props){
+    const peopleHtml = props.people.allPeopleBy('m').map( (p) => <li key={p.id}><PersonComponent  person={p} detail={true} /></li>)
     return (
-        <ol>{peopleInfo}</ol>
-    )
+        <div><ol>{peopleHtml}</ol></div>    
+    );
 }
-export default PeopleComponent
