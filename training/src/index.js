@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import PeopleApp from './PeopleHookApp';
+import PeopleApp from './PeopleApp';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(<PeopleApp />, document.getElementById('root'));

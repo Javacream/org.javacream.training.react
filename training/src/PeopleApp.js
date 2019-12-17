@@ -19,11 +19,16 @@ export default class PeopleApp extends Component {
     }, 3000)
 
   }
+
+  createPerson = (data) => {
+    peopleData.add(data.lastname, data.firstname, data.height, data.gender);
+    this.setState({})
+  }
   render(){
     return (
       <>
       <PeopleAppHeader />
-      <Content people={this.state.people}/>
+      <Content people={this.state.people} createPersonHandler={this.createPerson}/>
       <Footer user={this.state.profile}/>
       </>
   );

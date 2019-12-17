@@ -9,6 +9,7 @@ class PersonInputFormComponent extends Component{
     }
   }
   handleFormSubmit = (event) => {
+    this.props.createPersonHandler(this.state.fields);
     event.preventDefault();
   }
   handleChange = (event) => {
