@@ -11,11 +11,11 @@ export default class PeopleApp extends Component {
     setTimeout(() => {
       user.lastname="XXXXXXXXXXXXXX"
       console.log(user.lastname)
-      this.setState({...this.state, profile: user})//Nimm den alten State und merge ihn mit den neuen Attributen
+      this.setState({profile: user})
     }, 5000)
     setTimeout(() => {
       peopleData.add("Sawitzki", "Egon", 199, 'm')
-      this.setState({...this.state, profile: user})//Nimm den alten State und merge ihn mit den neuen Attributen
+      this.setState({})
     }, 3000)
 
   }
