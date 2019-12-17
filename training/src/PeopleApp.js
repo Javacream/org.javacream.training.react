@@ -1,14 +1,31 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './PeopleApp.css';
 import {PeopleAppFooter as Footer, PeopleContent as Content, PeopleAppHeader} from './people/PeopleMain'
 import {user, peopleData} from './people/testdata/PeopleData'
 
-export default function PeopleApp() {
-  return (
-    <>
-    <PeopleAppHeader />
-    <Content people={peopleData}/>
-    <Footer user={user}/>
-    </>
+export default class PeopleApp extends Component {
+
+  constructor(){
+    super()
+    this.state = {people: peopleData, profile: user}
+    setTimeout(() => {
+      user.lastname="XXXXXXXXXXXXXX"
+      console.log(user.lastname)
+      this.setState({...this.state, profile: user})//Nimm den alten State und merge ihn mit den neuen Attributen
+    }, 5000)
+    setTimeout(() => {
+      peopleData.add("Sawitzki", "Egon", 199, 'm')
+      this.setState({...this.state, profile: user})//Nimm den alten State und merge ihn mit den neuen Attributen
+    }, 3000)
+
+  }
+  render(){
+    return (
+      <>
+      <PeopleAppHeader />
+      <Content people={this.state.people}/>
+      <Footer user={this.state.profile}/>
+      </>
   );
+  }
 }
