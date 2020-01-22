@@ -18,3 +18,16 @@ test('PeopleModel works', () => {
     expect(model.personOf(40)!.firstname).toBe("Rainer")
 
 });
+
+
+test ("write info", () => {
+    function inner(f){
+        console.log(f())
+    }
+    function demo(){
+            let p:PersonClass = new PersonClass(1, "Sawitzki", "Rainer", "m");
+            //console.log(p.info())
+            inner(p.info);
+    }
+    demo()
+})
