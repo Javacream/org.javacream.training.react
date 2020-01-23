@@ -24,6 +24,9 @@ export class PeopleModel{
     add(person:Person){
       this.data.set(person.id, person)
     }
+    remove(id: number){
+      this.data.delete(id)
+    }
   
     people(): Array<Person>{
       return Array.from(this.data.values())

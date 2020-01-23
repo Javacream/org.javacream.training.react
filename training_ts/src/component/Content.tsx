@@ -19,7 +19,7 @@ class Content extends PureComponent<{}, {people:Array<Person>}> {
     readonly state = this.init()
     render(){
         return (<>
-                    <PeopleListComponent people={this.state.people}></PeopleListComponent>
+                    <PeopleListComponent people={this.state.people} deletePersonHandler={this.handleDeletePerson}></PeopleListComponent>
                     <hr />
                     <PersonInputFormComponent createPersonHandler={this.handleCreatePerson}></PersonInputFormComponent>
                     <hr />
@@ -33,9 +33,13 @@ class Content extends PureComponent<{}, {people:Array<Person>}> {
         peopleModel.add(person)
         this.changeState()
       }
-      changeState(){
+    handleDeletePerson = (id: number) => {
+        peopleModel.remove(id)
+        this.changeState();
+    }  
+    changeState(){
         this.setState({people:peopleModel.people()})
-      }
+    }
 
 }
 

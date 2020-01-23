@@ -3,6 +3,7 @@ import {Person} from '../model/People'
 import PersonComponent from './PersonComponent'
 export interface PeopleProp{
     people: Array<Person>;
+    deletePersonHandler?: (id: number) => void
 }
 
 export default class PeopleComponent extends PureComponent<{people: Array<Person>}, {}>{
@@ -13,7 +14,7 @@ export default class PeopleComponent extends PureComponent<{people: Array<Person
     }
     render(){
     const peoplePersonComponentsHtml = this.props.people.map((p:Person) => 
-        <PersonComponent key={p.id} className = "list" person={p} detail={true} />
+        <PersonComponent key={p.id} className = "list" person={p} detail={true} deletePersonHandler={this.props.deletePersonHandler}/>
     )
     const peopleHtmlRenderer = (
                 <div className="content">
