@@ -6,6 +6,7 @@ import PersonInputFormComponent from '../people/component/PersonInputFormCompone
 import './Content.css'
 import { PureComponent } from 'react';
 import {Person, PersonClass} from '../people/model/People'
+import {Link, Switch, Route, BrowserRouter} from 'react-router-dom'
 class Content extends PureComponent<{}, {people:Array<Person>}> {
     init = () => {
 
@@ -18,14 +19,18 @@ class Content extends PureComponent<{}, {people:Array<Person>}> {
     }
     readonly state = this.init()
     render(){
-        return (<>
-                    <PeopleListComponent people={this.state.people} deletePersonHandler={this.handleDeletePerson}></PeopleListComponent>
-                    <hr />
-                    <PersonInputFormComponent createPersonHandler={this.handleCreatePerson}></PersonInputFormComponent>
-                    <hr />
-                    <PeopleServerListComponent />
-                </>
-                )
+        return (
+        <BrowserRouter>
+            <Link to="/people/list">People List</Link>
+            <Link to="/people/create">Person create</Link>
+            <Link to="/people/server">People List from Server </Link>
+            <Switch>
+              <Route path="/people/list" render={() => (<PeopleListComponent people={this.state.people} deletePersonHandler={this.handleDeletePerson}></PeopleListComponent>)} />
+              <Route path="/people/create" render={() => (<PersonInputFormComponent createPersonHandler={this.handleCreatePerson}></PersonInputFormComponent>)} />
+              <Route exact path='/people/server' component={PeopleServerListComponent}/>
+            </Switch>
+        </BrowserRouter>
+        )
     }
 
     handleCreatePerson = (personData:{data: {lastname:string, firstname:string}}) => {
