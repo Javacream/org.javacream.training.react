@@ -9,7 +9,7 @@ export interface PersonProp{
 let PersonComponent = (props: PersonProp) => {
     if (props.detail){
         return (
-            <p className={props.className}>Firstname: {props.person.firstname}, Lastname:  {props.person.lastname}, Gender: {props.person.gender}, Height: {props.person.height}</p>
+            <li className={props.className}>Firstname: {props.person.firstname}, Lastname:  {props.person.lastname}, Gender: {props.person.gender}, Height: {props.person.height}</li>
         );
     }
     else{

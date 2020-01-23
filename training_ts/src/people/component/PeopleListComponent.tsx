@@ -16,8 +16,8 @@ export default class PeopleComponent extends PureComponent<{people: Array<Person
     )
     const peopleHtmlRenderer = (
                 <div className="content">
-                <h3>List</h3>
-                <ol>{peoplePersonComponentsHtml}</ol>
+                    <h3>List</h3>
+                    <ul>{peoplePersonComponentsHtml}</ul>
                 </div>
           )
         return peopleHtmlRenderer;
