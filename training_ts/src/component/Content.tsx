@@ -1,6 +1,10 @@
 import React from 'react';
+import {people} from '../ApplicationContent'
+import PeopleListComponent from '../people/component/PeopleListComponent'
+import './Content.css'
+
 const Content = () => {
-    return <p className="content">Nothing yet</p>;
+    return <PeopleListComponent people={people}></PeopleListComponent>;
 }
 
-export default Content;
+export default Content; 

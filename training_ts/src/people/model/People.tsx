@@ -7,7 +7,8 @@ export interface Person{
 }
 
 export class PersonClass implements Person{
-    constructor(readonly id: number, readonly lastname: string, public firstname: string, readonly gender:string){
+    constructor(readonly id: number, readonly lastname: string, public firstname: string, readonly gender:string, readonly height:number = 177){
+
     }
     info = () => {
         return `Hello, my name is ${this.firstname} ${this.lastname}` //this ist immer an die Instanz gebunden
