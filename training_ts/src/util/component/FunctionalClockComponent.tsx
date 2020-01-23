@@ -12,7 +12,7 @@ const FunctionalClockComponent = () => {
     }
 
     return (
-        <div>Time: {clock.time.toUTCString()}</div>
+        <div>Functional Time: {clock.time.toUTCString()}</div>
     )
 }
 

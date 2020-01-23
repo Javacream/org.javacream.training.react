@@ -6,7 +6,7 @@ interface TimeInfo{
 
 export default class ClockComponent extends React.PureComponent<{}, TimeInfo>{
     render(){
-        return (<div>Time: {this.state.time.toUTCString()}</div>)
+        return (<div>Class Time: {this.state.time.toUTCString()}</div>)
     }
     init = () => {
         setInterval(this.increment, 1000);
