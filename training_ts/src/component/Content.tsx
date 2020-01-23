@@ -1,6 +1,7 @@
 import React from 'react';
 import {people} from '../ApplicationContent'
 import PeopleListComponent from '../people/component/PeopleListComponent'
+import PeopleServerListComponent from '../people/component/PeopleServerListComponent'
 import './Content.css'
 import { PureComponent } from 'react';
 import {Person} from '../people/model/People'
@@ -15,7 +16,7 @@ class Content extends PureComponent<{}, {people:Array<Person>}> {
     }
     readonly state = this.init()
     render(){
-        return <PeopleListComponent people={this.state.people}></PeopleListComponent>;
+        return <><PeopleListComponent people={this.state.people}></PeopleListComponent><hr /><PeopleServerListComponent /></>;
     }
 }
 
