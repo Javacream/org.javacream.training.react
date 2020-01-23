@@ -9,6 +9,7 @@ export default class PeopleComponent extends PureComponent<{people: Array<Person
 
     constructor(readonly props:PeopleProp){
         super(props);
+        //setTimeout(() => this.forceUpdate(), 4000) //forceUpdate: Lieber nicht verwenden
     }
     render(){
     const peoplePersonComponentsHtml = this.props.people.map((p:Person) => 
