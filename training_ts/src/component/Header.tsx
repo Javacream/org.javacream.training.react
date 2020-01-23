@@ -1,5 +1,5 @@
 import React from 'react';
-import {header} from '../ApplicationContent'
+import {header} from '../ApplicationContext'
 import './Header.css'
 import ClockComponent from '../util/component/ClockComponent'
 import FunctionalClockComponent from '../util/component/FunctionalClockComponent'

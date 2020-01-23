@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {profile} from '../ApplicationContent'
+import {profile} from '../ApplicationContext'
 import './Footer.css'
 import PersonComponent from '../people/component/PersonComponent'
 let first = true;

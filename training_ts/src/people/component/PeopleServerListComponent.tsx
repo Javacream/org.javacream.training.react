@@ -1,7 +1,7 @@
 import React, { PureComponent} from 'react';
 import {Person} from '../model/People'
 import PersonComponent from '../component/PersonComponent'
-import {peopleController} from '../../ApplicationContent'
+import {peopleController} from '../../ApplicationContext'
 
 export default class PeopleServerComponent extends PureComponent<{}, {people: Array<Person>}>{
     state = {
