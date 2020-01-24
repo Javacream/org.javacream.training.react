@@ -15,9 +15,12 @@ const todos = (state = [], action) => {
           ? {...todo, completed: !todo.completed}
           : todo
       )
-    default:
-      return state
-  }
+      case 'CLEAR_TODO':
+        return [
+        ]    
+      default:
+        return state
+    }
 }
 
 export default todos
