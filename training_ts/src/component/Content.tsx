@@ -7,6 +7,9 @@ import './Content.css'
 import { PureComponent } from 'react';
 import {Person, PersonClass} from '../people/model/People'
 import {Link, Switch, Route, BrowserRouter} from 'react-router-dom'
+import {notificationBus} from '../ApplicationContext'
+
+
 class Content extends PureComponent<{}, {people:Array<Person>}> {
     init = () => {
 
@@ -37,10 +40,12 @@ class Content extends PureComponent<{}, {people:Array<Person>}> {
         let person = new PersonClass(Math.floor(Math.random() * 100001), personData.data.lastname, personData.data.firstname, "f")
         peopleModel.add(person)
         this.changeState()
+        notificationBus.publish("log", "added person " + person.info())
       }
     handleDeletePerson = (id: number) => {
         peopleModel.remove(id)
         this.changeState();
+        notificationBus.publish("log", "deleted person id=" + id)
     }  
     changeState(){
         this.setState({people:peopleModel.people()})
