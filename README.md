@@ -1,2 +1,2 @@
 # org.javacream.training.react
-React Trainining
+React Training
