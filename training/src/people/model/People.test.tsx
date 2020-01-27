@@ -1,10 +1,21 @@
-import {PeopleModel, Person, PersonClass} from './People'
 import '@testing-library/jest-dom/extend-expect';
+import { PersonClass, PeopleModel } from "./People";
 
-
-test('person creation works', () => {
-    let p: PersonClass = new PersonClass(42, "Sawitzki", "rainer", "m", 183)
-    let p2:Person = {id:42, lastname: "Sawitzki", firstname: "Rainer", gender: "m", height: 183}
-    expect(p.lastname).toBe("Sawitzki");
+test('creating a person', () => {
+    let p = new PersonClass(42, "Sawitzki", "Rainer", "m");
+    expect(p.lastname).toBe("Sawitzki")
 });
-  
+test('PeopleModel works', () => {
+    let model = new PeopleModel();
+    model.add(new PersonClass(40, "Sawitzki", "Rainer", "m"));
+    model.add({id: 41, lastname:"Sawitzki", firstname:"Klaus", gender:"m"});
+    model.add({id: 42, lastname:"Meier", firstname:"Hans", gender:"m"});
+    model.add({id: 43, lastname:"Metzger", firstname:"Georg", gender:"m"});
+    model.add({id: 44, lastname:"Meier", firstname:"Hanna", gender:"m"});
+    expect(model.findByLastname("Sawitzki").length).toBe(2)
+    expect(model.findByLastname("Metzger").length).toBe(1)
+    expect(model.people().length).toBe(5)
+    expect(model.findById(40)!.firstname).toBe("Rainer")
+
+});
+

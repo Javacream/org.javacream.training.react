@@ -1,31 +1,46 @@
-export class PeopleModel{
-
-    people: Map<number, Person>
-    constructor(){
-        this.people = new Map()
-    }
-    add(p:Person):void{
-        this.people.set(p.id, p)
-    }
-
-    findById(id: number){
-        return this.people.get(id)
-    }
-
-}
-
-export interface Person {
-    id: number
-    lastname:string
+export interface Person{
+    lastname: string
     firstname: string
+    id: number
+    height?: number
     gender: string
-    height: number
 }
 
 export class PersonClass implements Person{
-    constructor(readonly id: number, public lastname: string, readonly firstname: string, readonly  gender:string, readonly  height:number){}
-    info():string{
-        return this.firstname + " " + this.lastname
+    constructor(readonly id: number, readonly lastname: string, public firstname: string, readonly gender:string, readonly height:number = 177){
+
+    }
+    info(){
+        return `Hello, my name is ${this.firstname} ${this.lastname}` //this ist immer an die Instanz gebunden
     }
 }
 
+export class PeopleModel{
+    data: Map<number, Person>
+    constructor(){
+      this.data = new Map()
+    }
+  
+    add(person:Person){
+      this.data.set(person.id, person)
+    }
+    remove(id: number){
+      this.data.delete(id)
+    }
+  
+    people(): Array<Person>{
+      return Array.from(this.data.values())
+    }
+  
+    update(person:Person){
+      this.data.set(person.id, person)
+    }
+  
+    findById(personId:number):Person|undefined{
+      return this.data.get(personId)
+    }
+    findByLastname(lastname:string):Array<Person>{
+      let people = Array.from(this.data.values())
+      return people.filter(p => p.lastname === lastname)
+    }
+  }
