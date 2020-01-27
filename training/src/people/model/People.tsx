@@ -10,7 +10,7 @@ export class PersonClass implements Person{
     constructor(readonly id: number, readonly lastname: string, public firstname: string, readonly gender:string, readonly height:number = 177){
 
     }
-    info(){
+    info = () => {
         return `Hello, my name is ${this.firstname} ${this.lastname}` //this ist immer an die Instanz gebunden
     }
 }
@@ -21,25 +21,25 @@ export class PeopleModel{
       this.data = new Map()
     }
   
-    add(person:Person){
+    add = (person:Person) => {
       this.data.set(person.id, person)
     }
-    remove(id: number){
+    remove = (id: number) => {
       this.data.delete(id)
     }
   
-    people(): Array<Person>{
+    people = (): Array<Person> => {
       return Array.from(this.data.values())
     }
   
-    update(person:Person){
+    update = (person:Person) => {
       this.data.set(person.id, person)
     }
   
-    findById(personId:number):Person|undefined{
+    findById = (personId:number):Person|undefined => {
       return this.data.get(personId)
     }
-    findByLastname(lastname:string):Array<Person>{
+    findByLastname = (lastname:string):Array<Person> => {
       let people = Array.from(this.data.values())
       return people.filter(p => p.lastname === lastname)
     }

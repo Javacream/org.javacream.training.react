@@ -19,3 +19,14 @@ test('PeopleModel works', () => {
 
 });
 
+let func =  () => {
+    let printOut = (f) => {
+        console.log("in printout: " + f())
+    }    
+    let p = new PersonClass(40, "Sawitzki", "Rainer", "m")
+    printOut(p.info)
+    //console.log("in func: " + p.info())
+
+}
+test ('demo', func)
+
