@@ -2,13 +2,10 @@ import React, {PureComponent} from 'react';
 import { Person } from '../model/People';
 import PersonComponent from './PersonComponent';
 
-class PeopleListComponent extends PureComponent<{people: Array<Person>}, {}>{
+class PeopleListComponent extends PureComponent<{people: Array<Person>, deletePersonHandler?: (id: number) => void}, {}>{
 
-    constructor(readonly props :{people: Array<Person>}){
-        super(props)
-    }
     render(){
-        let htmlPeople = this.props.people.map( (p) => (<li key={p.id}><PersonComponent  person={p}/></li>))
+        let htmlPeople = this.props.people.map( (p) => (<li key={p.id}><PersonComponent  person={p} detail={true} deletePersonHandler={this.props.deletePersonHandler}/></li>))
         return (
                     <div className="content">
                         <h3>List of local people</h3>

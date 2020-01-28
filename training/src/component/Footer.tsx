@@ -4,7 +4,7 @@ import {userProfile} from '../ApplicationContext'
 import PersonComponent from '../people/component/PersonComponent'
 const Footer = () => {
     return (
-        <div className="footer"><PersonComponent person={userProfile}/></div>
+        <div className="footer"><PersonComponent detail={false} person={userProfile} /></div>
     )
 }
 

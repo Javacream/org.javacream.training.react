@@ -10,7 +10,7 @@ class Content extends PureComponent<{}, {people: Array<Person>}>{
         return (
 
             <div className="content">
-                <PeopleListComponent people={this.state.people} />
+                <PeopleListComponent people={this.state.people} deletePersonHandler={this.handleDeletePerson}/>
                 <hr />
                 <PeopleInputFormComponent createPersonHandler={this.createPerson}/>
             </div>
@@ -25,9 +25,15 @@ class Content extends PureComponent<{}, {people: Array<Person>}>{
 
     createPerson = (lastname: string, firstname:string) => {
         peopleModel.add(lastname, firstname);
-        this.setState({people: [...peopleModel.people()]})
+        this.changeState();
     }
-
+    handleDeletePerson = (id: number) => {
+        peopleModel.remove(id)
+        this.changeState();
+    }  
+    changeState = () =>{
+        this.setState({people:peopleModel.people()})
+    }
 }
 
 export default Content

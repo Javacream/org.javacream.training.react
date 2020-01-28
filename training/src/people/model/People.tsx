@@ -1,5 +1,3 @@
-import PersonComponent from "../component/PersonComponent"
-
 export interface Person{
     lastname: string
     firstname: string
