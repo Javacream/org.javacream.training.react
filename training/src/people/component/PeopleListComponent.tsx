@@ -17,11 +17,6 @@ class PeopleListComponent extends PureComponent<{people: Array<Person>}, {}>{
                 )
     }
 
-    componentDidMount(){
-        setTimeout(() => {
-            this.forceUpdate()//DON'T DO THAT!
-        }, 4000)
-    }
 }
 
 export default PeopleListComponent
