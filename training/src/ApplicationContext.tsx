@@ -5,4 +5,4 @@ export let peopleModel = new PeopleModel()
 export let userProfile = prototypePerson
 export const headerText = testHeaderText
 export const defaultContent = testContentText
-export const peopleList = testPeople;
+//export const peopleList = testPeople;

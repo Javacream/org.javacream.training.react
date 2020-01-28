@@ -1,3 +1,5 @@
+import PersonComponent from "../component/PersonComponent"
+
 export interface Person{
     lastname: string
     firstname: string
@@ -21,8 +23,10 @@ export class PeopleModel{
       this.data = new Map()
     }
   
-    add = (person:Person) => {
-      this.data.set(person.id, person)
+    add = (lastname:string, firstname: string, gender:string = "x", height:number = 123) => {
+      const id = Math.floor(Math.random() * 100001)
+      const newPerson = new PersonClass(id, lastname, firstname, gender, height)
+      this.data.set(id, newPerson)
     }
     remove = (id: number) => {
       this.data.delete(id)
