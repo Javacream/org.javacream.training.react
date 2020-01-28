@@ -1,9 +1,10 @@
 import React, {PureComponent} from 'react';
 import './Content.css'
-import {peopleList} from '../ApplicationContext'
+import {peopleList, peopleModel} from '../ApplicationContext'
 import PeopleListComponent from '../people/component/PeopleListComponent'
-import { Person } from '../people/model/People';
+import { Person, PersonClass } from '../people/model/People';
 import PeopleInputFormComponent from '../people/component/PeopleInputFormComponent'
+import PersonComponent from '../people/component/PersonComponent';
 class Content extends PureComponent<{}, {people: Array<Person>}>{
     state = {people: peopleList}
     render(){
@@ -12,7 +13,7 @@ class Content extends PureComponent<{}, {people: Array<Person>}>{
             <div className="content">
                 <PeopleListComponent people={this.state.people} />
                 <hr />
-                <PeopleInputFormComponent />
+                <PeopleInputFormComponent createPersonHandler={this.createPerson}/>
             </div>
         )
     }
@@ -20,6 +21,12 @@ class Content extends PureComponent<{}, {people: Array<Person>}>{
         setTimeout(() => {
             this.setState({people: [...peopleList]})
         }, 4000)
+    }
+
+    createPerson(lastname: string, firstname:string){
+        let newPerson = new PersonClass(42, lastname, firstname, 'x', 123);
+        peopleModel.add(newPerson);
+        console.log("added new Person: " + newPerson.info())
     }
 
 }
