@@ -7,7 +7,6 @@ interface TimeInfo{
 export default class ClockComponent extends React.PureComponent<{}, TimeInfo>{
     readonly state = {time: new Date(Date.now())}
     render(){
-    console.log("rendering Class Component")
     return (<div>Class Time: {this.state.time.toUTCString()}</div>)
     }
     componentDidMount(){

@@ -12,7 +12,6 @@ class Content extends PureComponent<{}, {people: Array<Person>}>{
     }
     componentDidMount(){
         setTimeout(() => {
-            console.log("setting new state")
             this.setState({people: [...peopleList]})
         }, 4000)
     }

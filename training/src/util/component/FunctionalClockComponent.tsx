@@ -8,7 +8,6 @@ const FunctionalClockComponent = () => {
         setInterval(() => updateTime({time: new Date(Date.now())}), 1000);
         initialized = true;
     }
-    console.log("rendering FunctionalComponent")
     return (
         <div>Functional Time: {state.time.toUTCString()}</div>
     )
