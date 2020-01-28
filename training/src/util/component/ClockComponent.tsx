@@ -5,15 +5,12 @@ interface TimeInfo{
 }
 
 export default class ClockComponent extends React.PureComponent<{}, TimeInfo>{
+    readonly state = {time: new Date(Date.now())}
     render(){
-        return (<div>Class Time: {this.state.time.toUTCString()}</div>)
+    console.log("rendering Class Component")
+    return (<div>Class Time: {this.state.time.toUTCString()}</div>)
     }
-    init = () => {
-        setInterval(this.increment, 1000);
-        return {time: new Date(Date.now())}
+    componentDidMount(){
+        setInterval(() => this.setState({time: new Date(Date.now())}), 1000);
     }
-    increment = () => {
-        this.setState({time: new Date(Date.now())})
-    }
-    readonly state = this.init()
 }
