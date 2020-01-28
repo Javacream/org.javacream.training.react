@@ -1,10 +1,10 @@
 import React from 'react';
 import './Footer.css'
-import {footerText} from '../test/testData'
+import {userProfile} from '../ApplicationContext'
 
 const Footer = () => {
     return (
-        <div className="footer">{footerText}</div>
+        <div className="footer">{userProfile.firstname} {userProfile.lastname}</div>
     )
 }
 

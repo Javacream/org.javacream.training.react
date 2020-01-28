@@ -1,6 +1,6 @@
 import React from 'react';
 import './Header.css';
-import {headerText} from '../test/testData'
+import {headerText} from '../ApplicationContext'
 
 const Header = () => {
     return (

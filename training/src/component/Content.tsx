@@ -1,6 +1,6 @@
 import React from 'react';
 import './Content.css'
-import {contentText} from '../test/testData'
+import {defaultContent as contentText} from '../ApplicationContext'
 
 const Content = () => {
     return (
