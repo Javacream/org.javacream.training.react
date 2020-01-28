@@ -1,4 +1,4 @@
-import {testHeaderText, prototypePerson, testContentText, testPeople} from './test/testData'
+import {testHeaderText, prototypePerson, testContentText} from './test/testData'
 import { PeopleModel } from './people/model/People'
 
 export let peopleModel = new PeopleModel()
