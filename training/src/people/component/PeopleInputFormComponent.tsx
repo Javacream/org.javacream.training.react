@@ -8,7 +8,7 @@ type State = {
   fields: InputFields
 }
 
-class PersonInputFormComponent extends Component<{}, {fields: InputFields}>{
+class PersonInputFormComponent extends Component<{createPersonHandler: any}, {fields: InputFields}>{
   state = {
     fields: {
       lastname: '',
@@ -16,6 +16,7 @@ class PersonInputFormComponent extends Component<{}, {fields: InputFields}>{
     }
   }
   handleFormSubmit = (event:FormEvent) => {
+      this.props.createPersonHandler(this.state.fields.lastname, this.state.fields.firstname)
     event.preventDefault();
   }
   handleChange = (event:React.FormEvent<HTMLInputElement>) => {
