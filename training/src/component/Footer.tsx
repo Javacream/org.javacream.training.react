@@ -1,10 +1,10 @@
 import React from 'react';
 import './Footer.css'
 import {userProfile} from '../ApplicationContext'
-
+import PersonComponent from '../people/component/PersonComponent'
 const Footer = () => {
     return (
-        <div className="footer">{userProfile.firstname} {userProfile.lastname}</div>
+        <div className="footer"><PersonComponent person={userProfile}/></div>
     )
 }
 
