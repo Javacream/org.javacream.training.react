@@ -8,7 +8,7 @@ class PeopleListComponent extends PureComponent<{people: Array<Person>}, {}>{
         super(props)
     }
     render(){
-        let htmlPeople = this.props.people.map( (p) => (<><li><PersonComponent key={p.id} person={p}/></li></>))
+        let htmlPeople = this.props.people.map( (p) => (<li key={p.id}><PersonComponent  person={p}/></li>))
         return (
                     <div className="content">
                         <h3>List of local people</h3>
