@@ -3,12 +3,13 @@ import { Person } from '../model/People';
 import PersonComponent from './PersonComponent';
 
 const PeopleListComponent = (props: {people: Array<Person>}) => {
-    let htmlPeople = props.people.map( (p) => <PersonComponent key={p.id} person={p} />)
+    let htmlPeople = props.people.map( (p) => (<><li><PersonComponent key={p.id} person={p}/></li></>))
     return (
-    <li>{htmlPeople}</li>
-    )
-
-
+                <div className="content">
+                    <h3>List of local people</h3>
+                    <ol>{htmlPeople}</ol>
+                </div>    
+            )
 }
 
 export default PeopleListComponent

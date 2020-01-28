@@ -1,10 +1,10 @@
 import React from 'react';
 import './Content.css'
-import {defaultContent as contentText} from '../ApplicationContext'
-
+import {peopleList} from '../ApplicationContext'
+import PeopleListComponent from '../people/component/PeopleListComponent'
 const Content = () => {
     return (
-        <div className="content">{contentText}</div>
+        <div className="content"><PeopleListComponent people={peopleList} /></div>
     )
 }
 
