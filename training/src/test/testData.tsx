@@ -10,8 +10,9 @@ export const testPeople = [
     new PersonClass(818, "Sawitzki", "Rainer", "m"),
     new PersonClass(819, "Sawitzki", "Helga", "f"),
 ]
-
+/*
 setTimeout(() => {
     prototypePerson.firstname = "CHANGED BY TIMEOUT"
     console.log(prototypePerson.firstname)
 }, 2000)
+*/

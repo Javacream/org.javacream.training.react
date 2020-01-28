@@ -16,11 +16,12 @@ class Content extends PureComponent<{}, {people: Array<Person>}>{
             </div>
         )
     }
+    /*
     componentDidMount(){
         setTimeout(() => {
             this.setState({people: [...peopleModel.people()]})
         }, 4000)
-    }
+    }*/
 
     createPerson = (lastname: string, firstname:string) => {
         peopleModel.add(lastname, firstname);
