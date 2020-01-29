@@ -5,6 +5,7 @@ import PeopleListComponent from '../people/component/PeopleListComponent'
 import { Person} from '../people/model/People';
 import PeopleInputFormComponent from '../people/component/PeopleInputFormComponent'
 import PeopleServerListComponent from '../people/component/PeopleServerListComponent'
+import PeopleServerSearchFormComponent from '../people/component/PeopleServerSearchFormComponent'
 class Content extends PureComponent<{}, {people: Array<Person>}>{
     state = {people: peopleModel.people()}
     render(){
@@ -16,6 +17,8 @@ class Content extends PureComponent<{}, {people: Array<Person>}>{
                 <PeopleInputFormComponent createPersonHandler={this.createPerson}/>
                 <hr />
                 <PeopleServerListComponent />
+                <hr />
+                <PeopleServerSearchFormComponent />
             </div>
         )
     }
