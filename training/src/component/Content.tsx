@@ -6,21 +6,22 @@ import { Person} from '../people/model/People';
 import PeopleInputFormComponent from '../people/component/PeopleInputFormComponent'
 import PeopleServerListComponent from '../people/component/PeopleServerListComponent'
 import PeopleServerSearchFormComponent from '../people/component/PeopleServerSearchFormComponent'
+import {Link, Switch, Route, BrowserRouter} from 'react-router-dom'
+
 class Content extends PureComponent<{}, {people: Array<Person>}>{
     state = {people: peopleModel.people()}
     render(){
         return (
-
-            <div className="content">
-                <PeopleListComponent people={this.state.people} deletePersonHandler={this.handleDeletePerson}/>
-                <hr />
-                <PeopleInputFormComponent createPersonHandler={this.createPerson}/>
-                <hr />
-                <PeopleServerListComponent />
-                <hr />
-                <PeopleServerSearchFormComponent />
-            </div>
-        )
+        <BrowserRouter>
+            <Link to="/people/list">People List</Link>
+            <Link to="/people/create">Person create</Link>
+            <Link to="/people/server">People List from Server </Link>
+            <Switch>
+              <Route path="/people/list" render={() => (<PeopleListComponent people={this.state.people} deletePersonHandler={this.handleDeletePerson}></PeopleListComponent>)} />
+              <Route path="/people/create" render={() => (<PeopleInputFormComponent createPersonHandler={this.createPerson} ></PeopleInputFormComponent>)} />
+              <Route exact path='/people/server' component={PeopleServerListComponent}/>
+            </Switch>
+        </BrowserRouter>)
     }
     /*
     componentDidMount(){
