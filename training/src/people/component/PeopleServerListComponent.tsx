@@ -1,6 +1,6 @@
 import React, { PureComponent} from 'react';
 import {Person} from '../model/People'
-import PersonComponent from '../component/PersonComponent'
+import PersonComponent from './PersonComponent'
 import {peopleController} from '../../ApplicationContext'
 
 export default class PeopleServerListComponent extends PureComponent<{}, {people: Array<Person>}>{
