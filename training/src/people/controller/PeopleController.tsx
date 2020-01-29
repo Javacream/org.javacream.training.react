@@ -15,6 +15,7 @@ export default class PeopleController{
 
     async findById(id: number):Promise<Person|undefined>{
         try{
+            console.log(id)
             let response = await fetch("http://localhost:8080/people/" + id)
             let person = await response.json()
             return person
