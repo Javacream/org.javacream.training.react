@@ -16,10 +16,12 @@ class Content extends PureComponent<{}, {people: Array<Person>}>{
             <Link to="/people/list">People List</Link>
             <Link to="/people/create">Person create</Link>
             <Link to="/people/server">People List from Server </Link>
+            <Link to="/people/search">People Search from Server </Link>
             <Switch>
               <Route path="/people/list" render={() => (<PeopleListComponent people={this.state.people} deletePersonHandler={this.handleDeletePerson}></PeopleListComponent>)} />
               <Route path="/people/create" render={() => (<PeopleInputFormComponent createPersonHandler={this.createPerson} ></PeopleInputFormComponent>)} />
               <Route exact path='/people/server' component={PeopleServerListComponent}/>
+              <Route exact path='/people/search' component={PeopleServerSearchFormComponent}/>
             </Switch>
         </BrowserRouter>)
     }
