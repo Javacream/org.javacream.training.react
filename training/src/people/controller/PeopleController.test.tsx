@@ -8,3 +8,9 @@ test('searching a person', async () => {
 
 });
 
+test('searching all people', async () => {
+    let controller = new PeopleController()
+    let people = await controller.allPeople()
+    expect(people.length).toBe(10)
+
+});
