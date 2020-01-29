@@ -4,6 +4,7 @@ import {peopleModel} from '../ApplicationContext'
 import PeopleListComponent from '../people/component/PeopleListComponent'
 import { Person} from '../people/model/People';
 import PeopleInputFormComponent from '../people/component/PeopleInputFormComponent'
+import PeopleServerListComponent from '../people/component/PeopleServerListComponent'
 class Content extends PureComponent<{}, {people: Array<Person>}>{
     state = {people: peopleModel.people()}
     render(){
@@ -13,6 +14,8 @@ class Content extends PureComponent<{}, {people: Array<Person>}>{
                 <PeopleListComponent people={this.state.people} deletePersonHandler={this.handleDeletePerson}/>
                 <hr />
                 <PeopleInputFormComponent createPersonHandler={this.createPerson}/>
+                <hr />
+                <PeopleServerListComponent />
             </div>
         )
     }
