@@ -1,8 +1,7 @@
 import React, { Component, FormEvent } from 'react';
-import {peopleController} from '../../ApplicationContext'
+import {peopleController, notification} from '../../ApplicationContext'
 import { Person } from '../model/People';
 import PersonComponent from './PersonComponent';
-
 type InputFields = {
   id: number
 }
@@ -16,6 +15,7 @@ class PersonServerSearchFormComponent extends Component<{}, {fields: InputFields
   handleFormSubmit = async (event:FormEvent) => {
     event.preventDefault();
     let person = await peopleController.findById(this.state.fields.id)
+    notification.publish("log", `Found person ${person?.lastname}`)
     this.setState({person})
   }
   handleChange = (event:React.FormEvent<HTMLInputElement>) => {
