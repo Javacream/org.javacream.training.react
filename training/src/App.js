@@ -1,7 +1,6 @@
 import React from 'react';
 import './App.css';
-import Content from './people/PeopleAppComponent'
-import PeopleAppComponent from './people/PeopleAppComponent';
+import PeopleAppComponent from './people/component/PeopleAppComponent';
 
 function App() {
   return (
