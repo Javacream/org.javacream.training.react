@@ -1,0 +1,11 @@
+.header {
+    text-align: center;
+    font-size: 3em;
+    background-color: green;
+  }
+  
+  .footer {
+    text-align: center;
+    font-size: 0.75em;
+    background-color: lightgreen;
+  }
