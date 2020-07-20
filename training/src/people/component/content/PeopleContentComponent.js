@@ -1,9 +1,9 @@
 import React from 'react';
-
+import {defaultPerson} from '../../model/PeopleData' 
 function PeopleContentComponent(){
 
     return (
-        <p>Empty Content</p>
+    <p>{defaultPerson.info()}</p>
     )
 }
 

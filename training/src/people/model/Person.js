@@ -6,7 +6,7 @@ class Person{
     }
 
     info(){
-        return "Person: lastname: ${this.lastname}, firstname=${this.firstname} "
+        return `Person: lastname: ${this.lastname}, firstname=${this.firstname}`
     }
 }
 
