@@ -1,9 +1,10 @@
 import React from 'react';
-import {peopleData} from '../../test/PeopleData' 
+import {peopleList} from '../../PeopleContext' 
+import PersonComponent from './PersonComponent'
+
 function PeopleContentComponent(){
-    let people = peopleData.allPeople()
-    let peopleHtml = people.map(person => <p key={person.id}>{person.info()}</p>)
-    return (
+    const peopleHtml = peopleList.map( (p) => <div key={p.id}><PersonComponent  person={p} detail={true} /> </div>)
+        return (
     <>
     <h2>People List</h2>    
     <>{peopleHtml}</>

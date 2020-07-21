@@ -1,9 +1,10 @@
 import React from 'react';
-import {profile} from '../../test/PeopleData' 
+import {userProfile} from '../../PeopleContext' 
+import PersonComponent from './PersonComponent'
 function PeopleProfileComponent(){
 
     return (
-    <p className="profile">Hello {profile.firstname} {profile.lastname}</p>
+        <PersonComponent person={userProfile} className="profile"/>
     )
 }
 
