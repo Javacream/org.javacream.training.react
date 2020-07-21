@@ -1,14 +1,13 @@
-import React, { useState } from "react";
-let first = true
-let ClockComponent = () => {
-    const [clock, updateClock] = useState({time: new Date(Date.now())})
-    if(first){
-        setInterval(() => {
-            updateClock({time: new Date(Date.now())})
-        }, 1000)
-        first = false
-    }
-    return (<div>Class Time: {clock.time.toUTCString()}</div>)
-}
+import React, { Component } from "react";
 
-export default ClockComponent
+export default class ClockComponent extends Component{
+    state = {time: new Date(Date.now())}
+
+    render(){
+        return (<div>Class Time: {this.state.time.toUTCString()}</div>)
+    }
+    constructor() {
+        super()
+        setInterval(() => this.setState({time: new Date(Date.now())}), 1000)
+    }
+}
