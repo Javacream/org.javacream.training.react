@@ -4,6 +4,7 @@ import PubSub from 'pubsub-js'
 import PeopleListComponent from './PeopleListComponent'
 import PersonInputFormComponent from './PersonInputFormComponent'
 import PeopleServerComponent from './PeopleServerComponent';
+import PeopleSearchComponent from './PeopleSearchComponent';
 
 class PeopleContentComponent extends Component{
     state = {data: peopleController.allPeople()}
@@ -22,6 +23,8 @@ class PeopleContentComponent extends Component{
             <PeopleListComponent peopleList={this.state.data}/>
             <hr />
             <PersonInputFormComponent />
+            <hr />
+            <PeopleSearchComponent />
             <hr />
             <PeopleServerComponent />
         </>
