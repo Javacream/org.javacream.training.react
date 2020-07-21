@@ -10,8 +10,8 @@ class PersonInputFormComponent extends Component{
     }
   }
   handleFormSubmit = (event) => {
-    this.props.handleCreatePerson(this.state.fields)
     event.preventDefault();
+    this.props.handleCreatePerson(this.state.fields)
   }
   handleChange = (event) => {
     let target = event.target
