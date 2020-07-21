@@ -2,7 +2,7 @@ import React from 'react';
 import {peopleData} from '../../test/PeopleData' 
 function PeopleContentComponent(){
     let people = peopleData.allPeople()
-    let peopleHtml = people.map(person => <p>{person.info()}</p>)
+    let peopleHtml = people.map(person => <p key={person.id}>{person.info()}</p>)
     return (
     <>
     <h2>People List</h2>    
