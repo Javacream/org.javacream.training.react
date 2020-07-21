@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PubSub from 'pubsub-js'
 
 class PersonInputFormComponent extends Component{
   state = {
@@ -11,7 +12,7 @@ class PersonInputFormComponent extends Component{
   }
   handleFormSubmit = (event) => {
     event.preventDefault();
-    this.props.handleCreatePerson(this.state.fields)
+    PubSub.publish("person.created", this.state.fields)
   }
   handleChange = (event) => {
     let target = event.target
