@@ -5,9 +5,11 @@ import PeopleListComponent from './PeopleListComponent'
 import PersonInputFormComponent from './PersonInputFormComponent'
 import PeopleServerComponent from './PeopleServerComponent';
 import PeopleSearchComponent from './PeopleSearchComponent';
+import NavigationComponent from './NavigationComponent'
+import {BrowserRouter, Switch, Route} from 'react-router-dom'
 
 class PeopleContentComponent extends Component{
-    state = {data: peopleController.allPeople()}
+    state = {people: peopleController.allPeople()}
     componentDidMount(){
         this.token = PubSub.subscribe("person.create", this.createPersonCallback)
     }
@@ -18,17 +20,18 @@ class PeopleContentComponent extends Component{
 
 
     render (){
-    return (
-        <>
-            <PeopleListComponent peopleList={this.state.data}/>
-            <hr />
-            <PersonInputFormComponent />
-            <hr />
-            <PeopleSearchComponent />
-            <hr />
-            <PeopleServerComponent />
-        </>
-    )
+    return (<BrowserRouter>
+            <NavigationComponent />
+            <hr />       
+            <Switch>
+                    <Route path='/people' render={(props) => <PeopleListComponent {...props} peopleList={this.state.people} />} />    
+                    <Route path='/peopleInput' render={(props) => <PersonInputFormComponent {...props} handleCreatePerson={this.createPersonCallback} />}/>    
+                    <Route path='/peopleFromServer' component={PeopleServerComponent}/>    
+                    <Route path='/peopleSearch' component={PeopleSearchComponent}/>    
+                </Switch>
+           </BrowserRouter>
+        )
+    
 }
     componentWillUnmount(){
         PubSub.unsubscribe(this.token)
