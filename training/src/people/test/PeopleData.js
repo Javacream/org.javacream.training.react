@@ -9,3 +9,5 @@ peopleData.add("Sawitzki", "Klaus", 181, 'm')
 peopleData.allPeople().push(profile)
 export {profile, peopleData} 
 
+setTimeout(() => {profile.lastname = "CHANGED"; console.log(profile.info())}, 4000);
+
