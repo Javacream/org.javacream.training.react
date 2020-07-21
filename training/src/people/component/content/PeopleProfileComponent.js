@@ -1,5 +1,5 @@
 import React from 'react';
-import {profile} from '../../model/PeopleData' 
+import {profile} from '../../test/PeopleData' 
 function PeopleProfileComponent(){
 
     return (

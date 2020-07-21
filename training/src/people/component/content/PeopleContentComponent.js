@@ -1,9 +1,10 @@
 import React from 'react';
-import {profile} from '../../model/PeopleData' 
+import {peopleData} from '../../test/PeopleData' 
 function PeopleContentComponent(){
-
+    let people = peopleData.allPeople()
+    let peopleHtml = people.map(person => <li>{person.info()}</li>)
     return (
-    <p>{profile.info()}</p>
+    <ul>{peopleHtml}</ul>
     )
 }
 

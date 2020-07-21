@@ -4,13 +4,14 @@ class PeopleController{
 
     constructor(){
         this.people = []
-        this.counter = 0
+        this.counter = 0;
     }
 
     add(lastname, firstname, height, gender){
         const person = new Person(this.counter, lastname, firstname, height, gender)
         this.people.push(person)
-        this.counter++
+        this.counter++;
+        return person
     }
     
     allPeople() {
@@ -20,7 +21,7 @@ class PeopleController{
     peopleByGender(gender){
         return this.people.filter((p) => p.gender === gender)
     }
-    eopleLastname(lastname){
+    peopleLastname(lastname){
         return this.people.filter((p) => p.lastname === lastname)
     }
     
