@@ -3,7 +3,7 @@ import {profile} from '../../model/PeopleData'
 function PeopleProfileComponent(){
 
     return (
-    <p class="profile">Hello {profile.firstname} {profile.lastname}</p>
+    <p className="profile">Hello {profile.firstname} {profile.lastname}</p>
     )
 }
 
