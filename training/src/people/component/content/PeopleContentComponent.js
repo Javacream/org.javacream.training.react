@@ -6,11 +6,10 @@ import PersonInputFormComponent from './PersonInputFormComponent'
 
 class PeopleContentComponent extends Component{
     state = {data: peopleController.allPeople()}
-    constructor(){
-        super()
-        PubSub.subscribe("person.created", this.createPersonCallback)
+    componentDidMount(){
+        this.token = PubSub.subscribe("person.create", this.createPersonCallback)
     }
-    createPersonCallback = (personData) =>{
+    createPersonCallback = (topic, personData) =>{
         peopleController.add(personData.lastname, personData.firstname, personData.height, personData.gender)
         this.setState({data: peopleController.allPeople()})
     }
@@ -25,6 +24,12 @@ class PeopleContentComponent extends Component{
         </>
     )
 }
+    componentWillUnmount(){
+        console.log("DEXT")
+
+        PubSub.unsubscribe(this.token)
+    }
+
 }
 
 export default PeopleContentComponent

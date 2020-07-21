@@ -10,9 +10,11 @@ class PersonInputFormComponent extends Component{
       height: 0
     }
   }
+
   handleFormSubmit = (event) => {
     event.preventDefault();
-    PubSub.publish("person.created", this.state.fields)
+    PubSub.publishSync("person.create", this.state.fields)
+
   }
   handleChange = (event) => {
     let target = event.target
