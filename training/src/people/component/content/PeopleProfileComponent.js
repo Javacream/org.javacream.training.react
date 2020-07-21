@@ -5,8 +5,7 @@ import PersonComponent from './PersonComponent'
 class PeopleProfileComponent extends Component{
     state = {person: userProfile}
 
-    constructor(){
-        super()
+    componentDidMount(){
         setTimeout(() => {
             userProfile.lastname = "CHANGED BY COMPONENT"
             this.setState({person: userProfile})

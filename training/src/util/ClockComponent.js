@@ -6,8 +6,7 @@ export default class ClockComponent extends Component{
     render(){
         return (<div>Class Time: {this.state.time.toUTCString()}</div>)
     }
-    constructor() {
-        super()
+    componentDidMount() {
         setInterval(() => this.setState({time: new Date(Date.now())}), 1000)
     }
 }
