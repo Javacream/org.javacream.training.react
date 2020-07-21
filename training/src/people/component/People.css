@@ -1,9 +1,14 @@
 .header {
     text-align: center;
-    font-size: 3em;
+    font-size: 1.5em;
     background-color: green;
   }
   
+  .profile{
+    text-align: right;
+    font-size: 0.5em;
+
+  }
   .footer {
     text-align: center;
     font-size: 0.75em;

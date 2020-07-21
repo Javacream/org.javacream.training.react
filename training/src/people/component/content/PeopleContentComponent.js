@@ -1,9 +1,9 @@
 import React from 'react';
-import {defaultPerson} from '../../model/PeopleData' 
+import {profile} from '../../model/PeopleData' 
 function PeopleContentComponent(){
 
     return (
-    <p>{defaultPerson.info()}</p>
+    <p>{profile.info()}</p>
     )
 }
 
