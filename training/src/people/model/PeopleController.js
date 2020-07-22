@@ -1,5 +1,5 @@
 import { Person } from "./Person";
-
+import PubSub from 'pubsub-js'
 class PeopleController{
 
     constructor(){
@@ -11,6 +11,7 @@ class PeopleController{
         const person = new Person(this.counter, lastname, firstname, height, gender)
         this.people.push(person)
         this.counter++;
+        PubSub.publish("log", `created ${person.info()}`)
         return person
     }
     

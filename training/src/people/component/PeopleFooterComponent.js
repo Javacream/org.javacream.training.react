@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ClockComponent from '../../util/ClockComponent';
+import LogComponent from '../../util/LogComponent';
 
 class PeopleFooterComponent extends Component {
     render(){
@@ -7,6 +8,8 @@ class PeopleFooterComponent extends Component {
             <>
                 <p className='footer'>Javacream Training</p>
                 <ClockComponent />
+                <hr />
+                <LogComponent numberOfMessages="3"/>
             </>
         );
     }
@@ -17,6 +20,8 @@ export function FunctionalPeopleFooterComponent () {
             <>
                 <p className='footer'>Javacream Training</p>
                 <ClockComponent />
+                <hr />
+                <LogComponent numberOfMessages="3"/>
             </>
         );    
     }
