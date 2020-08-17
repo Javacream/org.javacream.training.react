@@ -1,0 +1,16 @@
+#header {
+  text-align: center;
+  background-color: chartreuse;
+}
+
+#footer {
+  background-color: aquamarine;
+}
+
+.right {
+  text-align: right;
+}
+
+.center {
+  text-align: center;
+}

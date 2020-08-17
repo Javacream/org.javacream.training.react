@@ -1,9 +1,18 @@
 import React from 'react';
 import './App.css';
+import HeaderComponent from './people/components/HeaderComponent'
+import FooterComponent from './people/components/FooterComponent'
+import ContentComponent from './people/components/ContentComponent'
 
 function App() {
   return (
-    <p>Hello</p>
+    <>
+      <HeaderComponent />
+      <hr />
+      <ContentComponent />
+      <hr />
+      <FooterComponent />
+    </>
   );
 }
 
