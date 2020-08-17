@@ -33,8 +33,8 @@ const demo2Functional = ():string => {
 function hugo(p:number):boolean{
     return true;
 }
-function demoWithCallback(callbackFunction:()=>string){
-    let result = callbackFunction()
+function demoWithCallback(callbackFunction:(p:number)=>string){
+    let result = callbackFunction(42)
     console.log(result)
 }
 
