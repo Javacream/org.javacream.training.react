@@ -2,8 +2,9 @@ import React, { PureComponent } from 'react';
 import PeopleListComponent from './PeopleListComponent'
 import PersonInputFormComponent from './PersonInputComponent'
 import {peopleModel} from '../ApplicationContext'
+import { Person } from '../model/People';
 
-export default class ContentComponent extends PureComponent {
+export default class ContentComponent extends PureComponent<{}, {people:Array<Person>}> {
 
     state = {people: peopleModel.findAll()}
     render(){
@@ -15,9 +16,9 @@ export default class ContentComponent extends PureComponent {
         </div>
       )
     }
-    handlePersonCreation(data:any){
-        peopleModel.create(...peopleModel.)
-        this.state = {people: peopleModel.findAll()}
+    handlePersonCreation = (lastname:string, firstname:string, gender:string, height:number) =>{
+        peopleModel.create(lastname, firstname, gender, height)
+        this.setState({people: peopleModel.findAll()})
 
     }
 }

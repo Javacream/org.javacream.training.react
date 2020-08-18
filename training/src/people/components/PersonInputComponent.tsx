@@ -1,7 +1,20 @@
 import React from 'react'
 
+type stateType = {
+    fields: {
+      lastname: string,
+      firstname: string,
+      gender: string,
+      height: number
+    }
+  }
 
-export default class PersonInputFormComponent extends React.PureComponent{
+export default class PersonInputFormComponent extends React.PureComponent<{callback: (lastname:string,
+    firstname:string,
+    gender:string,
+    height:number
+  ) => void}, stateType>{
+  
     state = {
       fields: {
         lastname: '',
@@ -13,7 +26,7 @@ export default class PersonInputFormComponent extends React.PureComponent{
   
     handleFormSubmit = (event:any) => {
       event.preventDefault();
-      this.props.callback(this.state.fields)
+      this.props.callback(this.state.fields.lastname, this.state.fields.firstname, this.state.fields.gender, this.state.fields.height)
   
     }
     handleChange = (event:any) => {
