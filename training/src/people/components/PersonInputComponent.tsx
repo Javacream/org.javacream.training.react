@@ -13,6 +13,7 @@ export default class PersonInputFormComponent extends React.PureComponent{
   
     handleFormSubmit = (event:any) => {
       event.preventDefault();
+      this.props.callback(this.state.fields)
   
     }
     handleChange = (event:any) => {
