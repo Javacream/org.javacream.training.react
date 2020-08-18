@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { FormEvent, ChangeEvent } from 'react'
 
 type stateType = {
     fields: {
@@ -24,12 +24,12 @@ export default class PersonInputFormComponent extends React.PureComponent<{callb
       }
     }
   
-    handleFormSubmit = (event:any) => {
+    handleFormSubmit = (event:FormEvent<HTMLElement>) => {
       event.preventDefault();
       this.props.callback(this.state.fields.lastname, this.state.fields.firstname, this.state.fields.gender, this.state.fields.height)
   
     }
-    handleChange = (event:any) => {
+    handleChange = (event:ChangeEvent<HTMLInputElement>) => {
       let target = event.target
       let result:any = this.state.fields
       result[target.name] = target.value

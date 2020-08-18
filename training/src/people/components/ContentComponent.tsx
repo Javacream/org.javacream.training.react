@@ -1,25 +1,22 @@
-import React, { PureComponent } from 'react';
+import React, {useState} from 'react';
 import PeopleListComponent from './PeopleListComponent'
 import PersonInputFormComponent from './PersonInputComponent'
 import {peopleModel} from '../ApplicationContext'
-import { Person } from '../model/People';
 
-export default class ContentComponent extends PureComponent<{}, {people:Array<Person>}> {
+export default function ContentComponent() {
 
-    state = {people: peopleModel.findAll()}
-    render(){
+    const [data, updatePeople] = useState({people:peopleModel.findAll()})
+    const handlePersonCreation = (lastname:string, firstname:string, gender:string, height:number) =>{
+          peopleModel.create(lastname, firstname, gender, height)
+          updatePeople({people: peopleModel.findAll()})
+    }
     return  (
-        <div id="content">
-            <PeopleListComponent people={this.state.people}/>
-            <hr />
-            <PersonInputFormComponent callback={this.handlePersonCreation}/>
-        </div>
+      <div id="content">
+          <PeopleListComponent people={data.people}/>
+          <hr />
+          <PersonInputFormComponent callback={handlePersonCreation}/>
+      </div>
       )
     }
-    handlePersonCreation = (lastname:string, firstname:string, gender:string, height:number) =>{
-        peopleModel.create(lastname, firstname, gender, height)
-        this.setState({people: peopleModel.findAll()})
 
-    }
-}
 

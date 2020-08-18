@@ -15,14 +15,11 @@ export class ClockComponent extends React.PureComponent<{}, {actualDate:Date}>{
     }
 }
 
-let first = true
 export function HookClockComponent(){
-    const [clock, updateClock] = useState({time: new Date()})
-    if(first){
-        setInterval(() => {
-            updateClock({time: new Date()})
-        }, 1000)
-        first = false
-    }
-    return (<div>{clock.time.toUTCString()}</div>)
+    const [clock, updateClock] = useState(new Date())
+//        setTimeout(() => {
+//            let newTime = new Date()
+//            updateClock(newTime); console.log(clock.toUTCString());
+//        }, 1000)
+    return (<div>{clock.toLocaleString()}</div>)
 }
