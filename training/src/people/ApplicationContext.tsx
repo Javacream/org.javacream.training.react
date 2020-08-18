@@ -9,3 +9,5 @@ export let profile:Person = {id: 42, lastname: "Mustermann", firstname: "Hans", 
 peopleModel.create("Sawitzki", "Rainer", 'm', 183)
 peopleModel.create("Fabricius", "Carola", 'f', 176)
 peopleModel.create("Sawitzki", "Klaus", 'm', 181)
+
+setTimeout( () => {profile.lastname = "Meier"; console.log(profile.lastname)}, 5000)
