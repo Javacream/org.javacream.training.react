@@ -1,5 +1,5 @@
 let greeting = "Hello"
-function saySomething(text){
+function saySomething(text:string){
     console.log(text)
 }
 class Person{
