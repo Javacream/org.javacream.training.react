@@ -1,6 +1,7 @@
-import React from 'react';
+import React from 'react'
+import {config} from '../ApplicationContext'
 export default function HeaderComponent() {
-    const headerText = "P E O P L E"
+    const headerText = config.applicationName
     const htmlFragment = (
         <div id="header">
             <p>{headerText}</p>
