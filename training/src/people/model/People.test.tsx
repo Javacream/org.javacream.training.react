@@ -22,5 +22,11 @@ describe ('PeopleModel manages people', () => {
     peopleModel.deleteById(1)
     expect(peopleModel.findAll().length).toBe(2)
   })
+  it ('peopleModel has two males', () => {
+    expect(peopleModel.findByGender('m').length).toBe(2)
+  })
+  it ('peopleNames[0] is Rainer Sawitzki', () => {
+    expect(peopleModel.peopleNames()[0]).toBe("Rainer Sawitzki")
+  })
 
 });

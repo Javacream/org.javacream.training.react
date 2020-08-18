@@ -32,5 +32,12 @@ export class PeopleModel{
     }
     deleteById(id:number):void{
 		this.data.delete(id)
-	  }
+    }
+
+	findByGender(gender:string){
+		return Array.from(this.data.values()).filter(p => p.gender === gender);
 	}
+	peopleNames(){
+		return Array.from(this.data.values()).map(p => `${p.firstname} ${p.lastname}`);
+	}
+}
