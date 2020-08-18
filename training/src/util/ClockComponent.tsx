@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 
-export class ClockComponent extends React.PureComponent{
+
+export class ClockComponent extends React.PureComponent<{}, {actualDate:Date}>{
     state = {actualDate: new Date()}
     componentDidMount(){
         setInterval( () => {this.setState({actualDate: new Date()})}, 1000)
@@ -14,12 +15,14 @@ export class ClockComponent extends React.PureComponent{
     }
 }
 
+let first = true
 export function HookClockComponent(){
-    const [date, updateDate] = useState({actualDate: new Date()})
-    //setInterval( () => {updateDate({actualDate: new Date()})}, 1000)
-    return (
-        <div>
-            <p>{date.actualDate.toLocaleString()}</p>
-        </div>
-    )
+    const [clock, updateClock] = useState({time: new Date()})
+    if(first){
+        setInterval(() => {
+            updateClock({time: new Date()})
+        }, 1000)
+        first = false
+    }
+    return (<div>{clock.time.toUTCString()}</div>)
 }
