@@ -6,9 +6,9 @@ export default function HeaderComponent() {
     const htmlFragment = (
         <div id="header">
             <p>{headerText}</p>
-            <PersonComponent person={profile} cssStyle="right" detail={true}/>
+            <PersonComponent person={profile} cssStyle="right" detail={false}/>
         </div>
       )
-    return htmlFragment 
+    return htmlFragment
 }
 

@@ -1,9 +1,9 @@
 import React from 'react';
-
+import PeopleListComponent from './PeopleListComponent'
 export default function ContentComponent() {
     return  (
         <div id="content">
-            <p>Empty Content</p>
+            <PeopleListComponent />
         </div>
       )
 

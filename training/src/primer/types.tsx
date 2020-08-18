@@ -1,4 +1,4 @@
-let message:string = 'Hello'
+export let message:string = 'Hello'
 let digit:number = 42
 //message = digit
 
