@@ -1,6 +1,6 @@
 # org.javacream.training.react
 React Trainining
-## Durchführung des digitalen Seminars vom 17.-19.8.2020
+## Durchführung des Seminars vom 17.-19.8.2020
 
 * Referent: Rainer Sawitzki, eMail: training@rainer-sawitzki.de
 
