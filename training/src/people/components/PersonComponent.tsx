@@ -10,7 +10,7 @@ export default function PersonComponent(props:PersonComponentPropType){
     const person = props.person
     if (props.detail){
     return(
-        <p>{`Person: id=${person.id}, lastname=${person.lastname}, firstname=${person.firstname}, gender=${person.id}, id=${person.gender}, height=${person.height}`}</p>
+        <p>{`Person: id=${person.id}, lastname=${person.lastname}, firstname=${person.firstname}, gender=${person.gender}, height=${person.height}`}</p>
         )
     }
     else{
