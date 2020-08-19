@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import PeopleListComponent from './PeopleListComponent'
 import NavigationComponent from './NavigationComponent'
 import PersonInputFormComponent from './PersonInputComponent'
+import PersonSearchComponent from './PersonSearchComponent'
 import {peopleModel} from '../ApplicationContext'
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
@@ -21,6 +22,7 @@ export default function ContentComponent() {
             <Switch>
             <Route path='/people' render={(props) => <PeopleListComponent {...props} people={data.people} />} />    
             <Route path='/peopleInput' render={(props) => <PersonInputFormComponent {...props} callback={handlePersonCreation} />}/>    
+            <Route path='/peopleSearch' render={(props) => <PersonSearchComponent {...props} />}/>    
             </Switch>
           </div>
         </BrowserRouter>

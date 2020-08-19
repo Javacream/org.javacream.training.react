@@ -8,6 +8,7 @@ const NavigationComponent = () => {
         <p><Link to="/">Home</Link></p>
         <p><Link to="/people">People</Link></p>
         <p><Link to="/peopleInput">People Input</Link></p>
+        <p><Link to="/peopleSearch">People Search</Link></p>
       </div>
     )
 }
