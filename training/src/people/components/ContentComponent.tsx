@@ -1,7 +1,9 @@
 import React, {useState} from 'react';
 import PeopleListComponent from './PeopleListComponent'
+import NavigationComponent from './NavigationComponent'
 import PersonInputFormComponent from './PersonInputComponent'
 import {peopleModel} from '../ApplicationContext'
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 export default function ContentComponent() {
 
@@ -12,11 +14,21 @@ export default function ContentComponent() {
     }
     return  (
       <div id="content">
-          <PeopleListComponent people={data.people}/>
-          <hr />
-          <PersonInputFormComponent callback={handlePersonCreation}/>
-      </div>
+    <BrowserRouter>
+          <div>
+            <NavigationComponent />
+            <hr />
+            <Switch>
+            <Route path='/people' render={(props) => <PeopleListComponent {...props} people={data.people} />} />    
+            <Route path='/peopleInput' render={(props) => <PersonInputFormComponent {...props} callback={handlePersonCreation} />}/>    
+            </Switch>
+          </div>
+        </BrowserRouter>
+
+  </div>
       )
     }
 
 
+
+    

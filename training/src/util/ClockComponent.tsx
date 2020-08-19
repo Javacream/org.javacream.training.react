@@ -1,5 +1,4 @@
-import React, {useState} from 'react'
-
+import React from 'react'
 
 export class ClockComponent extends React.PureComponent<{}, {actualDate:Date}>{
     state = {actualDate: new Date()}
@@ -15,11 +14,3 @@ export class ClockComponent extends React.PureComponent<{}, {actualDate:Date}>{
     }
 }
 
-export function HookClockComponent(){
-    const [clock, updateClock] = useState(new Date())
-//        setTimeout(() => {
-//            let newTime = new Date()
-//            updateClock(newTime); console.log(clock.toUTCString());
-//        }, 1000)
-    return (<div>{clock.toLocaleString()}</div>)
-}
