@@ -1,4 +1,6 @@
-import React, { FormEvent, ChangeEvent } from 'react'
+import React, { ChangeEvent } from 'react'
+import Button from 'react-bootstrap/Button'
+
 import {peopleModel} from '../ApplicationContext'
 import { Person } from '../model/People'
 import PersonComponent from './PersonComponent'
@@ -18,7 +20,7 @@ export default class PersonSearchFormComponent extends React.PureComponent<{}, s
       }
     }
   
-    handleFormSubmit = (event:FormEvent<HTMLElement>) => {
+    handleFormSubmit = (event:any) => {
       event.preventDefault();
       const searchResult = peopleModel.findById(Number(this.state.fields.id))
       this.setState({result: searchResult})
@@ -37,10 +39,8 @@ export default class PersonSearchFormComponent extends React.PureComponent<{}, s
       }
       return (
         <>
-        <form onSubmit={this.handleFormSubmit}>
-          <input placeholder="Id" name="id" value={this.state.fields.id} onChange={this.handleChange}></input>
-          <input type="submit" value="Search Person"/>
-        </form>
+        <input placeholder="Id" name="id" value={this.state.fields.id} onChange={this.handleChange}></input>
+        <Button variant="outline-primary" onClick={this.handleFormSubmit}>Search Person</Button>
         {searchResultHtml}
         </>
       )
