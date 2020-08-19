@@ -14,7 +14,7 @@ export default class ContentComponent extends React.PureComponent{
     this.setState({people: await peopleController.loadPeople()})
   }
   handlePersonCreation = async (lastname:string, firstname:string, gender:string, height:number) =>{
-          peopleController.savePerson(lastname, firstname, gender, height)
+          await peopleController.savePerson(lastname, firstname, gender, height)
           this.setState({people: await peopleController.loadPeople()})
     }
 

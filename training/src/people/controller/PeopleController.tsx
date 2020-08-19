@@ -1,7 +1,6 @@
 import { Person } from "../model/People"
 
 export default class PeopleController{
-    counter = 0
     async loadPeople():Promise<Array<Person>>{
         try{
             let response = await fetch("http://localhost:8080/people")
@@ -10,7 +9,7 @@ export default class PeopleController{
         }
         catch(error){
             console.log(error)
-            return new Array()
+            return []
         }
     }
     async loadPersonById(id:number):Promise<Person|undefined>{
@@ -24,11 +23,11 @@ export default class PeopleController{
         }
     }
     async savePerson(lastname:string, firstname:string, gender:string, height:number):Promise<void>{
-            this.counter++
-            const id = this.counter
-            const person:Person = ({id, lastname, firstname, gender, height}) //{short for id: id, lastname: lastname}
+            const person = ({lastname, firstname, gender, height}) //{short for id: id, lastname: lastname}
         try{
-            await fetch(`http://localhost:8080/people/`, {method: 'POST', body: JSON.stringify(person)})
+            await fetch(`http://localhost:8080/people`, {method: 'POST', headers: {
+                'Content-Type': 'application/json'
+              }, body: JSON.stringify(person)})
         }
         catch(error){
             console.log(error)
