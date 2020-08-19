@@ -1,7 +1,7 @@
 import React, { ChangeEvent } from 'react'
 import Button from 'react-bootstrap/Button'
 
-import {peopleModel} from '../ApplicationContext'
+import {peopleController} from '../ApplicationContext'
 import { Person } from '../model/People'
 import PersonComponent from './PersonComponent'
 type stateType = {
@@ -20,9 +20,9 @@ export default class PersonSearchFormComponent extends React.PureComponent<{}, s
       }
     }
   
-    handleFormSubmit = (event:any) => {
+    handleFormSubmit = async (event:any) => {
       event.preventDefault();
-      const searchResult = peopleModel.findById(Number(this.state.fields.id))
+      const searchResult = await peopleController.loadPersonById(Number(this.state.fields.id))
       this.setState({result: searchResult})
 
     }

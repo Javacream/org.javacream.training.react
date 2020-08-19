@@ -12,4 +12,15 @@ export default class PeopleController{
             return new Array()
         }
     }
+    async loadPersonById(id:number):Promise<Person|undefined>{
+        try{
+            let response = await fetch(`http://localhost:8080/people/${id}`)
+            let person:Person = await response.json()
+            return person
+        }
+        catch(error){
+            console.log(error)
+        }
+    }
+
 }
