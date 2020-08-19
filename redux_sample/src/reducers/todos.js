@@ -15,7 +15,9 @@ const todos = (state = [], action) => {
           ? {...todo, completed: !todo.completed}
           : todo
       )
-    default:
+      case 'CLEAR_TODOS':
+        return []
+      default:
       return state
   }
 }
