@@ -1,18 +1,20 @@
-import React, {useState} from 'react';
+import React from 'react';
 import PeopleListComponent from './PeopleListComponent'
 import NavigationComponent from './NavigationComponent'
 import PersonInputFormComponent from './PersonInputComponent'
 import PersonSearchComponent from './PersonSearchComponent'
-import {peopleModel} from '../ApplicationContext'
+import {peopleController, peopleModel} from '../ApplicationContext'
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { render } from '@testing-library/react';
 
-export default function ContentComponent() {
+export default class ContentComponent extends React.PureComponent {
 
-    const [data, updatePeople] = useState({people:peopleModel.findAll()})
-    const handlePersonCreation = (lastname:string, firstname:string, gender:string, height:number) =>{
+    state = {people: await peopleController.loadPeople()}
+    const handlePersonCreation = async (lastname:string, firstname:string, gender:string, height:number) =>{
           peopleModel.create(lastname, firstname, gender, height)
-          updatePeople({people: peopleModel.findAll()})
+          updatePeople({people: await peopleController.loadPeople()})
     }
+    render(){
     return  (
       <div id="content">
     <BrowserRouter>
@@ -30,7 +32,7 @@ export default function ContentComponent() {
   </div>
       )
     }
-
+  }
 
 
     
