@@ -1,5 +1,6 @@
 import React, { ChangeEvent } from 'react'
 import Button from 'react-bootstrap/Button'
+import {publish} from 'pubsub-js'
 
 import {peopleController} from '../ApplicationContext'
 import { Person } from '../model/People'
@@ -24,6 +25,8 @@ export default class PersonSearchFormComponent extends React.PureComponent<{}, s
       event.preventDefault();
       const searchResult = await peopleController.loadPersonById(Number(this.state.fields.id))
       this.setState({result: searchResult})
+      publish("log", "searched person " + this.state.fields.id)
+
 
     }
     handleChange = (event:ChangeEvent<HTMLInputElement>) => {

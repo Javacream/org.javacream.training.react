@@ -1,5 +1,5 @@
 import { Person } from "../model/People"
-
+import {publish} from 'pubsub-js'
 export default class PeopleController{
     async loadPeople():Promise<Array<Person>>{
         try{
@@ -25,10 +25,13 @@ export default class PeopleController{
     async savePerson(lastname:string, firstname:string, gender:string, height:number):Promise<void>{
             const person = ({lastname, firstname, gender, height}) //{short for id: id, lastname: lastname}
         try{
+            const personString = JSON.stringify(person)
             await fetch(`http://localhost:8080/people`, {method: 'POST', headers: {
                 'Content-Type': 'application/json'
-              }, body: JSON.stringify(person)})
-        }
+              }, body: JSON.stringify(personString)})
+
+              publish("log", "created person " + personString)
+            }
         catch(error){
             console.log(error)
         }
