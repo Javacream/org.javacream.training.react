@@ -18,4 +18,8 @@ React Trainining
   * Zeitplan 
     * Mo.:       9:00 - 16:00
     * Di. - Mi.: 8:45 - 16:00
+    
+* Start Server
+  * Download org.javacream.training.rest.people.server-1.0.jar
+  * Use Java 8 to start with java -jar <PATH_TO>/org.javacream.training.rest.people.server-1.0.jar
 
