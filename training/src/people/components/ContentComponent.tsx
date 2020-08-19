@@ -3,7 +3,7 @@ import PeopleListComponent from './PeopleListComponent'
 import NavigationComponent from './NavigationComponent'
 import PersonInputFormComponent from './PersonInputComponent'
 import PersonSearchComponent from './PersonSearchComponent'
-import {peopleController, peopleModel} from '../ApplicationContext'
+import {peopleController} from '../ApplicationContext'
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { Person } from '../model/People';
 
@@ -14,7 +14,7 @@ export default class ContentComponent extends React.PureComponent{
     this.setState({people: await peopleController.loadPeople()})
   }
   handlePersonCreation = async (lastname:string, firstname:string, gender:string, height:number) =>{
-          peopleModel.create(lastname, firstname, gender, height)
+          peopleController.savePerson(lastname, firstname, gender, height)
           this.setState({people: await peopleController.loadPeople()})
     }
 
