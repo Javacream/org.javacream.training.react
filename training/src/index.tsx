@@ -3,10 +3,11 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-
+let Hugo = App
+const addHtml = <Hugo />
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    {addHtml}  
   </React.StrictMode>,
   document.getElementById('root')
 );

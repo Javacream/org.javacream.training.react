@@ -1,0 +1,17 @@
+#header {
+  text-align: center;
+  background-color: chartreuse;
+}
+  
+#footer {
+  background-color: aquamarine;
+  text-align: center;
+}
+  
+.right {
+  text-align: right;
+}
+  
+.center {
+  text-align: center;
+}
