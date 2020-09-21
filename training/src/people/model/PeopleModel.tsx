@@ -5,17 +5,6 @@ export interface Person{
 	gender:string
 	height:number
 }
-
-/*
-Klassen sind für Datenstrukturen eher unüblich
-class PersonClass implements Person{
-    constructor(readonly id:number, public lastname:string, readonly firstname:string, readonly gender:string, public height:number){}
-}
-
-let anotherPerson = new PersonClass(43, "Sawitzki", "Klaus", 'm', 184)
-
- */
-
  export class PeopleModel{
     counter = 0
     peopleMap:Map<number, Person> = new Map()
@@ -27,7 +16,7 @@ let anotherPerson = new PersonClass(43, "Sawitzki", "Klaus", 'm', 184)
 	findPersonById(id:number){
         return this.peopleMap.get(id)
     }
-    update(id, height){
+    update(id:number, height:number){
         let person = this.peopleMap.get(id)
         if (person){
             person.height = height
