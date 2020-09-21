@@ -1,3 +1,5 @@
+import { peopleModel } from "../components/PeopleApplicationContext"
+
 export interface Person{
 	id:number
 	lastname:string
@@ -25,6 +27,10 @@ export interface Person{
     
 	deleteById(id:number){
         this.peopleMap.delete(id)
+    }
+
+    findAll(){
+        return Array.from(this.peopleMap.values())
     }
 
  }

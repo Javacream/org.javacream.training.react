@@ -8,3 +8,6 @@ export const config = {
 
 const profileId = peopleModel.create("Mustermann", "Hans", "m")
 export const profile = peopleModel.findPersonById(profileId)
+peopleModel.create("Sawitzki", "Rainer", "m", 183)
+peopleModel.create("Polt", "Gerhard", "m", 191)
+peopleModel.create("Müller", "Hanna", "f", 176)
