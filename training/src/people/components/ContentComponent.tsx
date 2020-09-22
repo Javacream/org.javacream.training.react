@@ -16,7 +16,7 @@ export class ContentComponent extends React.PureComponent {
     render(){
       return  (
         <>
-          <PeopleListComponent people={peopleModel.findAll()}/>
+          <PeopleListComponent people={this.state.people}/>
           <hr />
           <PersonInputComponent callback={this.handlePersonCreation}/>
 
