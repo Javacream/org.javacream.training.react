@@ -9,7 +9,7 @@ type stateType = {
     }
   }
 
-export default class PersonInputFormComponent extends React.PureComponent<{callback: (lastname:string,
+export default class PersonInputComponent extends React.PureComponent<{callback: (lastname:string,
     firstname:string,
     gender:string,
     height:number
