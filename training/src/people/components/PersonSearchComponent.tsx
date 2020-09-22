@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import PersonComponent from './PersonComponent'
-import {peopleModel} from './PeopleApplicationContext'
+import {peopleController} from './PeopleApplicationContext'
 export default function PersonSearchComponent() {
   const [id, setId] = useState(0);
   const [person, updatePerson] = useState()
-  const handleSubmit = (evt:any) => {
+  const handleSubmit = async (evt:any) => {
       evt.preventDefault();
-      let person = peopleModel.findPersonById(id)
+      let person = await peopleController.loadPersonById(id)
       updatePerson(person)
   }
   return (
