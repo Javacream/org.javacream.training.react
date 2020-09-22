@@ -4,6 +4,7 @@ import {peopleModel} from './PeopleApplicationContext'
 import PersonInputComponent from './PersonInputComponent'
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import NavigationComponent from './NavigationComponent'
+import PersonSearchComponent from './PersonSearchComponent'
 export function ContentComponent() {
     let [people, updatePeople] = useState(peopleModel.findAll())
     const handlePersonCreation = (lastname:string, firstname:string, gender:string, height:number) =>{
@@ -18,8 +19,9 @@ export function ContentComponent() {
             <NavigationComponent />
             <hr />
             <Switch>
-            <Route path='/people' render={(props) => <PeopleListComponent {...props} people={people} />} />    
-            <Route path='/peopleInput' render={(props) => <PersonInputComponent {...props} callback={handlePersonCreation} />}/>    
+              <Route path='/people' render={(props) => <PeopleListComponent {...props} people={people} />} />    
+              <Route path='/peopleInput' render={(props) => <PersonInputComponent {...props} callback={handlePersonCreation} />}/>    
+              <Route path='/peopleSearch' component={PersonSearchComponent}/>    
             </Switch>
           </div>
         </BrowserRouter>

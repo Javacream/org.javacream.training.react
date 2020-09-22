@@ -1,6 +1,5 @@
 import React from 'react';
 import {subscribe, unsubscribe} from 'pubsub-js'
-import { runInThisContext } from 'vm';
 
 export default class LogComponent extends React.PureComponent{
     state = {message: "nothing"}
