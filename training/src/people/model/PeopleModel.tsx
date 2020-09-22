@@ -1,5 +1,4 @@
-import { peopleModel } from "../components/PeopleApplicationContext"
-
+import {publish} from 'pubsub-js'
 export interface Person{
 	id:number
 	lastname:string
@@ -13,6 +12,7 @@ export interface Person{
     create(lastname:string, firstname:string, gender="x", height=100):number {
         const id = this.counter++
         this.peopleMap.set(id, {id, lastname, firstname, gender, height})
+        publish("log", `create person with ${id}` )
         return id
     }
 	findPersonById(id:number){

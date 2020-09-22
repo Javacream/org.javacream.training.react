@@ -28,7 +28,7 @@ let callback:(p:string) => number  = (p:string) =>{
 
 let callback2:(p:string) => string  = (p:string) =>{
     return p
-
+}
 
 //somethingWithCallback("Hugo", "Egal")
 somethingWithCallback("Hugo", callback)
