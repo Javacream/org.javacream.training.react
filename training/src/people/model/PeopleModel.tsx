@@ -1,4 +1,3 @@
-import {publish} from 'pubsub-js'
 export interface Person{
 	id:number
 	lastname:string

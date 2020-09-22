@@ -7,7 +7,7 @@ export default class PeopleController{
             let people:Array<Person> = await response.json()
             return people
         }
-        catch(error){
+    catch(error){
             console.log(error)
             return []
         }
