@@ -12,7 +12,7 @@ React Trainining
   * https://docs.google.com/presentation/d/1zcZEvrMTRrY-wuIEhGXVfBufu5nIQfa8xRKbbs1ZmeI/edit?usp=sharing
 
 * Seminarzeiten
-  * 8 Unterrichtseinheiten mit jeweils 90 Minuten
+  * 12 Unterrichtseinheiten mit jeweils 90 Minuten
   * Mittagspause 45’ (12:15-13:00)
   * Kaffeepause 10:30-10:45 und 14:30 - 14:45
   * Zeitplan 
