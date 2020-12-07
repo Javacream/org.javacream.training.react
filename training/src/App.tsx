@@ -1,12 +1,12 @@
 import React from 'react';
 import './App.css';
-
+import Header from './people/components/Header'
 function App() {
   return (
-    <div>
-      <p>Hello World</p>
-    </div>
-  );
+    <>
+      <Header></Header>
+      <p>Hello</p><p>World</p>
+    </>)
 }
 
 export default App;
