@@ -4,7 +4,7 @@ import {peopleModel} from '../model/peopleData'
 import PersonComponent from './Person'
 export default function PeopleList(){
     const allPeople:Array<Person> = peopleModel.findAll()
-    const allPeopleHtml:Array<JSX.Element> = allPeople.map((person) => <li><PersonComponent person={person}></PersonComponent></li>)
+    const allPeopleHtml:Array<JSX.Element> = allPeople.map((person) => <li key={person.id}><PersonComponent person={person}></PersonComponent></li>)
     return (
         <>
         <h3>PEOPLE LIST</h3>
