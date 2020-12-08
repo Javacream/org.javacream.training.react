@@ -7,3 +7,8 @@ export const peopleModel = new PeopleModel
 peopleModel.create("Sawitzki", "Rainer")
 peopleModel.create("Sawitzki", "Klaus")
 peopleModel.create("Meier", "Hanna")
+
+setTimeout(() => {
+    profile.lastname = "Meuer"
+    console.log("+***** + " + profile.lastname)
+}, 5000)
