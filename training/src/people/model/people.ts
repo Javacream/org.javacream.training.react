@@ -20,6 +20,7 @@ export class PeopleModel{
         const id = this.counter
         const newPerson:Person = {id, lastname, firstname, gender, height}
         this.people.set(id, newPerson)
+        return id
 
     }
 
