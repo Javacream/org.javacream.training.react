@@ -7,7 +7,7 @@ export default function Header() {
     return (
         <div className="header">
             <p>{config.appTitle}</p>
-            <PersonComponent person={profile}></PersonComponent>
+            <PersonComponent person={profile} cssStyle="right"></PersonComponent>
         </div>
         )
 }
