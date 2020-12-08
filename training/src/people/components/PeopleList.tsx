@@ -1,9 +1,11 @@
 import React from 'react'
 import { Person } from '../model/people'
-import {peopleModel} from '../model/peopleData'
 import PersonComponent from './Person'
-export default function PeopleList(){
-    const allPeople:Array<Person> = peopleModel.findAll()
+type PeopleListProps = {
+    people:Array<Person>
+}
+export default function PeopleList(props:PeopleListProps){
+    const allPeople:Array<Person> = props.people
     const allPeopleHtml:Array<JSX.Element> = allPeople.map((person) => <li key={person.id}><PersonComponent person={person}></PersonComponent></li>)
     return (
         <>
