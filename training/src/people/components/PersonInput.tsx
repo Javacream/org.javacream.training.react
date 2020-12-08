@@ -1,7 +1,12 @@
 import React from 'react'
 
-
-export default class PersonInputFormComponent extends React.PureComponent{
+type stateType = {
+  fields: {
+    lastname:string, 
+    firstname:string
+  }
+}
+export default class PersonInputFormComponent extends React.PureComponent<{update: (lastname:string, firstname:string) => void}, stateType>{
     state = {
       fields: {
         lastname: '',
