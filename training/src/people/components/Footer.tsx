@@ -1,5 +1,13 @@
 import React from 'react'
 import './Footer.css'
+import config from '../../Configuration'
 export default function Footer() {
-    return <div className="footer"><p>Javacream</p></div>
+
+const actualTime = new Date()
+return (<
+    div className="footer">
+    <p>{config.company}</p>
+    <p>{actualTime.toLocaleString()}</p>
+    </div>
+    )
 }
