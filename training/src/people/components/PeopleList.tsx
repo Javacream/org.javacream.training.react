@@ -6,7 +6,7 @@ type PeopleListProps = {
 }
 export default function PeopleList(props:PeopleListProps){
     const allPeople:Array<Person> = props.people
-    const allPeopleHtml:Array<JSX.Element> = allPeople.map((person) => <li key={person.id}><PersonComponent person={person}></PersonComponent></li>)
+    const allPeopleHtml:Array<JSX.Element> = allPeople.map((person) => <li key={person.id}><PersonComponent person={person} detail={true}></PersonComponent></li>)
     return (
         <>
         <h3>PEOPLE LIST</h3>
