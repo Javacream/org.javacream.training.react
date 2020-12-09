@@ -2,30 +2,7 @@ import React, { useState } from 'react'
 import PeopleList from './PeopleList'
 import PersonInput from './PersonInput'
 import {peopleModel} from '../model/peopleData'
-
-class ContentClass extends React.PureComponent {
-    state = {
-        people: peopleModel.findAll()
-
-    }
-    render(){
-    return (
-        <div>
-            <PeopleList people={this.state.people}></PeopleList>
-            <PersonInput update={this.handlePersonCreation}></PersonInput>
-        </div>
-    )
-    }
-
-    handlePersonCreation = (lastname:string, firstname:string) => {
-        peopleModel.create(lastname, firstname)
-        this.setState({
-            people: peopleModel.findAll()
-    
-        })
-    }
-}
-
+import { BrowserRouter, Link, Route, Switch } from 'react-router-dom'
 
 export default function Content() {
     const initialState = {people: peopleModel.findAll()}
@@ -39,8 +16,15 @@ export default function Content() {
     }
     return (
         <div>
-            <PeopleList people={peopleState.people}></PeopleList>
-            <PersonInput update={handlePersonCreation}></PersonInput>
+            <BrowserRouter>
+            <Link to='/peopleList'>List</Link>
+            <Link to='/personInput'>Input</Link>
+            <Link to='/'>Home</Link>
+            <Switch>
+                <Route path='/peopleList' render={(props) => <PeopleList {...props} people={peopleState.people}></PeopleList>}></Route>
+                <Route path='/personInput' render={(props) => <PersonInput {...props} update={handlePersonCreation}></PersonInput>}></Route>
+            </Switch>
+            </BrowserRouter>
         </div>
     )
 
