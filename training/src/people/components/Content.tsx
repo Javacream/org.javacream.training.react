@@ -2,23 +2,24 @@ import React, { useEffect, useState } from 'react'
 import PeopleList from './PeopleList'
 import PersonInput from './PersonInput'
 import PersonSearch from './PersonSearch'
+import peopleController from '../controller/PeopleController'
 import {peopleModel} from '../model/peopleData'
 import { BrowserRouter, Link, Route, Switch } from 'react-router-dom'
 import { subscribe, unsubscribe } from 'pubsub-js'
 
-export default function Content() {
-    const initialState = {people: peopleModel.findAll()}
+export default async function Content() {
+    const initialState = {people: await peopleController.findAll()}
     const [peopleState, updateState] = useState(initialState)
-    const handlePersonCreation = (lastname:string, firstname:string) => {
+    const handlePersonCreation = async (lastname:string, firstname:string) => {
         peopleModel.create(lastname, firstname)
         updateState({
-            people: peopleModel.findAll()
+            people: await peopleController.findAll()
     
         })
     }
-    const handlePersonDeleteNotification = (message:string, data:any) => {
+    const handlePersonDeleteNotification = async (message:string, data:any) => {
         updateState({
-            people: peopleModel.findAll()
+            people: await peopleController.findAll()
     
         })
 
