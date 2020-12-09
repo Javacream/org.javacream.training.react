@@ -1,6 +1,6 @@
 import React, { ChangeEvent } from 'react'
 import { Person } from '../model/people'
-
+import Button from 'react-bootstrap/Button'
 import { peopleModel } from '../model/peopleData'
 import PersonComponent from './Person'
 type stateType = {
@@ -40,7 +40,7 @@ export default class PersonSearchFormComponent extends React.PureComponent<{}, s
       return (
         <>
         <input placeholder="Id" name="id" value={this.state.fields.id} onChange={this.handleChange}></input>
-        <button  onClick={this.handleFormSubmit}>Search Person</button>
+        <Button variant="primary" onClick={this.handleFormSubmit}>Search Person</Button>
         {searchResultHtml}
         </>
       )
