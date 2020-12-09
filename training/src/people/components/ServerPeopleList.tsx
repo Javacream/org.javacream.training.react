@@ -10,7 +10,7 @@ export default class ServerPeopleList extends React.PureComponent{
     }
     allPeople:Array<Person> = []
     render(){
-        const allPeopleHtml:Array<JSX.Element> = this.state.people.map((person) => <li key={person.id}><PersonComponent person={person} detail={true}></PersonComponent></li>)
+        const allPeopleHtml:Array<JSX.Element> = this.state.people.map((person) => <li key={person.id}><PersonComponent person={person} detail={false}></PersonComponent></li>)
         return (
         <>
         <h3>PEOPLE LIST</h3>

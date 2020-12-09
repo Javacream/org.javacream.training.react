@@ -7,6 +7,14 @@ class PeopleController{
         return people
 
     }
+
+    async findById(id:number){
+        let response:Response = await fetch(config.endpoint + "/" + id)
+        let person:Person = await response.json()
+        return person
+
+    }
+
 }
 
 let peopleController = new PeopleController()
