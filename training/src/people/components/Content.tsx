@@ -1,9 +1,10 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import PeopleList from './PeopleList'
 import PersonInput from './PersonInput'
 import PersonSearch from './PersonSearch'
 import {peopleModel} from '../model/peopleData'
 import { BrowserRouter, Link, Route, Switch } from 'react-router-dom'
+import { subscribe, unsubscribe } from 'pubsub-js'
 
 export default function Content() {
     const initialState = {people: peopleModel.findAll()}
@@ -15,6 +16,22 @@ export default function Content() {
     
         })
     }
+    const handlePersonDeleteNotification = (message:string, data:any) => {
+        updateState({
+            people: peopleModel.findAll()
+    
+        })
+
+    }
+    useEffect( () =>  {
+        console.log("did mount")
+        const subscription = subscribe("people.delete", handlePersonDeleteNotification)
+        return () => {        
+                console.log("will unmount")
+                unsubscribe(subscription)
+            }
+        }
+        , [])
     return (
         <div>
             <BrowserRouter>

@@ -10,7 +10,7 @@ type PersonComponentProp = {
 export default function PersonComponent(props:PersonComponentProp) {
     const handleDelete = (id:number) => {
         console.log(`deleting person ${id}`)
-        peopleModel.deleteById(id) //wird so nicht funktionieren, die PeopleList wird nicht aktualisiert!
+        peopleModel.deleteById(id) 
     }
     let personString:string
     const person = props.person
