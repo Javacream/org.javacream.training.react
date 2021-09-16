@@ -1,6 +1,8 @@
+import { company } from "../PeopleApplicationContext";
+
 function Footer() {
     return (
-      <p>Footer</p>    
+      <p>{company}</p>    
     );
   }
   

@@ -27,10 +27,10 @@ export class PeopleModel{
         return this.people
     }
     
-    peopleByGender(gender){
+    findByByGender(gender){
         return this.people.filter((p) => p.gender === gender)
     }
-    peopleLastname(lastname){
+    findByLastname(lastname){
         return this.people.filter((p) => p.lastname === lastname)
     }
     
