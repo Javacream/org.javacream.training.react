@@ -1,8 +1,8 @@
-import PeopleListComponent from "./PeopleListComponent";
+import PersonInputFormComponent from "./PersonInputFormComponent";
 
 function Content() {
     return (
-      <PeopleListComponent />    
+      <PersonInputFormComponent />    
     );
   }
   
