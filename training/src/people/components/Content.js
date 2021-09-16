@@ -1,6 +1,8 @@
+import PeopleListComponent from "./PeopleListComponent";
+
 function Content() {
     return (
-      <p>nothing yet</p>    
+      <PeopleListComponent />    
     );
   }
   
