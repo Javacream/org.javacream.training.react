@@ -10,5 +10,5 @@ peopleModel.people = peopleData
 
 let applicationTitle= "P E O P L E"
 let company= "Javacream"
-
-export {peopleModel, applicationTitle, company}
+let user={id: "9999", lastname: "Mustermann", firstname:"Max", gender:"m", height:155}
+export {peopleModel, applicationTitle, company, user}
