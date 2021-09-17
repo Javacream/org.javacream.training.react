@@ -1,4 +1,4 @@
-import {Component} from 'react'
+import {Component, useEffect} from 'react'
 import {actions} from '../people/PeopleApplicationContext'
 export default class LogComponent extends Component{
     state = {message: "Nothing"}
@@ -21,4 +21,13 @@ export default class LogComponent extends Component{
         )
     
     }  
+}
+
+function FunctionalLogComponentScratch(){
+    useEffect(() => {
+        this.actionsSubscription = actions.subscribe(this.update)
+        return () => {
+            this.actionsSubscription.unsubscribe()
+        }
+    }) 
 }
