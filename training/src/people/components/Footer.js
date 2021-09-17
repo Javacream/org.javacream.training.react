@@ -1,8 +1,14 @@
 import { company } from "../PeopleApplicationContext";
+import ClockComponent from "./ClockComponent";
+import FunctionalClockComponent from "./FunctionalClockComponent";
 
 function Footer() {
     return (
-      <p>{company}</p>    
+      <>
+      <p>{company}</p>   
+      <ClockComponent /> 
+      <FunctionalClockComponent />
+      </>
     );
   }
   
