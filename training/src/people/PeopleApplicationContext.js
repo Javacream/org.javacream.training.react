@@ -1,5 +1,5 @@
 import { PeopleModel } from "./model/People";
-
+import {BehaviorSubject} from 'rxjs'
 let peopleModel = new PeopleModel()
 let peopleData = [
     {id: "1000", lastname: "Sawitzki", firstname:"Rainer"},
@@ -11,5 +11,7 @@ peopleModel.people = peopleData
 let applicationTitle= "P E O P L E"
 let company= "Javacream"
 let user={id: "9999", lastname: "Mustermann", firstname:"Max", gender:"m", height:155}
-export {peopleModel, applicationTitle, company, user}
+let actions = new BehaviorSubject()
+export {peopleModel, applicationTitle, company, user, actions}
 setTimeout(() => {user.lastname="Meier"; console.log(user.lastname)}, 2000)
+

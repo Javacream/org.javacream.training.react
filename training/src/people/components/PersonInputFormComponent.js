@@ -1,6 +1,6 @@
 import { Component } from 'react';
-import {peopleModel} from '../PeopleApplicationContext'
-import PersonListComponent from './PeopleListComponent'
+import {peopleModel, actions} from '../PeopleApplicationContext'
+import PubSub from 'pubsub-js'
 class PersonInputFormComponent extends Component{
   state = {
     fields: {
@@ -8,16 +8,14 @@ class PersonInputFormComponent extends Component{
       firstname: '',
       gender: '',
       height: 0
-    },
-    people: peopleModel.allPeople()
+    }
   }
 
   handleFormSubmit = (event) => {
     event.preventDefault();
-    peopleModel.create(this.state.fields.lastname, this.state.fields.firstname, this.state.fields.height, this.state.fields.gender)
-    this.setState({people: peopleModel.allPeople()})
-
-
+    let person = peopleModel.create(this.state.fields.lastname, this.state.fields.firstname, this.state.fields.height, this.state.fields.gender)
+    PubSub.publish("person.create", person.id)
+    actions.next("created a person")
   }
   handleChange = (event) => {
     let target = event.target
@@ -37,7 +35,6 @@ class PersonInputFormComponent extends Component{
       <input type="submit" value="Create Person"/>
       </form>
       <hr />
-      <PersonListComponent people={this.state.people} />
       </>
     )
   }
