@@ -8,10 +8,10 @@ React Trainining
   * https://github.com/Javacream/org.javacream.training.react
 
 * Digitales Flipchart
-  * https://docs.google.com/presentation/d/1c79QgBtrTl1zq85pefXx6qvCKxe_3r4muXD82-5yd4E/edit?usp=sharing
+  * https://docs.google.com/presentation/d/1_GqmFnhzxAZeWxevtquPP3dFHcaISt_w6HDsWMo8QVk/edit?usp=sharing
   
 * Seminarzeiten
-  * 8 Unterrichtseinheiten mit jeweils 90 Minuten
+  * 12 Unterrichtseinheiten mit jeweils 90 Minuten
   * 9:00 - 16:15
   * Mittagspause 45’ (12:15-13:00)
   * Kaffeepausen 10:30 - 10:45 und 14:30 - 14:45
