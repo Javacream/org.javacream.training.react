@@ -24,6 +24,12 @@ describe ("BooksRepository provides CRUD operations", () => {
         expect(book.available).toBe(available)
     })
 
+    it ("finds ISBN1001", () => {
+        console.log(booksRepository.findAll())
+        let book = booksRepository.findByIsbn("ISBN1001")
+        expect(book.title).toBe("Title1001")
+    })
+
     it ("deletes a created book", () => {
         const title = "TEST"
         const price = 9.99
