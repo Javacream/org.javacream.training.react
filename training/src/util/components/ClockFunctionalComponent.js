@@ -1,9 +1,12 @@
 import { useState } from "react";
 
-//SCRATCH
+let first = true
 export default function ClockFunctionalComponent() {
     const [actualDate, setDate] = useState(new Date())
-    setInterval(() => setDate(new Date()), 990)
+    if (first){
+        setInterval(() => {setDate(new Date()); console.log("FunctionalComponent: " + actualDate)}, 5000)
+        first = false
+    }
     return (
       <>
       <p>{actualDate.toUTCString()}</p>
