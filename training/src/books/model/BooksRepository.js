@@ -1,4 +1,4 @@
-import { Book } from "./Book"
+import Book  from "./Book"
 export default class BooksRepository{
     constructor(initial){
         this.books = new Map()

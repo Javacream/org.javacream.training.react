@@ -1,4 +1,4 @@
-export class Book {
+export default class Book {
     constructor(isbn, title, price, available){
         this.isbn = isbn
         this.title = title
@@ -6,6 +6,7 @@ export class Book {
         this.available = available
         //Optional: Read-Only
         Object.freeze(this)
+        Object.freeze(this.prototype)
     }
 
     unboundInfo(){

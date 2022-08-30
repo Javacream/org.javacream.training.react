@@ -1,5 +1,4 @@
 import BooksRepository from './BooksRepository'
-import Book from './Book'
 describe ("BooksRepository provides CRUD operations", () => {
     let booksRepository = null
     beforeEach(() => booksRepository = new BooksRepository(0))
