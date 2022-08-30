@@ -2,17 +2,17 @@ import React, { useEffect, useState } from 'react'
 
 const Clock = () => {
 
-    const [second, setSecond] = useState(0);
+    const [date, setDate] = useState(new Date());
 
     useEffect(() =>{
         console.log("setting interval");
         setInterval(() =>{
-            setSecond(second + 1)
+            setDate(new Date())
         }, 1000)
     }, [])
     return (
         <div>
-            <p className='second'>{ second }</p>
+            <p className='second'>{ date.toUTCString() }</p>
         </div>
     )
 }
