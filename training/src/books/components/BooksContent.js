@@ -1,4 +1,4 @@
-import './BooksFooter.css'
+import './BooksContent.css'
 export default function BooksContent() {
     return (
       <>
