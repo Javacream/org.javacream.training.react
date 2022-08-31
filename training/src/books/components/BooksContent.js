@@ -6,6 +6,7 @@ import {BrowserRouter} from 'react-router-dom'
 import BooksListComponent from './BooksListComponent';
 import BooksSearchComponent from './BookSearchComponent'
 import BooksCreateComponent from './BookCreateComponent'
+import CounterComponent from '../../demo/redux/components/CounterComponent';
 export default function BooksContent() {
     return (
       <>
@@ -15,6 +16,9 @@ export default function BooksContent() {
           <Route path='/list' element={<BooksListComponent />} /> 
           <Route path='/create' element={<BooksCreateComponent />}/> 
           <Route path='/search' element={<BooksSearchComponent />}/> 
+          <Route path='/redux-counter' element={<CounterComponent />}/> 
+
+          
         </Routes>
       </BrowserRouter>
     </>

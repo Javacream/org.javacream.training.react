@@ -7,6 +7,7 @@ export default function NavigationComponent(props) {
             <div><Link to="/list">List</Link></div>
             <div><Link to="/search">Search</Link></div>
             <div><Link to="/create">Create</Link></div>
+            <div><Link to="/redux-counter">Redux Counter</Link></div>
         </>
     )
 }
