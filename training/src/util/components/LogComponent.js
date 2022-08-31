@@ -2,14 +2,14 @@ import { useEffect, useState } from "react"
 import { whiteboard } from "../../books/ApplicationContext";
 export default function LogComponent(props){
     const [message, updateMessage] = useState("")
-    let subscription = null
+    let logSubscription = null
     useEffect(() => {    
         function handleLogMessage(message) {
             updateMessage(message);    
         }    
-        subscription = whiteboard.create.subscribe(handleLogMessage);
+        logSubscription = whiteboard.log.subscribe(handleLogMessage);
         return function cleanup() {
-                  subscription.unsubscribe();    
+                  logSubscription.unsubscribe();    
                 };  
         });
     return (
