@@ -8,7 +8,7 @@ React Trainining
   * https://github.com/Javacream/org.javacream.training.react
 
 * Digitales Flipchart
-  * https://docs.google.com/presentation/d/1_GqmFnhzxAZeWxevtquPP3dFHcaISt_w6HDsWMo8QVk/edit?usp=sharing
+  * https://docs.google.com/presentation/d/1K9SlhqXE_TgZes6y1hqmOjqpJi8zCRwn4K_PmqEGXPE/edit?usp=sharing
   
 * Seminarzeiten
   * 12 Unterrichtseinheiten mit jeweils 90 Minuten
