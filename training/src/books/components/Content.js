@@ -1,7 +1,9 @@
+import BooksList from "./BooksList";
+
 export default function Content(){
     return (
         <>
-        <p>Content, empty</p>
+        <p><BooksList></BooksList></p>
         </>
     )
 }
