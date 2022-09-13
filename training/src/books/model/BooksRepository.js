@@ -9,6 +9,7 @@ export default class BooksRepository{
         const isbn = "ISBN" + this.counter++
         const newBook = new Book(isbn, title, 19.99, false)
         this.books.set(isbn, newBook)
+        return newBook
     }
 
     findAll(){

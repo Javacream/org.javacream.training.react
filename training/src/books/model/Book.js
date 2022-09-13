@@ -1,4 +1,4 @@
-class Book {
+export default class Book {
     constructor(isbn, title, price, available){
         this.isbn = isbn
         this.title = title
