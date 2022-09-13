@@ -27,6 +27,6 @@ export default class BooksRepository{
         this.books.get(isbn).available = available
     }
     deleteByIsbn(isbn){
-        delete this.books.isbn
+        this.books.delete(isbn)
     }
 }
