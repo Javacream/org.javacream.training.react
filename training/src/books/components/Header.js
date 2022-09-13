@@ -1,8 +1,8 @@
 import styles from './Header.module.css'
-
+import {config } from '../ApplicationContext'
 export default function Header(){
-    const appTitle = "B O O K S"
+
     return (
-        <><p className = {styles.style}>{appTitle}</p></>
+        <><p className = {styles.style}>{config.appTitle}</p></>
     )
 }

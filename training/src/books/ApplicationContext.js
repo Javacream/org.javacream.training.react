@@ -2,6 +2,7 @@ import Book from "./model/Book";
 import BooksRepository from "./model/BooksRepository";
 
 const booksRepository = new BooksRepository()
+const config = {appTitle: "BOOKS APPLICATION", company: "©Javacream"}
 
 for (let i = 1000; i < 1005; i++){
     const isbn = "ISBN" + i
@@ -11,4 +12,4 @@ for (let i = 1000; i < 1005; i++){
     booksRepository.books.set(isbn, new Book(isbn, title, price, available))
 
 }
-export {booksRepository}
+export {booksRepository, config}
