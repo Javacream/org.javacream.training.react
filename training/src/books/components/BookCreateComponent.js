@@ -1,10 +1,12 @@
-import { booksRepository } from "../ApplicationContext"
+import { booksRepository, whiteboard } from "../ApplicationContext"
 import BookComponent from "./BookComponent"
 import { useState } from "react"
 export default function BookCreateComponent() {
     const handleSubmit = (event) => {
         event.preventDefault()
-        setBook(booksRepository.create(title))
+        const newBook = booksRepository.create(title)
+        setBook(newBook)
+        whiteboard.bookCreation.next(newBook.isbn)
     }
     const [title, setTitle] = useState("");
     const [book, setBook] = useState(null);
