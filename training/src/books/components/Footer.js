@@ -5,10 +5,10 @@ import FunctionalClock from '../../util/components/FunctionalClock'
 
 export default function Footer(){
     return (
-        <>
-        <p className = {styles.style}>{config.company}</p>
-        <ClassClock></ClassClock>
-        <FunctionalClock></FunctionalClock>
-        </>
+        <div className = {styles.style}>
+            <p>{config.company}</p>
+            <ClassClock></ClassClock>
+            <FunctionalClock></FunctionalClock>
+        </div>
     )
 }
