@@ -1,12 +1,21 @@
+import { booksRepository } from "../ApplicationContext"
+
 export default function BookComponent(props){
     const book = props.bookAttribute
-    if (book){
+    const showDelete = props.showDelete
+    if (book && !showDelete){
         return (
             <div><p >{book.isbn} {book.title} {book.price} {book.available?'available': 'unavailable'}</p></div>
             )
-        }
-        else{
+    }
+    if (book && showDelete){
+        
+        return (
+            <div>{book.isbn} {book.title} {book.price} {book.available?'available': 'unavailable'}<button onClick = {() => booksRepository.deleteByIsbn(book.isbn)}>Delete</button> </div>
+            )
+    }
+    else{
         return <p>No Book</p>
-        }
+    }
     
 }

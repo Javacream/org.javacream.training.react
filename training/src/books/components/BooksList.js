@@ -14,7 +14,7 @@ export default function BooksList(){
         }
     }, [])
 
-    const booksListHtml = booksList.map((book) => <BookComponent  key={book.isbn} bookAttribute={book}></BookComponent>) //booksListHtml = Array<HTML>
+    const booksListHtml = booksList.map((book) => <BookComponent  key={book.isbn} bookAttribute={book} showDelete={true}></BookComponent>) //booksListHtml = Array<HTML>
     return (
         <>
             <p>BOOKS LIST</p>
