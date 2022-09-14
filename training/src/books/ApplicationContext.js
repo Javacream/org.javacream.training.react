@@ -1,7 +1,7 @@
 import Book from "./model/Book";
 import BooksRepository from "./model/BooksRepository";
 import Person from "./people/model/Person";
-
+import {Subject} from 'rxjs'
 const booksRepository = new BooksRepository()
 
 for (let i = 1000; i < 1005; i++){
@@ -15,4 +15,7 @@ for (let i = 1000; i < 1005; i++){
 }
 const profile = new Person("Hans", "Mustermann")
 const config = {appTitle: "BOOKS APPLICATION", company: "©Javacream", profile}
-export {booksRepository, config}
+const whiteboard = {
+    bookCreation: new Subject()
+}
+export {booksRepository, config, whiteboard}
