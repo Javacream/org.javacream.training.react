@@ -1,7 +1,6 @@
 export default function FunctionalClock(){
     const time = new Date().toUTCString()
-    return 
-    (
+    return (
         <><p>{time}</p></>
     )
 }
