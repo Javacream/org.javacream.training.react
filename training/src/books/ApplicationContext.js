@@ -16,6 +16,11 @@ for (let i = 1000; i < 1005; i++){
 const profile = new Person("Hans", "Mustermann")
 const config = {appTitle: "BOOKS APPLICATION", company: "©Javacream", profile}
 const whiteboard = {
-    bookCreation: new Subject()
+    bookCreation: new Subject(),
+    bookSearch: new Subject()
 }
+const log = new Subject()
+whiteboard.bookCreation.subscribe((message) => log.next(message))
+whiteboard.bookSearch.subscribe((message) => log.next(message))
+whiteboard.log = log
 export {booksRepository, config, whiteboard}

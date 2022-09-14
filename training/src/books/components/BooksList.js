@@ -6,7 +6,8 @@ export default function BooksList(){
     //const booksRepository = new BooksRepository()
     const [booksList, booksListUpdate] = useState(booksRepository.findAll())
     useEffect( () => {
-        whiteboard.bookCreation.subscribe((data) => booksListUpdate(booksRepository.findAll()))
+        const subscription = whiteboard.bookCreation.subscribe((data) => booksListUpdate(booksRepository.findAll()))
+        return () => subscription.unsubscribe()
     }, [])
 
     const booksListHtml = booksList.map((book) => <BookComponent  key={book.isbn} bookAttribute={book}></BookComponent>) //booksListHtml = Array<HTML>

@@ -1,3 +1,4 @@
+import { whiteboard } from '../ApplicationContext'
 import Book from './Book'
 export default class BooksRepository{
     constructor(){
@@ -9,6 +10,7 @@ export default class BooksRepository{
         const isbn = "ISBN" + this.counter++
         const newBook = new Book(isbn, title, 19.99, false)
         this.books.set(isbn, newBook)
+        whiteboard.bookCreation.next(newBook.info())
         return newBook
     }
 
@@ -17,7 +19,9 @@ export default class BooksRepository{
     }
 
     findByIsbn(isbn){
-        return this.books.get(isbn)
+        const book = this.books.get(isbn)
+        whiteboard.bookSearch.next(`search using isbn ${isbn} found book ${book?book.info():'no result'}`)
+        return book
     }
 
     updatePrice(isbn, newPrice){
