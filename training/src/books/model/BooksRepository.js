@@ -10,7 +10,7 @@ export default class BooksRepository{
         const isbn = "ISBN" + this.counter++
         const newBook = new Book(isbn, title, 19.99, false)
         this.books.set(isbn, newBook)
-        whiteboard.bookCreation.next(newBook.info())
+        whiteboard.bookCreation.next('created book: ' + newBook.info())
         return newBook
     }
 
@@ -32,5 +32,6 @@ export default class BooksRepository{
     }
     deleteByIsbn(isbn){
         this.books.delete(isbn)
+        whiteboard.bookDeletion.next(`deleted isbn ${isbn}`)
     }
 }

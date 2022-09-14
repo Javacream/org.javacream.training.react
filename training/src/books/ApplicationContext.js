@@ -17,10 +17,12 @@ const profile = new Person("Hans", "Mustermann")
 const config = {appTitle: "BOOKS APPLICATION", company: "©Javacream", profile}
 const whiteboard = {
     bookCreation: new Subject(),
-    bookSearch: new Subject()
+    bookSearch: new Subject(),
+    bookDeletion: new Subject()
 }
 const log = new Subject()
 whiteboard.bookCreation.subscribe((message) => log.next(message))
 whiteboard.bookSearch.subscribe((message) => log.next(message))
+whiteboard.bookDeletion.subscribe((message) => log.next(message))
 whiteboard.log = log
 export {booksRepository, config, whiteboard}
