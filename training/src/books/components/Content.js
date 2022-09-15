@@ -6,6 +6,7 @@ import {BrowserRouter} from 'react-router-dom'
 import {Routes, Route} from 'react-router'
 import BookDeleteComponent from "./BookDeleteComponent";
 import HomeComponent from "./HomeComponent";
+import CounterComponent from "../../demo/redux/components/CounterComponent";
 export default function Content(){
     return (
         <>
@@ -18,6 +19,7 @@ export default function Content(){
                 <Route path='/create' element={<BookCreateComponent></BookCreateComponent>}></Route>
                 <Route path='/delete' element={<BookDeleteComponent></BookDeleteComponent>}></Route>
             </Routes>
+            <CounterComponent></CounterComponent>
         </BrowserRouter>
         </>
     )
