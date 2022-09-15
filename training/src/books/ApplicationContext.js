@@ -1,6 +1,6 @@
 import Book from "./model/Book";
 import BooksRepository from "./model/BooksRepository";
-import {Subject} from 'rxjs'
+import {Subject, from} from 'rxjs'
 import getDefaultProfile from "./people/model/ProfileController";
 
 
@@ -20,12 +20,11 @@ const whiteboard = {
     bookCreation: new Subject(),
     bookSearch: new Subject(),
     bookDeletion: new Subject(),
-    profileChanged: new Subject()
+    profileChanged: from(getDefaultProfile())
 }
 const log = new Subject()
 whiteboard.bookCreation.subscribe((message) => log.next(message))
 whiteboard.bookSearch.subscribe((message) => log.next(message))
 whiteboard.bookDeletion.subscribe((message) => log.next(message))
 whiteboard.log = log
-getDefaultProfile().then(profile => whiteboard.profileChanged.next(profile))
 export {booksRepository, config, whiteboard}
