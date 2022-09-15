@@ -1,5 +1,5 @@
 import styles from './Header.module.css'
-import {config } from '../ApplicationContext'
+import {config, whiteboard } from '../ApplicationContext'
 import PersonComponent from '../people/components/PersonComponent'
 import { useEffect, useState } from 'react'
 
@@ -7,11 +7,8 @@ import { useEffect, useState } from 'react'
 export default function Header(){
     const [person, personUpdate] = useState("")
     useEffect(() => {
-        const getData = async () => {
-            const person = await config.profile
-            personUpdate(person)
-        }
-        getData()
+        const subscription = whiteboard.profileChanged.subscribe(profile => personUpdate(profile))
+        return () => subscription.unsubscribe()
     }, [])
     return (
         <div className = {styles.style}>

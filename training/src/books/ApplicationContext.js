@@ -15,16 +15,17 @@ for (let i = 1000; i < 1005; i++){
 
 
 }
-const profile = getDefaultProfile()
-const config = {appTitle: "BOOKS APPLICATION", company: "©Javacream", profile}
+const config = {appTitle: "BOOKS APPLICATION", company: "©Javacream"}
 const whiteboard = {
     bookCreation: new Subject(),
     bookSearch: new Subject(),
-    bookDeletion: new Subject()
+    bookDeletion: new Subject(),
+    profileChanged: new Subject()
 }
 const log = new Subject()
 whiteboard.bookCreation.subscribe((message) => log.next(message))
 whiteboard.bookSearch.subscribe((message) => log.next(message))
 whiteboard.bookDeletion.subscribe((message) => log.next(message))
 whiteboard.log = log
+getDefaultProfile().then(profile => whiteboard.profileChanged.next(profile))
 export {booksRepository, config, whiteboard}
