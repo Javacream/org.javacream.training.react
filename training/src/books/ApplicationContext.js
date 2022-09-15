@@ -1,7 +1,9 @@
 import Book from "./model/Book";
 import BooksRepository from "./model/BooksRepository";
-import Person from "./people/model/Person";
 import {Subject} from 'rxjs'
+import getDefaultProfile from "./people/model/ProfileController";
+
+
 const booksRepository = new BooksRepository()
 
 for (let i = 1000; i < 1005; i++){
@@ -13,7 +15,7 @@ for (let i = 1000; i < 1005; i++){
 
 
 }
-const profile = new Person("Hans", "Mustermann")
+const profile = getDefaultProfile()
 const config = {appTitle: "BOOKS APPLICATION", company: "©Javacream", profile}
 const whiteboard = {
     bookCreation: new Subject(),

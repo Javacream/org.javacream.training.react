@@ -1,6 +1,6 @@
 import getDefaultProfile from './ProfileController'
 describe('client server', () => {
-    it ('does a successful server request', () => {
+    xit ('does a successful server request', () => {
         const person = getDefaultProfile()
         person.then((person) => console.log(person.lastname))
     })
