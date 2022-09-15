@@ -12,11 +12,14 @@ const counterSliceTemplate =
         }, 
         decrement(state, action){
             state.value -= 1
-        }
+        },
+        change(state, action){
+            state.value += action.payload.number
+        }, 
     }
 }
 
 const counterSlice = createSlice(counterSliceTemplate)
 
-export const {increment, decrement} = counterSlice.actions
+export const {increment, decrement, change} = counterSlice.actions
 export default counterSlice.reducer

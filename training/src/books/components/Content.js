@@ -18,8 +18,8 @@ export default function Content(){
                 <Route path='/search' element={<BookSearchComponent></BookSearchComponent>}></Route>
                 <Route path='/create' element={<BookCreateComponent></BookCreateComponent>}></Route>
                 <Route path='/delete' element={<BookDeleteComponent></BookDeleteComponent>}></Route>
+                <Route path='/redux' element={<CounterComponent></CounterComponent>}></Route>
             </Routes>
-            <CounterComponent></CounterComponent>
         </BrowserRouter>
         </>
     )

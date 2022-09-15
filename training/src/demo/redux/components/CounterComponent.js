@@ -1,6 +1,6 @@
 import { store } from "../../../books/ApplicationContext";
 import {useEffect, useState} from 'react'
-import {increment, decrement} from '../CounterSlice'
+import {increment, decrement, change} from '../CounterSlice'
 export default function CounterComponent(){
     const [value, updateValue] = useState(0);
     const updateComponent = () => {
@@ -13,6 +13,7 @@ export default function CounterComponent(){
         <>
             <button id="increment" onClick={() => store.dispatch(increment())}>+</button>
             <button id="decrement" onClick={() => store.dispatch(decrement())}>-</button>
+            <button id="batch" onClick={() => store.dispatch(change({number: 5}))}>+ 5</button>
             Clicked: <span id="value">{value}</span>
         </>
     )

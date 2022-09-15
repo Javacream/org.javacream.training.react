@@ -7,6 +7,7 @@ export default function NavigationComponent(){
             <div><Link to="/create">Create</Link></div>
             <div><Link to="/search">Search</Link></div>
             <div><Link to="/delete">Delete</Link></div>
+            <div><Link to="/redux">Redux Sample</Link></div>
         </>
     )
 }
