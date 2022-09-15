@@ -1,20 +1,24 @@
 //import {booksRepository} from "../ApplicationContext"
 import BookComponent from "./BookComponent"
-import { booksRepository, whiteboard } from "../ApplicationContext"
+import { booksController, whiteboard } from "../ApplicationContext"
 import { useEffect, useState } from "react"
+import {from} from 'rxjs' 
 export default function BooksList(){
-    //const booksRepository = new BooksRepository()
-    const [booksList, booksListUpdate] = useState(booksRepository.findAll())
+
+    const [booksList, booksListUpdate] = useState()
     useEffect( () => {
-        const createSubscription = whiteboard.bookCreation.subscribe((data) => booksListUpdate(booksRepository.findAll()))
-        const deleteSubscription = whiteboard.bookDeletion.subscribe((data) => booksListUpdate(booksRepository.findAll()))
+        from(booksController.findAll()).subscribe(list => booksListUpdate(list))
+        const createSubscription = whiteboard.bookCreation.subscribe((data) => from(booksController.findAll()).subscribe(list => booksListUpdate(list)))
+        const deleteSubscription = whiteboard.bookDeletion.subscribe((data) => from(booksController.findAll()).subscribe(list => booksListUpdate(list)))
         return () => {
             createSubscription.unsubscribe()
             deleteSubscription.unsubscribe()
         }
     }, [])
-
-    const booksListHtml = booksList.map((book) => <BookComponent  key={book.isbn} bookAttribute={book} showDelete={true}></BookComponent>) //booksListHtml = Array<HTML>
+    let booksListHtml = "EMPTY LIST"
+    if (booksList) {
+        booksListHtml = booksList.map((book) => <BookComponent  key={book.isbn} bookAttribute={book} showDelete={true}></BookComponent>) //booksListHtml = Array<HTML>
+    }
     return (
         <>
             <p>BOOKS LIST</p>

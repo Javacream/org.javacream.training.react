@@ -1,9 +1,9 @@
-import { booksRepository } from "../ApplicationContext"
+import { booksController } from "../ApplicationContext"
 import { useState } from "react"
 export default function BookDeleteComponent() {
     const handleSubmit = (event) => {
         event.preventDefault()
-        booksRepository.deleteByIsbn(isbn)
+        booksController.deleteByIsbn(isbn)
     }
     const [isbn, setIsbn] = useState("");
         return (

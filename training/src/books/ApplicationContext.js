@@ -1,21 +1,11 @@
-import Book from "./model/Book";
-import BooksRepository from "./model/BooksRepository";
 import {Subject, from} from 'rxjs'
 import getDefaultProfile from "./people/model/ProfileController";
+import BooksController from "./model/BooksController";
 
+const config = {appTitle: "BOOKS APPLICATION", company: "©Javacream", baseUrl: "http://h2908727.stratoserver.net:8080/api/books"}
 
-const booksRepository = new BooksRepository()
+const booksController = new BooksController()
 
-for (let i = 1000; i < 1005; i++){
-    const isbn = "ISBN" + i
-    const title = "TITLE" + i
-    const price = 1.99 + i
-    const available = true
-    booksRepository.books.set(isbn, new Book(isbn, title, price, available))
-
-
-}
-const config = {appTitle: "BOOKS APPLICATION", company: "©Javacream"}
 const whiteboard = {
     bookCreation: new Subject(),
     bookSearch: new Subject(),
@@ -27,4 +17,4 @@ whiteboard.bookCreation.subscribe((message) => log.next(message))
 whiteboard.bookSearch.subscribe((message) => log.next(message))
 whiteboard.bookDeletion.subscribe((message) => log.next(message))
 whiteboard.log = log
-export {booksRepository, config, whiteboard}
+export {config, whiteboard, booksController}
