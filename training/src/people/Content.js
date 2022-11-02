@@ -1,8 +1,9 @@
 import './Content.css';
+import PeopleList from './PeopleList';
 function Content() {
   return (
     <div >
-      empty
+      <PeopleList />
     </div>
   );
 }
