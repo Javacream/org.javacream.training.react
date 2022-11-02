@@ -1,4 +1,4 @@
-import {peopleModel} from './PeopleApplicationContext'
+import {peopleModel} from '../PeopleApplicationContext'
 import PersonComponent from './PersonComponent'
 export default function PeopleList(){
     //peopleList: Typ: Liste von Personen-Informtaionen

@@ -12,7 +12,7 @@ export default class ClockClassComponent extends Component{
     render(){
         return (
             <>
-            <p>{this.state.time.toUTCString()}</p>
+            <p>Class: {this.state.time.toUTCString()}</p>
             </>
         )
     }

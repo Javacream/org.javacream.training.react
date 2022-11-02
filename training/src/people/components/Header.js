@@ -1,5 +1,5 @@
 import './Header.css';
-import {applicationTitle} from './PeopleApplicationContext'
+import {applicationTitle} from '../PeopleApplicationContext'
 
 function Header() {
   return (

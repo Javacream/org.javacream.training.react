@@ -10,7 +10,7 @@ export default function ClockFunctionalComponent(){
     }, [])
     return (
         <>
-        <p>{actualTime}</p>
+        <p>Functional: {actualTime}</p>
         </>
     )
 }
