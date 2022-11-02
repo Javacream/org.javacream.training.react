@@ -1,9 +1,9 @@
 import './App.css';
-
+import PeopleApp from './people/PeopleApp';
 function App() {
   return (
     <div >
-      Hello React!
+      <PeopleApp />
     </div>
   );
 }
