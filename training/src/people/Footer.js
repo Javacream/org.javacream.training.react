@@ -1,8 +1,9 @@
 import './Footer.css';
+import { company} from './PeopleApplicationContext'
 function Footer() {
   return (
     <div >
-      Javacream
+      {company}
     </div>
   );
 }

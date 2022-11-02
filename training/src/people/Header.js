@@ -1,8 +1,10 @@
 import './Header.css';
+import {applicationTitle} from './PeopleApplicationContext'
+
 function Header() {
   return (
     <div >
-      PEOPLE
+      {applicationTitle}
     </div>
   );
 }
