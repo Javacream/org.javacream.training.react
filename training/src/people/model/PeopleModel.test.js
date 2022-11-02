@@ -1,6 +1,6 @@
 import {Person, PeopleModel} from './People'
 
-describe ('people manages persons', () => {
+describe ('peoplemodel manages people', () => {
     let people = new PeopleModel()
     people.create("Sawitzki", "Rainer", 183, 'm')
     people.create("Fabricius", "Carola", 176, 'f')
