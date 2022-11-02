@@ -4,9 +4,14 @@ import { useState } from "react"
 export default function CreatePersonComponent() {
     const handleSubmit = (event) => {
         event.preventDefault()
-        console.log(lastname)
+        peopleModel.create(lastname, firstname, 177, 'd')
+        //CHECK: Die Personen sind schon angekommen, aber die Liste wird trotzdem nicht aktualisiert -> morgen
+        console.log(peopleModel.allPeople())
     }
+
+    //Hinweis: statt mehrerer State-Variablen könnten wir hier auch ein Personen-Objekt nutzen
     const [lastname, setLastname] = useState("");
+    const [firstname, setFirstname] = useState("");
         return (
             <>  
             <form onSubmit={handleSubmit}>
@@ -15,6 +20,13 @@ export default function CreatePersonComponent() {
                     type="text" 
                     value={lastname}
                     onChange={(e) => setLastname(e.target.value)}
+                />
+                </label>
+                <label>Firstname:
+                <input
+                    type="text" 
+                    value={firstname}
+                    onChange={(e) => setFirstname(e.target.value)}
                 />
                 </label>
                 <input type="submit" />
