@@ -13,4 +13,5 @@ peopleModel.people = peopleData
 
 export {peopleModel, applicationTitle, company}
 
+setTimeout(() => {peopleData[0].lastname="CHANGED"; console.log(peopleData[0].lastname)}, 5000)
 
