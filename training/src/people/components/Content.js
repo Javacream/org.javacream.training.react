@@ -7,6 +7,7 @@ import { BrowserRouter } from 'react-router-dom';
 import {Routes, Route} from 'react-router'
 import CounterComponent from '../../demo/redux/components/CounterComponent';
 import PeopleServerList from './PeopleServerList';
+import PersonServerSearch from '../PersonServerSearch';
 function Content() {
   return (
     <div >
@@ -20,6 +21,7 @@ function Content() {
           <Route path="/create"  element={<CreatePersonComponent />}></Route>
           <Route path="/redux"  element={<CounterComponent />}></Route>
           <Route path="/server"  element={<PeopleServerList />}></Route>
+          <Route path="/search"  element={<PersonServerSearch />}></Route>
 
         </Routes>
       </BrowserRouter>

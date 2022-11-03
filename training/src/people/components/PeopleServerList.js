@@ -1,8 +1,8 @@
 import { Component } from "react";
 import PersonComponent from "./PersonComponent";
+import { baseUrl } from "../PeopleApplicationContext";
 
 export default class PeopleServerList extends Component{
-    url = "http://h2908727.stratoserver.net:8080/people" //REST-Server, der Personen-Daten liefert
     state = {people: []}
     async loadData(){
         //Plan: Sequenzieller Ablauf
@@ -17,7 +17,7 @@ export default class PeopleServerList extends Component{
         // })
         //fetch(this.url).then((response) => response.json()).then((peopleList) => this.setState({people: peopleList}))
         //async await
-        const response = await fetch(this.url)
+        const response = await fetch(baseUrl)
         const peopleList = await response.json()
         this.setState({people: peopleList})
         //Reactive

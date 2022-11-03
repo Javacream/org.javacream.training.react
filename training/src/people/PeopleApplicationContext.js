@@ -5,6 +5,7 @@ import counterReducers from '../demo/redux/CounterSlice'
 let peopleModel = new PeopleModel()
 let applicationTitle= "P E O P L E"
 let company= "Javacream"
+const baseUrl = "http://h2908727.stratoserver.net:8080/people" //REST-Server, der Personen-Daten liefert
 
 let peopleData = new Map()
 peopleData.set("1000", {id: "1000", lastname: "Sawitzki", firstname:"Rainer"})
@@ -32,6 +33,6 @@ const store = configureStore(
         }
     }
 )
-export {peopleModel, applicationTitle, company, whiteboard, store}
+export {peopleModel, applicationTitle, company, baseUrl, whiteboard, store}
 
 
