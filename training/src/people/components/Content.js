@@ -6,6 +6,7 @@ import NavigationComponent from './NavigationComponent';
 import { BrowserRouter } from 'react-router-dom';
 import {Routes, Route} from 'react-router'
 import CounterComponent from '../../demo/redux/components/CounterComponent';
+import PeopleServerList from './PeopleServerList';
 function Content() {
   return (
     <div >
@@ -18,6 +19,7 @@ function Content() {
           <Route path="/delete"  element={<DeletePersonComponent />}></Route>
           <Route path="/create"  element={<CreatePersonComponent />}></Route>
           <Route path="/redux"  element={<CounterComponent />}></Route>
+          <Route path="/server"  element={<PeopleServerList />}></Route>
 
         </Routes>
       </BrowserRouter>

@@ -7,6 +7,7 @@ export default function NavigationComponent(){
             <Link to="/delete">Person Delete</Link>
             <Link to="/create">Person Create</Link>
             <Link to="/redux">Redux Sample</Link>
+            <Link to="/server">People Server List</Link>
         </>
     )
 }
