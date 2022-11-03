@@ -1,4 +1,4 @@
-import { peopleModel, whiteboard} from "../PeopleApplicationContext"
+import { peopleModel} from "../PeopleApplicationContext"
 import { useState } from "react"
 import PersonComponent from "./PersonComponent"
 
@@ -7,7 +7,6 @@ export default function CreatePersonComponent() {
         event.preventDefault()
         const person = peopleModel.create(lastname, firstname, 177, 'd')
         setPerson(person)
-        whiteboard.personCreated.next(person)
     }
 
     //Hinweis: statt mehrerer State-Variablen könnten wir hier auch ein Personen-Objekt nutzen

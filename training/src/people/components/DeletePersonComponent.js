@@ -1,12 +1,10 @@
-import { peopleModel, whiteboard} from "../PeopleApplicationContext"
+import { peopleModel} from "../PeopleApplicationContext"
 import { useState } from "react"
 
 export default function DeletePersonComponent() {
     const handleSubmit = (event) => {
         event.preventDefault()
         peopleModel.deleteById(id)
-        whiteboard.personDeleted.next(id)
-        
     }
 
     //Hinweis: statt mehrerer State-Variablen könnten wir hier auch ein Personen-Objekt nutzen

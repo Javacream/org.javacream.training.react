@@ -17,6 +17,11 @@ let whiteboard = {
 
 }
 
+const log = new Subject()
+whiteboard.personCreated.subscribe((message) => log.next(message))
+whiteboard.personDeleted.subscribe((message) => log.next(message))
+
+whiteboard.log = log
 export {peopleModel, applicationTitle, company, whiteboard}
 
 

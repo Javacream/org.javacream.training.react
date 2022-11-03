@@ -1,3 +1,5 @@
+import { whiteboard } from "../PeopleApplicationContext"
+
 export class Person {
     constructor(id, lastname, firstname, height, gender){
         this.id = id
@@ -24,6 +26,7 @@ export class PeopleModel{
         const person = new Person("" + this.counter, lastname, firstname, height, gender)
         this.people.set(person.id, person)
         this.counter++
+        whiteboard.personCreated.next("Created person with id " + person.id)
         return person
     }
     
@@ -44,5 +47,6 @@ export class PeopleModel{
 
     deleteById(id){
         this.people.delete(id)
+        whiteboard.personDeleted.next("Deleted person with id " + id)
     }
 }
