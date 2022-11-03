@@ -2,13 +2,11 @@ import { peopleModel} from "../PeopleApplicationContext"
 import { useState } from "react"
 import PersonComponent from "./PersonComponent"
 
-export default function CreatePersonComponent() {
+export default function CreatePersonComponent(props) {
     const handleSubmit = (event) => {
         event.preventDefault()
         setPerson(peopleModel.create(lastname, firstname, 177, 'd'))
-
-        //CHECK: Die Personen sind schon angekommen, aber die Liste wird trotzdem nicht aktualisiert -> morgen
-        console.log(peopleModel.allPeople())
+        props.notifyFunction()
     }
 
     //Hinweis: statt mehrerer State-Variablen könnten wir hier auch ein Personen-Objekt nutzen
