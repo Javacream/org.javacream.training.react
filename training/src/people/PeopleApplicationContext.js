@@ -1,5 +1,7 @@
 import { PeopleModel } from "./model/People";
 import {Subject} from 'rxjs'
+import {configureStore} from '@reduxjs/toolkit'
+import counterReducers from '../demo/redux/CounterSlice'
 let peopleModel = new PeopleModel()
 let applicationTitle= "P E O P L E"
 let company= "Javacream"
@@ -22,6 +24,14 @@ whiteboard.personCreated.subscribe((message) => log.next(message))
 whiteboard.personDeleted.subscribe((message) => log.next(message))
 
 whiteboard.log = log
-export {peopleModel, applicationTitle, company, whiteboard}
+
+const store = configureStore(
+    {
+        reducer: {
+            counter: counterReducers
+        }
+    }
+)
+export {peopleModel, applicationTitle, company, whiteboard, store}
 
 
