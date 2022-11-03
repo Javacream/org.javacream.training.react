@@ -13,7 +13,7 @@ export default function CreatePersonComponent() {
     //Hinweis: statt mehrerer State-Variablen könnten wir hier auch ein Personen-Objekt nutzen
     const [lastname, setLastname] = useState("");
     const [firstname, setFirstname] = useState("");
-    const [person, setPerson] = useState({});
+    const [person, setPerson] = useState();
         return (
             <>  
             <form onSubmit={handleSubmit}>
@@ -33,7 +33,7 @@ export default function CreatePersonComponent() {
                 </label>
                 <input type="submit" />
             </form>
-            <PersonComponent person={person} />
+            <PersonComponent person={person} detail={true}/>
         </>
         )
 }

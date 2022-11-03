@@ -12,7 +12,8 @@ peopleData.set("1003", {id: "1003", lastname: "Schimmerman", firstname:"Arnim", 
 peopleModel.people = peopleData
 
 let whiteboard = {
-    personCreated: new Subject()
+    personCreated: new Subject(),
+    personDeleted: new Subject()
 
 }
 

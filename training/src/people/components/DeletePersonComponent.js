@@ -1,12 +1,12 @@
-import { peopleModel} from "../PeopleApplicationContext"
+import { peopleModel, whiteboard} from "../PeopleApplicationContext"
 import { useState } from "react"
 
 export default function DeletePersonComponent() {
     const handleSubmit = (event) => {
         event.preventDefault()
         peopleModel.deleteById(id)
-        //CHECK: Die Personen sind schon angekommen, aber die Liste wird trotzdem nicht aktualisiert -> morgen
-        console.log(peopleModel.allPeople())
+        whiteboard.personDeleted.next(id)
+        
     }
 
     //Hinweis: statt mehrerer State-Variablen könnten wir hier auch ein Personen-Objekt nutzen

@@ -8,7 +8,7 @@ export class Person {
     }
 
     info(){
-        return `Person: lastname: ${this.lastname}, firstname=${this.firstname}, height=${this.height}, gender=${this.gender}`
+        return `Person=id=${this.id}, lastname=${this.lastname}=firstname=${this.firstname}, height=${this.height}, gender=${this.gender}`
     }
 
 }
@@ -21,7 +21,7 @@ export class PeopleModel{
     }
 
     create(lastname, firstname, height, gender){
-        const person = new Person(this.counter, lastname, firstname, height, gender)
+        const person = new Person("" + this.counter, lastname, firstname, height, gender)
         this.people.set(person.id, person)
         this.counter++
         return person
@@ -33,7 +33,7 @@ export class PeopleModel{
     
     findByByGender(gender){
         return this.allPeople().filter((p) => p.gender === gender)
-    }
+        }
     findByLastname(lastname){
         return this.allPeople.filter((p) => p.lastname === lastname)
     }
