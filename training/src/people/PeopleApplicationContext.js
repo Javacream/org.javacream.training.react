@@ -1,5 +1,5 @@
 import { PeopleModel } from "./model/People";
-
+import {Subject} from 'rxjs'
 let peopleModel = new PeopleModel()
 let applicationTitle= "P E O P L E"
 let company= "Javacream"
@@ -11,6 +11,11 @@ peopleData.set("1003", {id: "1003", lastname: "Schimmerman", firstname:"Arnim", 
 
 peopleModel.people = peopleData
 
-export {peopleModel, applicationTitle, company}
+let whiteboard = {
+    personCreated: new Subject()
+
+}
+
+export {peopleModel, applicationTitle, company, whiteboard}
 
 
