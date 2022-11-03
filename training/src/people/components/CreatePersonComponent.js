@@ -2,11 +2,10 @@ import { peopleModel} from "../PeopleApplicationContext"
 import { useState } from "react"
 import PersonComponent from "./PersonComponent"
 
-export default function CreatePersonComponent(props) {
+export default function CreatePersonComponent() {
     const handleSubmit = (event) => {
         event.preventDefault()
         setPerson(peopleModel.create(lastname, firstname, 177, 'd'))
-        props.notifyFunction()
     }
 
     //Hinweis: statt mehrerer State-Variablen könnten wir hier auch ein Personen-Objekt nutzen
