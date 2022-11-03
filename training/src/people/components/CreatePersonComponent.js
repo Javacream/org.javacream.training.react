@@ -1,10 +1,12 @@
 import { peopleModel} from "../PeopleApplicationContext"
 import { useState } from "react"
+import PersonComponent from "./PersonComponent"
 
 export default function CreatePersonComponent() {
     const handleSubmit = (event) => {
         event.preventDefault()
-        peopleModel.create(lastname, firstname, 177, 'd')
+        setPerson(peopleModel.create(lastname, firstname, 177, 'd'))
+
         //CHECK: Die Personen sind schon angekommen, aber die Liste wird trotzdem nicht aktualisiert -> morgen
         console.log(peopleModel.allPeople())
     }
@@ -12,6 +14,7 @@ export default function CreatePersonComponent() {
     //Hinweis: statt mehrerer State-Variablen könnten wir hier auch ein Personen-Objekt nutzen
     const [lastname, setLastname] = useState("");
     const [firstname, setFirstname] = useState("");
+    const [person, setPerson] = useState({});
         return (
             <>  
             <form onSubmit={handleSubmit}>
@@ -31,6 +34,7 @@ export default function CreatePersonComponent() {
                 </label>
                 <input type="submit" />
             </form>
+            <PersonComponent person={person} />
         </>
         )
 }

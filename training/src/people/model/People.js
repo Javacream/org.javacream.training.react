@@ -16,29 +16,33 @@ export class Person {
 
 export class PeopleModel{
     constructor(){
-        this.people = []
+        this.people = new Map()
         this.counter = 0
     }
 
     create(lastname, firstname, height, gender){
         const person = new Person(this.counter, lastname, firstname, height, gender)
-        this.people.push(person)
+        this.people.set(person.id, person)
         this.counter++
         return person
     }
     
     allPeople() {
-        return this.people
+        return Array.from(this.people.values())
     }
     
     findByByGender(gender){
-        return this.people.filter((p) => p.gender === gender)
+        return this.allPeople().filter((p) => p.gender === gender)
     }
     findByLastname(lastname){
-        return this.people.filter((p) => p.lastname === lastname)
+        return this.allPeople.filter((p) => p.lastname === lastname)
     }
     
     allInfos(){
-        return this.people.map((person) => person.info())
+        return this.allPeople().map((person) => person.info())
+    }
+
+    deleteById(id){
+        this.people.delete(id)
     }
 }
