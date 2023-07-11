@@ -1,14 +1,9 @@
-# org.javacream.training.react
-React Trainining
-## Durchführung des Seminars
+##React Trainining
 
-* Referent: Rainer Sawitzki, eMail: training@rainer-sawitzki.de
 
-* Beispiele
-  * https://github.com/Javacream/org.javacream.training.react
+* Referent: Rainer Sawitzki, rainer.sawitzki@gmail.com
 
-* Digitales Flipchart
-  * https://docs.google.com/presentation/d/1J-7gndzzOPBuK0flEdblXrSkdZWbAZhwgaxYqgTlI0E/edit?usp=sharing
+* [Digitales Flipchart](https://docs.google.com/presentation/d/1v5VM22hiWdTHOdsdNzXLkdf9iMUzjKIA7WkWjVGgDrc/edit?usp=drivesdk)
   
 * Seminarzeiten
   * 8 Unterrichtseinheiten mit jeweils 90 Minuten
