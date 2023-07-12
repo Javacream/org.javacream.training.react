@@ -8,3 +8,5 @@ peopleModel.create("Musterfrau", "Hannah", 199, 'f')
 peopleModel.create("Schneider", "Andrea", 183, 'd')
 
 export let user = new Person(1000, "Schneider", "Edgar", 188, 'd')
+
+setTimeout(() => {user.lastname = "Meier"; console.log("*****" + user.lastname)}, 1000)
