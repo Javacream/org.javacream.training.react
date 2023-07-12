@@ -1,7 +1,8 @@
 import { peopleModel } from "./PeopleContext"
+import PersonComponent from "./PersonComponent"
 export default function PeopleList(){
     const peopleList = peopleModel.allPeople()
-    const peopleHtmlList = peopleList.map((person) => <p key={person.id}>{person.lastname}</p>)
+    const peopleHtmlList = peopleList.map((p) => <PersonComponent key={p.id} person={p}></PersonComponent>)
     return (
         <>{peopleHtmlList}</>
     )
