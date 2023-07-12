@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 
 export let name ="Hugo"
