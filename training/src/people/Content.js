@@ -1,7 +1,8 @@
 import "./Content.css"
+import PeopleList from "./PeopleList"
 export default function Content(){
     return (
-        <p>empty</p>
+        <PeopleList></PeopleList>
     )
 }
 
