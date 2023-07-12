@@ -1,4 +1,4 @@
-##React Trainining
+## React Trainining
 
 
 * Referent: Rainer Sawitzki, rainer.sawitzki@gmail.com
