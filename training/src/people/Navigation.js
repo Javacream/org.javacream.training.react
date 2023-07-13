@@ -7,6 +7,7 @@ export default function Navigation(){
             <Link to="/create">New Person</Link>
             <Link to="/">Home</Link>
             <Link to="/redux">Counter</Link>
+            <Link to="/server">People Server List</Link>
 
         </>
     )

@@ -6,6 +6,7 @@ import CreatePerson from "./CreatePerson"
 import Navigation from "./Navigation"
 import Home from "./Home"
 import CounterComponent from "../counter/CounterComponent"
+import PeopleServerList from "./PeopleServerList"
 export default function Content(){
     return (
         <>
@@ -16,6 +17,7 @@ export default function Content(){
                 <Route path = "/create" element={<CreatePerson />}></Route>
                 <Route path = "/" element={<Home />}></Route>
                 <Route path = "/redux" element={<CounterComponent />}></Route>
+                <Route path = "/server" element={<PeopleServerList />}></Route>
             </Routes>
         </BrowserRouter>
         </>
