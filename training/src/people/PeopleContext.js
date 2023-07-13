@@ -5,9 +5,12 @@ export const company = "Javacream"
 
 export let whiteboard = {
     personCreation: new Subject(),
-    personDeletion: new Subject()
+    personDeletion: new Subject(),
+    log: new Subject()
 
 }
+
+whiteboard.personCreation.subscribe((p) => whiteboard.log.next("Created person " + p.id))
 export const peopleModel = new PeopleModel()
 
 const p1 = new Person (100, "Sawitzki", "Rainer", 183, 'm')
