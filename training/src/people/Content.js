@@ -5,8 +5,10 @@ export default function Content(){
     return (
         <>
             <PeopleList></PeopleList>
+            <hr />
             <CreatePerson></CreatePerson>
         </>
     )
 }
+
 
