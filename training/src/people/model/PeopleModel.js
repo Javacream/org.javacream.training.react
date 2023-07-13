@@ -1,3 +1,4 @@
+import { whiteboard } from "../PeopleContext";
 export class Person{
     constructor(id, lastname, firstname, height, gender){
         this.id = id;
@@ -21,6 +22,7 @@ export class PeopleModel{
     create(lastname, firstname, height, gender){
         const person = new Person(this.counter++, lastname, firstname, height, gender)
         this.people.push(person)
+        whiteboard.personCreation.next(person)
         return person
     }
 
