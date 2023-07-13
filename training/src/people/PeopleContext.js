@@ -1,5 +1,7 @@
 import {Person, PeopleModel} from './model/PeopleModel'
 import {Subject} from 'rxjs'
+import {configureStore} from '@reduxjs/toolkit'
+import reducer from '../counter/CounterSlice'
 export const applicationTitle = "People"
 export const company = "Javacream"
 
@@ -20,4 +22,11 @@ const p3 = new Person (102, "Schneider", "Andrea", 183, 'd')
 peopleModel.people = [p1, p2, p3]
 export let user = new Person(1000, "Schneider", "Edgar", 188, 'd')
 
+export const store = configureStore(
+    {
+        reducer: {
+            counter: reducer
+        }
+    }
+)
 
