@@ -1,5 +1,5 @@
 export default function PersonComponent(props){
-    let aPerson = props.person_param
+    let aPerson = props.person
     let detail = props.detail
     if (detail) {
         return (
