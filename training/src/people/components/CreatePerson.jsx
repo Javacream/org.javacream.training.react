@@ -9,7 +9,6 @@ export default function CreatePerson(){
         event.preventDefault()
         const p = peopleModel.create(lastname, firstname, 177, 'd')
         updatePerson(p)
-        console.log(peopleModel.allPeople())
     }
 
     return (
