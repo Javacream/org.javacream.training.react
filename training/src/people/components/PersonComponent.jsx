@@ -1,12 +1,13 @@
+import { peopleModel } from "../PeopleContext"
+
 export default function PersonComponent(props){
     let aPerson = props.person
     let detail = props.detail
-    let handleDelete = props.handleDelete
     if (detail) {
         return (
             <>
                 <div>{aPerson.firstname} {aPerson.lastname} {aPerson.height} {aPerson.gender}</div>
-                <button onClick={() => handleDelete(aPerson.id)}> Delete</button>
+                <button onClick={() => peopleModel.delete_by(aPerson.id)}> Delete</button>
             </>
         )
     }

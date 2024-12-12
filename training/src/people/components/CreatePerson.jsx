@@ -23,7 +23,7 @@ export default function CreatePerson(){
                 </label>
                 <input type="submit" value="Create Person"/>
             </form>
-            <PersonComponent person={person} detail={true}></PersonComponent>
+            <PersonComponent person={person} detail={false}></PersonComponent>
         </>
     )
 }

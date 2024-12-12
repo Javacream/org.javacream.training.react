@@ -1,3 +1,4 @@
+import {personDeletion} from '../PeopleContext'
 export class Person{
     constructor(id, lastname, firstname, height, gender){
         this.id = id;
@@ -30,5 +31,6 @@ export class PeopleModel{
 
     delete_by(id){
         this.people.delete(id)
+        personDeletion.next(id)
     }
 }

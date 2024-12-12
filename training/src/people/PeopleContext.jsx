@@ -1,5 +1,5 @@
 import {Person,  PeopleModel } from "./model/PeopleModel"
-
+import {Subject} from 'rxjs'
 export const applicationTitle = 'PEOPLE'
 export const company = 'Javacream'
 export let peopleModel = new PeopleModel()
@@ -9,3 +9,7 @@ peopleModel.create('Smith', 'Andrea', 156, 'd')
 console.log(peopleModel.allPeople())
 export let user = new Person(1000, 'Doe', 'John', 199, 'd')
 setTimeout(() => {user.lastname = 'Smith'; console.log('*******' + user.lastname)}, 1000)
+
+export let personCreation = new Subject()
+export let personDeletion = new Subject()
+personDeletion.subscribe((id) => console.log('############## ' + id))
