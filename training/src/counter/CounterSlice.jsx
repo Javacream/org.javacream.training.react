@@ -5,14 +5,18 @@ const counterSliceTemplate = {
     initialState: {value:0},
     reducers: {
         increment(state, action){
-            state.value += 1
+            state.value += 5
         },
         decrement(state, action){
             state.value -= 1
+        },
+        inverse(state, action){
+            state.value = -state.value
         }
+
 
     }
 }
 const counterSlice = createSlice(counterSliceTemplate)
-export const {increment, decrement} = counterSlice.actions //increment und decrement sind Funktionen, die für eine Component einee Action erzeugen
+export const {increment, decrement, inverse} = counterSlice.actions 
 export default counterSlice.reducer

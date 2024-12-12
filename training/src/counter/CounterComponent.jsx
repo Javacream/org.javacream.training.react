@@ -1,6 +1,6 @@
 import { store } from "../people/PeopleContext";
 import {useEffect, useState} from 'react'
-import {increment, decrement} from './CounterSlice'
+import {increment, decrement, inverse} from './CounterSlice'
 
 export default function CounterComponent(){
     const [value, updateValue] = useState(0);
@@ -15,6 +15,7 @@ export default function CounterComponent(){
             <div>
                 <button id="increment" onClick={() => store.dispatch(increment())}>+</button>
                 <button id="decrement" onClick={() => store.dispatch(decrement())}>-</button>
+                <button id="inverse" onClick={() => store.dispatch(inverse())}>+/-</button>
                 <p>Clicked: <span id="value">{value}</span></p>
             </div>
         </>
