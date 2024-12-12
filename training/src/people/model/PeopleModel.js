@@ -15,16 +15,20 @@ export class Person{
 export class PeopleModel{
     constructor(){
         this.counter = 0
-        this.people = []
+        this.people = new Map()
     }
 
     create(lastname, firstname, height, gender){
         const person = new Person(this.counter++, lastname, firstname, height, gender)
-        this.people.push(person)
+        this.people.set(person.id, person)
         return person
     }
 
     allPeople() {
-        return this.people
+        return Array.from(this.people.values())
+    }
+
+    delete_by(id){
+        this.people.delete(id)
     }
 }
